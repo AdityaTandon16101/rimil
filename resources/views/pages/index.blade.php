@@ -2,7 +2,10 @@
 
 @section('title', "Welcome To Rimil")
 
+@push('css')
+<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+@endpush
+
 @section('content')
 <h1>Landing Page</h1>
-<h1>Landing by DEE</h1>
 @endsection

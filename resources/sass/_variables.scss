@@ -1,6 +1,15 @@
 // Body
 $body-bg: #f8fafc;
 
+$primary: #676be5;
+$secondary: rgb(0, 168, 0);
+$headerHeight: 3.5rem;
+
+@mixin button {
+    background-color: $secondary;
+    color: #fff;
+}
+
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
