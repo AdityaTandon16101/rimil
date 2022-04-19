@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use App\Http\Requests\RegistrationRequest;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -49,6 +48,15 @@ class RegisterController extends Controller
 
     public function register(RegistrationRequest $request)
     {
-        $request->storeUser();
+        DB::beginTransaction();
+        try {
+            $user = $request->storeUser();
+            $request->storeMemberDetails($user);
+            DB::commit();
+            Auth::login($user);
+            return redirect(RouteServiceProvider::DASHBOARD);
+        } catch (\Exception $ex) {
+            DB::rollBack();
+        }
     }
 }

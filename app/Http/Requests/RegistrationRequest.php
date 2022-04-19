@@ -2,7 +2,11 @@
 
 namespace App\Http\Requests;
 
+use App\Models\MemberDetail;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Hash;
 
 class RegistrationRequest extends FormRequest
 {
@@ -33,6 +37,28 @@ class RegistrationRequest extends FormRequest
 
     public function storeUser()
     {
-        //
+        $user = new User;
+        // uuid
+        $user->role_id = Role::CUSTOMER;
+        // photo
+        $user->name = $this->get('name');
+        $user->email = $this->get('email');
+        $user->phone = $this->get('phone');
+        $user->password = Hash::make($this->get('password'));
+        $user->status = true;
+        $user->banned = User::NON_BANNED;
+        $user->save();
+        return $user;
+    }
+
+    public function storeMemberDetails($user)
+    {
+        $memberDetail = new MemberDetail();
+        $memberDetail->user_id = $user->id;
+        $memberDetail->referral_income = 0;
+        $memberDetail->total_earnings = 0;
+        $memberDetail->withdraws = 0;
+        $memberDetail->reward_income = 0;
+        $memberDetail->save();
     }
 }

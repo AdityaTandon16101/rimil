@@ -3,3 +3,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    &.app #app,
+    &.admin #app {
+        display: flex;
+        .sidebar {
+            flex: 0.2;
+        }
+        .page {
+            flex: 1;
+        }
+    }
+}

@@ -11282,3 +11282,12 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+body.app #app, body.admin #app {
+  display: flex;
+}
+body.app #app .sidebar, body.admin #app .sidebar {
+  flex: 0.2;
+}
+body.app #app .page, body.admin #app .page {
+  flex: 1;
+}

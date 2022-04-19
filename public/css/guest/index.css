@@ -1,0 +1,22 @@
+footer {
+  background-color: #676be5;
+}
+footer > * {
+  color: #fff;
+}
+footer ul {
+  margin-left: -2em;
+}
+footer ul li {
+  list-style: none;
+}
+footer ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+footer .copyright {
+  background-color: rgba(0, 0, 0, 0.15);
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
