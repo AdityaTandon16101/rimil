@@ -14,9 +14,9 @@
 
 <body>
   <div id="app">
-    <x-guest.header />
+    <x-partials.guest.header />
     @yield('content')
-    <x-guest.footer />
+    <x-partials.guest.footer />
   </div>
   <script src="{{ asset('js/app.js') }}"></script>
   @stack('scripts')

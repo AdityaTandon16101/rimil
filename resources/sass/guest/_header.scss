@@ -1,3 +1,34 @@
 header {
-    
+  position: fixed !important;
+  padding: 1.5rem 0 !important;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+  
+  &.scrolled {
+    padding: 0.5rem 0 !important;
+    background-color: rgba($color: $primary, $alpha: 0.85);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .logo {
+    a {
+      color: #fff;
+    }
+  }
+
+  ul {
+    li {
+      a {
+        text-decoration: none;
+        color: #fff !important;
+      }
+    }
+  }
+  ul.guestauth {
+    margin-left: 1.65em;
+    li {
+      @include authLink;
+    }
+  }
 }

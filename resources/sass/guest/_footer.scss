@@ -1,8 +1,10 @@
 @import '../variables';
 
 footer {
+    padding: 3rem 0 0 0;
     background-color: $primary;
-    & > * {
+    & > *,
+    a {
         color: #fff;
     }
     ul {
@@ -11,7 +13,6 @@ footer {
             list-style: none;
             a {
                 text-decoration: none;
-                color: #fff;
             }
         }
     }

@@ -11282,6 +11282,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 body.app #app, body.admin #app {
   display: flex;
 }

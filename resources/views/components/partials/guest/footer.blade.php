@@ -1,10 +1,12 @@
-<footer class="pt-3">
+<footer>
   <div class="container">
     <div class="row">
       <div class="col-md-4">
         <div class="logo">
-          <h5>LOGO HERE</h5>
-          <p>
+          <a href="{{ route('index') }}">
+            <x-logo />
+          </a>
+          <p class="mt-3">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo alias asperiores eaque temporibus magni
             laboriosam fugiat facilis animi nihil sapiente?
           </p>
@@ -17,8 +19,8 @@
           <li><a href="{{ route('login') }}">Login</a></li>
           <li><a href="{{ route('register') }}">Register</a></li>
           @endguest
-          <li><a href="{{ route('about') }}">About</a></li>
-          <li><a href="{{ route('contact') }}">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="col-md-4">
