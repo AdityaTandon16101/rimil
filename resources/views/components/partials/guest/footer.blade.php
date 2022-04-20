@@ -19,8 +19,10 @@
           <li><a href="{{ route('login') }}">Login</a></li>
           <li><a href="{{ route('register') }}">Register</a></li>
           @endguest
+          @if (Route::currentRouteName() == 'index')
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
+          @endif
         </ul>
       </div>
       <div class="col-md-4">

@@ -1,7 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.guest')
+
+@section('title', "Join " . config('app.name') . " Now")
+
+@push('css')
+<link rel="stylesheet" href="{{ asset('css/guest/register.css') }}" />
+@endpush
 
 @section('content')
-<div class="container">
+<div class="container" register>
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">

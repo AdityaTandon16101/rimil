@@ -1,0 +1,13 @@
+@import "../variables";
+@import "./header";
+@import "./footer";
+
+header {
+  background-color: $primary;
+  padding: 0.5em 0 !important;
+}
+
+[login] {
+    margin-top: 5em;
+    min-height: 80vh;
+}

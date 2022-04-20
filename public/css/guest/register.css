@@ -1,1 +1,75 @@
+header {
+  position: fixed !important;
+  padding: 1.5rem 0 !important;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+header.scrolled {
+  padding: 0.5rem 0 !important;
+  background-color: rgba(103, 107, 229, 0.85);
+  transition: all 0.3s ease-in-out;
+}
+header .logo a {
+  color: #fff;
+}
+header ul li a {
+  text-decoration: none;
+  color: #fff !important;
+}
+header ul.guestauth {
+  margin-left: 1.65em;
+}
+header ul.guestauth li {
+  box-sizing: border-box;
+  padding: 0 1em;
+  list-style: none;
+  margin: 0 0.2em;
+  border: 1px solid #fff;
+  border-radius: 1.2em;
+  text-align: center;
+  transition: all 0.2s;
+}
+header ul.guestauth li:hover {
+  background-color: #fdd282;
+  border: none;
+  transition: all 0.2s;
+}
+header ul.guestauth li:hover a {
+  color: #333 !important;
+}
 
+footer {
+  padding: 3rem 0 0 0;
+  background-color: #676be5;
+}
+footer > *,
+footer a {
+  color: #fff;
+}
+footer ul {
+  margin-left: -2em;
+}
+footer ul li {
+  list-style: none;
+}
+footer ul li a {
+  text-decoration: none;
+}
+footer .copyright {
+  background-color: rgba(0, 0, 0, 0.15);
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+header {
+  background-color: #676be5;
+  padding: 0.5em 0 !important;
+}
+
+[register] {
+  margin-top: 5em;
+  min-height: 80vh;
+}
