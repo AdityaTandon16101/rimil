@@ -14,7 +14,7 @@
           display: flex;
       }
       .login-content .content-section{
-          background-color: rgb(255, 255, 255);
+          background-color: orange;
           height: 350px;
           width: 60%;
           margin-left: 280px;
@@ -57,7 +57,7 @@
       }
       .email-sec-div .email-label{
           text-align: center;
-          color: gray;
+          color: black;
           font-family: serif;
           font-size: 25px;
           margin-left: 100px;
@@ -94,7 +94,7 @@
       }
       .pass-sec-div .password-label{
           text-align: center;
-          color: gray;
+          color: black;
           font-family: serif;
           font-size: 25px;
           margin-left: 100px;
