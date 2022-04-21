@@ -14,9 +14,8 @@
 
 <body class="app">
   <div id="app">
-    <x-app.sidebar />
+    <x-partials.app.sidebar />
     <div class="page">
-      <x-app.header />
       @yield('content')
     </div>
   </div>

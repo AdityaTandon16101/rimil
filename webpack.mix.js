@@ -20,6 +20,9 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/guest/register.scss', 'public/css/guest')
     // Customer
     .sass('resources/sass/customer/dashboard.scss', 'public/css/customer')
+    .sass('resources/sass/customer/profile.scss', 'public/css/customer')
+    .sass('resources/sass/customer/teams.scss', 'public/css/customer')
+    .sass('resources/sass/customer/withdraw.scss', 'public/css/customer')
 
     .sourceMaps()
     .disableNotifications()

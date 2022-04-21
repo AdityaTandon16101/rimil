@@ -1,0 +1,9 @@
+@import "../variables";
+
+header {
+    background-color: $primary;
+    .navbar-brand,
+    .nav-link {
+        color: #fff !important;
+    }
+}

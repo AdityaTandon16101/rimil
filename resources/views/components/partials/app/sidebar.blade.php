@@ -6,8 +6,11 @@
     <li @class(['active'=> Route::currentRouteName() == 'dashboard'])>
       <a href="{{ route('dashboard') }}">Dashboard</a>
     </li>
-    <li><a href="">Profile</a></li>
-    <li><a href="">Team</a></li>
-    <li><a href="">Withdraw</a></li>
+    <li @class(['active'=> Route::currentRouteName() == 'teams'])>
+      <a href="{{ route('teams') }}">Team</a>
+    </li>
+    <li @class(['active'=> Route::currentRouteName() == 'withdraw'])>
+      <a href="{{ route('withdraw') }}">Withdraw</a>
+    </li>
   </ul>
 </div>

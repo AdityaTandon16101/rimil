@@ -11289,6 +11289,7 @@ body {
 
 body.app #app, body.admin #app {
   display: flex;
+  background-color: #ebebeb;
 }
 body.app #app .sidebar, body.admin #app .sidebar {
   flex: 0.2;

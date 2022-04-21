@@ -7,5 +7,6 @@
 @endpush
 
 @section('content')
-<h1>User Dashboard</h1>
+<x-partials.app.header title="Dashboard" />
+<h1>Customer Dashboard</h1>
 @endsection

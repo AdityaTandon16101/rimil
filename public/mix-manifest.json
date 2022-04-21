@@ -4,5 +4,8 @@
     "/css/guest/register.css": "/css/guest/register.css",
     "/css/guest/login.css": "/css/guest/login.css",
     "/css/guest/index.css": "/css/guest/index.css",
-    "/css/customer/dashboard.css": "/css/customer/dashboard.css"
+    "/css/customer/withdraw.css": "/css/customer/withdraw.css",
+    "/css/customer/profile.css": "/css/customer/profile.css",
+    "/css/customer/dashboard.css": "/css/customer/dashboard.css",
+    "/css/customer/teams.css": "/css/customer/teams.css"
 }

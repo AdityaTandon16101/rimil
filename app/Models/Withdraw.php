@@ -16,6 +16,11 @@ class Withdraw extends Model
         'amount'
     ];
 
+    public function scopeMy($query)
+    {
+        return $query->where('user_id', auth()->id());
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

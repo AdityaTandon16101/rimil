@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Withdraw;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,27 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.auth.dashboard');
+        return view('pages.app.dashboard');
+    }
+
+    public function profile()
+    {
+        return view('pages.app.profile');
+    }
+
+    public function teams()
+    {
+        return view('pages.app.team');
+    }
+
+    public function withdraw()
+    {
+        return view('pages.app.withdraw');
+    }
+
+    public function withdraws()
+    {
+        $withdraws = Withdraw::query()->my()->paginate();
+        return view('pages.app.withdraws', compact('withdraws'));
     }
 }
