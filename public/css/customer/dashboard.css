@@ -1,0 +1,41 @@
+.sidebar {
+  height: 100vh;
+  background-color: #fff;
+}
+.sidebar .logo {
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1em;
+}
+.sidebar ul {
+  margin: 0 0 0 -2em;
+}
+.sidebar ul li {
+  list-style: none;
+  height: 3rem;
+  line-height: 3rem;
+  padding: 0 1.5em;
+  transition: padding 0.3s ease-in-out;
+}
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+.sidebar ul li:hover:not(.active) {
+  padding: 0 0 0 2em;
+  transition: padding 0.3s ease-in-out;
+}
+.sidebar ul li.active {
+  background-color: #676be5;
+}
+.sidebar ul li.active a {
+  color: #fff;
+}
+
+header {
+  background-color: #676be5;
+}
+header .navbar-brand,
+header .nav-link {
+  color: #fff !important;
+}

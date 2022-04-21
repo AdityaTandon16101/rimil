@@ -12,11 +12,12 @@
   @stack('css')
 </head>
 
-<body>
+<body class="app">
   <div id="app">
-    <x-guest.header />
-    @yield('content')
-    <x-guest.footer />
+    <x-partials.app.sidebar />
+    <div class="page">
+      @yield('content')
+    </div>
   </div>
   <script src="{{ asset('js/app.js') }}"></script>
   @stack('scripts')

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<header class="navbar navbar-expand-md">
   <div class="container">
-    <a class="navbar-brand" href="{{ route('index') }}">
-      {{ config('app.name', 'Rimil') }}
+    <a class="navbar-brand">
+      {{ $title }}
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -37,8 +37,11 @@
           </a>
 
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
+            <a class="dropdown-item" href="{{ route('profile') }}">
+              {{ __('Profile') }}
+            </a>
+            <a class="dropdown-item" href="{{ route('logout') }}"
+              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               {{ __('Logout') }}
             </a>
 
@@ -51,4 +54,4 @@
       </ul>
     </div>
   </div>
-</nav>
+</header>

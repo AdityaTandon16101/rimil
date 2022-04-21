@@ -1,0 +1,40 @@
+@import '../variables';
+
+.sidebar {
+  height: 100vh;
+  background-color: #fff;
+
+  .logo {
+    height: $appHeaderHeight;
+    line-height: $appHeaderHeight;
+    padding: 0 1em;
+  }
+
+  ul {
+    margin: 0 0 0 -2em;
+    li {
+      list-style: none;
+      height: 3rem;
+      line-height: 3rem;
+      padding: 0 1.5em;
+      transition: padding 0.3s ease-in-out;
+  
+      a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      &:hover:not(.active) {
+        padding: 0 0 0 2em;
+        transition: padding 0.3s ease-in-out;
+      }
+  
+      &.active {
+        background-color: $primary;
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

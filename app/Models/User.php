@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\{HasMany, HasOne};
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -11,6 +12,9 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    const NON_BANNED = false;
+    const BANNED = true;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +24,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
         'password',
+        'status',
+        'banned'
     ];
 
     /**
@@ -40,5 +47,22 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'status' => 'boolean',
+        'banned' => 'boolean',
     ];
+
+    public function memberDetail(): HasOne
+    {
+        return $this->hasOne(MemberDetail::class);
+    }
+
+    public function banks(): HasMany
+    {
+        return $this->hasMany(BankDetail::class);
+    }
+
+    public function withdraws(): HasMany
+    {
+        return $this->hasMany(Withdraw::class);
+    }
 }

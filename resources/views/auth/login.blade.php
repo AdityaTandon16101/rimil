@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.guest')
+
+@section('title', 'Login to ' . config('app.name'))
 
 @push('css')
 <style>
@@ -185,5 +187,5 @@
 
     </div>
 </div>
-
+</div>
 @endsection
