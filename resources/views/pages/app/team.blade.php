@@ -7,6 +7,7 @@
 @endpush
 
 @section('content')
+<x-partials.app.header title="My Team" />
 <h1>Teams Page</h1>
 
 @endsection

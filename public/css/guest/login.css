@@ -69,11 +69,6 @@ header {
   padding: 0.5em 0 !important;
 }
 
-[login] {
-  margin-top: 5em;
-  min-height: 80vh;
-}
-
 .content {
   background-color: aqua;
   width: 100%;

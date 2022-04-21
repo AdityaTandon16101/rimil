@@ -1038,6 +1038,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 
 /***/ }),
 
+/***/ "./resources/sass/customer/deposite.scss":
+/*!***********************************************!*\
+  !*** ./resources/sass/customer/deposite.scss ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9jdXN0b21lci9kZXBvc2l0ZS5zY3NzLmpzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9zYXNzL2N1c3RvbWVyL2RlcG9zaXRlLnNjc3M/NDY1NCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/sass/customer/deposite.scss\n");
+
+/***/ }),
+
 /***/ "./resources/sass/customer/withdraw.scss":
 /*!***********************************************!*\
   !*** ./resources/sass/customer/withdraw.scss ***!
@@ -1045,7 +1056,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9jdXN0b21lci93aXRoZHJhdy5zY3NzLmpzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9zYXNzL2N1c3RvbWVyL3dpdGhkcmF3LnNjc3M/ZjQyZiJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/sass/customer/withdraw.scss\n");
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9yZXNvdXJjZXMvc2Fzcy9jdXN0b21lci93aXRoZHJhdy5zY3NzLmpzIiwibWFwcGluZ3MiOiI7QUFBQSIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3Jlc291cmNlcy9zYXNzL2N1c3RvbWVyL3dpdGhkcmF3LnNjc3M/OGYyYSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBleHRyYWN0ZWQgYnkgbWluaS1jc3MtZXh0cmFjdC1wbHVnaW5cbmV4cG9ydCB7fTsiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./resources/sass/customer/withdraw.scss\n");
 
 /***/ }),
 
@@ -1231,6 +1242,7 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 			"css/guest/login": 0,
 /******/ 			"css/guest/index": 0,
 /******/ 			"css/customer/withdraw": 0,
+/******/ 			"css/customer/deposite": 0,
 /******/ 			"css/customer/teams": 0,
 /******/ 			"css/customer/profile": 0,
 /******/ 			"css/customer/dashboard": 0
@@ -1283,15 +1295,16 @@ eval("// shim for using process in browser\nvar process = module.exports = {};\n
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/guest/index.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/guest/login.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/guest/register.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/dashboard.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/profile.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/teams.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/withdraw.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/guest/index.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/guest/login.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/guest/register.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/dashboard.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/profile.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/teams.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/deposite.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","css/guest/register","css/guest/login","css/guest/index","css/customer/withdraw","css/customer/deposite","css/customer/teams","css/customer/profile","css/customer/dashboard"], () => (__webpack_require__("./resources/sass/customer/withdraw.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()

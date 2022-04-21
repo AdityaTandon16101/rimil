@@ -7,5 +7,6 @@
 @endpush
 
 @section('content')
+<x-partials.app.header title="My Profile" />
 <h1>Profile Page</h1>
 @endsection
