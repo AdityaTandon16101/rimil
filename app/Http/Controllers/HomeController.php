@@ -37,6 +37,11 @@ class HomeController extends Controller
         return view('pages.app.team');
     }
 
+    public function deposites()
+    {
+        return view('pages.app.deposite');
+    }
+
     public function withdraw()
     {
         return view('pages.app.withdraw');

@@ -7,5 +7,6 @@
 @endpush
 
 @section('content')
+<x-partials.app.header title="My Withdraws" />
 <h1>Withdraw History Page</h1>
 @endsection

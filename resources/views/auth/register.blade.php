@@ -3,124 +3,74 @@
 @section('title', "Join " . config('app.name') . " Now")
 
 @push('css')
-<style>
-  .header-heading {
-    background-color: cornflowerblue;
-    height: 80px;
-    width: 100%;
-    display: flex;
-  }
-
-  .container {
-    background-color: blueviolet;
-
-  }
-</style>
+<link rel="stylesheet" href="{{ asset('css/guest/register.css') }}" />
 @endpush
 
 @section('content')
-<div class="content">
-  <div class="heading-section">
+<div class="register-content" register>
+  <div class="div-content">
+    <div class="main-div">
+      <form action="{{ route('register') }}" method="POST">
+        @csrf
+        <div class="reg-label">
+          <label class="reg-name-label">Registration</label>
+        </div>
 
-    <div class="head-sec-1">
-    </div>
 
-    <div class="head-sec-2">
-    </div>
-
-  </div>
-
-  <div class="container" register>
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header">{{ __('Register') }}</div>
-
-          <div class="card-body">
-            <form method="POST" action="{{ route('register') }}">
-              @csrf
-
-              <div class="row mb-3">
-                <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
-
-                <div class="col-md-6">
-                  <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                    value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                  @error('name')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                <div class="col-md-6">
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                    value="{{ old('email') }}" required autocomplete="email">
-
-                  @error('email')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
-
-                <div class="col-md-6">
-                  <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone"
-                    value="{{ old('phone') }}" required autocomplete="phone">
-
-                  @error('phone')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                <div class="col-md-6">
-                  <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="new-password">
-
-                  @error('password')
-                  <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                  </span>
-                  @enderror
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Confirm Password')
-                  }}</label>
-
-                <div class="col-md-6">
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                    required autocomplete="new-password">
-                </div>
-              </div>
-
-              <div class="row mb-0">
-                <div class="col-md-6 offset-md-4">
-                  <button type="submit" class="btn btn-primary">
-                    {{ __('Register') }}
-                  </button>
-                </div>
-              </div>
-            </form>
+        <div class="name-section">
+          <div class="name-label">
+            <label class="label-text">Name</label>
+          </div>
+          <div class="name-input">
+            <input class="name-text-input" name="name" type="text" />
           </div>
         </div>
-      </div>
+
+
+        <div class="email-section">
+          <div class="email-label">
+            <label class="label-text">Email</label>
+          </div>
+          <div class="email-input">
+            <input class="email-text-input" type="email" name="email" />
+          </div>
+        </div>
+
+        <div class="number-section">
+          <div class="number-label">
+            <label class="label-text">Number</label>
+          </div>
+          <div class="number-input">
+            <input class="number-text-input" type="number" name="phone" />
+          </div>
+        </div>
+
+        <div class="password-section">
+          <div class="password-label">
+            <label class="label-text">Password</label>
+          </div>
+          <div class="password-input">
+            <input class="password-text-input" type="password" name="password" />
+          </div>
+        </div>
+
+        <div class="re-password-section">
+          <div class="re-password-label">
+            <label class="label-text">Re-Password</label>
+          </div>
+          <div class="re-password-input">
+            <input class="re-password-text-input" type="password" name="confirm-password" />
+          </div>
+        </div>
+
+        <div class="submit">
+          <div class="submit-btn">
+            <button type="submit" class="submit-text">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-  @endsection
+</div>
+</div>
+@endsection

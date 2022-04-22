@@ -7,6 +7,7 @@
 @endpush
 
 @section('content')
+<x-partials.app.header title="Withdraw" />
 <h1>Withdraw Page</h1>
 
 <a href="{{ route('withdraws') }}">All Withdraws</a>

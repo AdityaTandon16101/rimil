@@ -30,7 +30,8 @@
       }
   
       &.active {
-        background-color: $primary;
+        background-color: $primaryAlpha;
+        border-left: 0.5em solid rgba($color: $primary, $alpha: 0.75);
         a {
           color: #fff;
         }
