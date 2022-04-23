@@ -4,20 +4,22 @@
 
 @push('css')
 <style>
-  .register-content{
+  .register-content {
     /*background-color: aqua;*/
     height: 420px;
     width: 100%;
     display: flex;
   }
-  .div-content{
+
+  .div-content {
     /*background-color: blueviolet;*/
     height: 380px;
     width: 90%;
     margin-left: 5%;
     margin-top: 20px;
   }
-  .main-div{
+
+  .main-div {
     /*background-color: rgb(29, 71, 57);*/
     height: 370px;
     width: 85%;
@@ -27,7 +29,8 @@
     border-radius: 3px;
     background-color: orange;
   }
-  .reg-label{
+
+  .reg-label {
     background-color: rgb(19, 77, 185);
     height: 35px;
     width: 100%;
@@ -35,29 +38,34 @@
     border: 2px solid rgb(19, 77, 185);
     border-radius: 3px 3px 0px 0px;
   }
-  .reg-label .reg-name-label{
+
+  .reg-label .reg-name-label {
     font-family: serif;
     font-size: 25px;
     padding-bottom: 5px;
     color: aliceblue;
   }
-  .name-section{
+
+  .name-section {
     /*background-color: chartreuse;*/
     height: 50px;
     width: 100%;
     display: flex;
   }
-  .name-label{
+
+  .name-label {
     /*background-color: cadetblue;*/
     height: 49px;
     width: 50%;
   }
-  .name-input{
+
+  .name-input {
     /*background-color: chocolate;*/
     height: 49px;
     width: 50%;
   }
-  .name-text-input{
+
+  .name-text-input {
     height: 30px;
     width: 250px;
     margin-left: 30px;
@@ -66,30 +74,34 @@
     border-radius: 4px;
     background-color: whitesmoke;
   }
-  .label-text{
+
+  .label-text {
     font-family: serif;
     font-size: 25px;
     margin-left: 300px;
   }
 
 
-  .email-section{
+  .email-section {
     /*background-color: blue;*/
     height: 50px;
     width: 100%;
     display: flex;
   }
-  .email-label{
+
+  .email-label {
     /*background-color: cadetblue;*/
     height: 49px;
     width: 50%;
   }
-  .email-input{
+
+  .email-input {
     /*background-color: chocolate;*/
     height: 49px;
     width: 50%;
   }
-  .email-text-input{
+
+  .email-text-input {
     height: 30px;
     width: 250px;
     margin-left: 30px;
@@ -101,23 +113,26 @@
 
 
 
-  .number-section{
+  .number-section {
     /*background-color: chartreuse;*/
     height: 50px;
     width: 100%;
     display: flex;
   }
-  .number-label{
+
+  .number-label {
     /*background-color: cadetblue;*/
     height: 49px;
     width: 50%;
   }
-  .number-input{
+
+  .number-input {
     /*background-color: chocolate;*/
     height: 49px;
     width: 50%;
   }
-  .number-text-input{
+
+  .number-text-input {
     height: 30px;
     width: 250px;
     margin-left: 30px;
@@ -129,23 +144,26 @@
 
 
 
-  .password-section{
+  .password-section {
     /*background-color: rgb(12, 116, 67);*/
     height: 50px;
     width: 100%;
     display: flex;
   }
-  .password-label{
+
+  .password-label {
     /*background-color: cadetblue;*/
     height: 49px;
     width: 50%;
   }
-  .password-input{
+
+  .password-input {
     /*background-color: chocolate;*/
     height: 49px;
     width: 50%;
   }
-  .password-text-input{
+
+  .password-text-input {
     height: 30px;
     width: 250px;
     margin-left: 30px;
@@ -157,23 +175,26 @@
 
 
 
-  .re-password-section{
+  .re-password-section {
     /*background-color: rgb(54, 14, 119);*/
     height: 50px;
     width: 100%;
     display: flex;
   }
-  .re-password-label{
+
+  .re-password-label {
     /*background-color: cadetblue;*/
     height: 49px;
     width: 50%;
   }
-  .re-password-input{
+
+  .re-password-input {
     /*background-color: chocolate;*/
     height: 49px;
     width: 50%;
   }
-  .re-password-text-input{
+
+  .re-password-text-input {
     height: 30px;
     width: 250px;
     margin-left: 30px;
@@ -183,18 +204,20 @@
     background-color: whitesmoke;
   }
 
-  .submit{
+  .submit {
     /*background-color: yellow;*/
     height: 50px;
     width: 100%;
   }
-  .submit-btn{
+
+  .submit-btn {
     /*background-color: blueviolet;*/
     height: 40px;
     width: 30%;
     margin-left: 380px;
   }
-  .submit-text{
+
+  .submit-text {
     height: 38px;
     width: 150px;
     font-family: serif;
@@ -206,7 +229,6 @@
     border: 2px solid rgb(19, 77, 185);
     margin-left: 60px;
   }
-
 </style>
 @endpush
 
@@ -256,7 +278,7 @@
             <input class="password-text-input" type="password">
           </div>
         </div>
-        
+
         <div class="re-password-section">
           <div class="re-password-label">
             <label class="label-text">Re-Password</label>
@@ -273,7 +295,7 @@
         </div>
       </form>
     </div>
-    </div>
   </div>
 </div>
-  @endsection
+</div>
+@endsection
