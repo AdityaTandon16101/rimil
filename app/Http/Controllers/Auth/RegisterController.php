@@ -57,6 +57,7 @@ class RegisterController extends Controller
             return redirect(RouteServiceProvider::DASHBOARD);
         } catch (\Exception $ex) {
             DB::rollBack();
+            return back();
         }
     }
 }

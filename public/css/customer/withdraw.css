@@ -26,7 +26,8 @@
   transition: padding 0.3s ease-in-out;
 }
 .sidebar ul li.active {
-  background-color: #676be5;
+  background-color: hsla(238deg, 71%, 65%, 0.65);
+  border-left: 0.5em solid rgba(103, 107, 229, 0.75);
 }
 .sidebar ul li.active a {
   color: #fff;
