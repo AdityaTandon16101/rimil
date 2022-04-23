@@ -36,7 +36,7 @@
         @csrf
         <div class="email-section">
           <div class="email-sec-div">
-            <label class="email-label">Email Address</label>
+            <label class="email-label">Email / Phone</label>
           </div>
           <div class="email-input">
             <input class="email-intext" type="email" name="email" />

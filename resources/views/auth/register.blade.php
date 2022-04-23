@@ -33,8 +33,6 @@
   .main-div{
     height: 390px;
   }
-  .div-content{
-  }
 </style>
 @endpush
 
