@@ -4,6 +4,23 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('css/guest/login.css') }}" />
+<style>
+  .login-content{
+    height: 500px;
+  }
+  .email-intext{
+    border: 2px solid white;
+  }
+  .pass-intext{
+    border: 2px solid whitesmoke;
+  }
+  .login-btn{
+    border: 2px solid rgb(18, 121, 168);
+  }
+  .login-text{
+    border: 2px solid rgb(18, 121, 168);
+  }
+</style>
 @endpush
 
 @section('content')

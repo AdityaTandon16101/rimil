@@ -4,6 +4,38 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('css/guest/register.css') }}" />
+<style>
+  .refferal-section{
+    /*background-color: rgb(54, 14, 119);*/
+    height: 50px;
+    width: 100%;
+    display: flex;
+  }
+  .refferal-label{
+    /*background-color: cadetblue;*/
+    height: 49px;
+    width: 50%;
+  }
+  .refferal-input{
+    /*background-color: chocolate;*/
+    height: 49px;
+    width: 50%;
+  }
+  .refferal-text-input{
+    height: 30px;
+    width: 250px;
+    margin-left: 30px;
+    margin-top: 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+  }
+  .main-div{
+    height: 390px;
+  }
+  .div-content{
+  }
+</style>
 @endpush
 
 @section('content')
@@ -60,6 +92,15 @@
           </div>
           <div class="re-password-input">
             <input class="re-password-text-input" type="password" name="confirm-password" />
+          </div>
+        </div>
+
+        <div class="refferal-section">
+          <div class="refferal-label">
+            <label class="label-text">Refferal ID</label>
+          </div>
+          <div class="refferal-input">
+            <input class="refferal-text-input" type="text">
           </div>
         </div>
 
