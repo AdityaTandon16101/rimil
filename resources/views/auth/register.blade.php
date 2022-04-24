@@ -4,6 +4,33 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('css/guest/register.css') }}" />
+<style>
+  .sponsor-section{
+    /*background-color: rgb(54, 14, 119);*/
+    height: 50px;
+    width: 100%;
+    display: flex;
+  }
+  .sponsor-label{
+    /*background-color: cadetblue;*/
+    height: 49px;
+    width: 50%;
+  }
+  .sponsor-input{
+    /*background-color: chocolate;*/
+    height: 49px;
+    width: 50%;
+  }
+  .sponsor-text-input{
+    height: 30px;
+    width: 250px;
+    margin-left: 30px;
+    margin-top: 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+  }
+</style>
 @endpush
 
 @section('content')
@@ -64,6 +91,15 @@
           </div>
           <div class="refferal-input">
             <input class="refferal-text-input" type="text" name="referral" />
+          </div>
+        </div>
+
+        <div class="sponsor-section">
+          <div class="sponsor-label">
+            <label class="label-text">Sponsor Name</label>
+          </div>
+          <div class="sponsor-input">
+            <input class="sponsor-text-input" type=""/>
           </div>
         </div>
 
