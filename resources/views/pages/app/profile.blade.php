@@ -8,5 +8,16 @@
 
 @section('content')
 <x-partials.app.header title="My Profile" />
-<h1>Profile Page</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <x-profile.links />
+    </div>
+    <div class="col-12">
+      <x-profile.viewEdit />
+      <x-profile.bankDetail />
+      <x-profile.changePassword />
+    </div>
+  </div>
+</div>
 @endsection

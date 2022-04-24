@@ -42,7 +42,7 @@ class RegistrationRequest extends FormRequest
         // uuid
         $user->role_id = Role::CUSTOMER;
         // photo
-        $user->referral_id = $this->get('referral');
+        // $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 6);
         $user->name = $this->get('name');
         $user->email = $this->get('email');
         $user->phone = $this->get('phone');
