@@ -245,3 +245,29 @@ header {
   .main-div {
     height: 390px;
   }
+
+  .sponsor-section{
+    /*background-color: rgb(54, 14, 119);*/
+    height: 50px;
+    width: 100%;
+    display: flex;
+  }
+  .sponsor-label{
+    /*background-color: cadetblue;*/
+    height: 49px;
+    width: 50%;
+  }
+  .sponsor-input{
+    /*background-color: chocolate;*/
+    height: 49px;
+    width: 50%;
+  }
+  .sponsor-text-input{
+    height: 30px;
+    width: 250px;
+    margin-left: 30px;
+    margin-top: 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+  }

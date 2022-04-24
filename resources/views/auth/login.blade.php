@@ -5,9 +5,7 @@
 @push('css')
 <link rel="stylesheet" href="{{ asset('css/guest/login.css') }}" />
 <style>
-  .content-section .login-text{
-    border: 2px solid rgb(28, 112, 168);
-  }
+
 </style>
 @endpush
 
