@@ -18,7 +18,7 @@ header {
     }
 
     .login-content {
-        background-color: rgb(108, 112, 111);
+        background-color: white;
         width: 100%;
         height: 600px;
         display: flex;
@@ -91,6 +91,7 @@ header {
         border-radius: 6px;
         margin-top: 2px;
         margin-left: 50px;
+        margin: 2px solid white;
     }
 
 
@@ -149,3 +150,22 @@ header {
         width: 150px;
         border-radius: 4px;
     }
+
+    .login-content{
+        height: 500px;
+      }
+      .email-intext{
+        border: 2px solid white;
+      }
+      .pass-intext{
+        border: 2px solid whitesmoke;
+      }
+      .login-btn{
+        border: 2px solid rgb(18, 121, 168);
+      }
+      .login-text{
+        border: 2px solid rgb(18, 121, 168);
+      }
+      .content-section .login-text{
+        border: 2px solid rgb(28, 112, 168);
+      }

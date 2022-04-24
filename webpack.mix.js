@@ -26,5 +26,4 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/customer/withdraw.scss', 'public/css/customer')
 
     .sourceMaps()
-    .disableNotifications()
-    .browserSync('127.0.0.1:8000');
+    .disableNotifications();

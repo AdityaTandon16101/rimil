@@ -23,6 +23,7 @@
           </div>
           <div class="name-input">
             <input class="name-text-input" name="name" type="text" />
+            @error('name') {{ $message }} @enderror
           </div>
         </div>
 
@@ -33,6 +34,7 @@
           </div>
           <div class="email-input">
             <input class="email-text-input" type="email" name="email" />
+            @error('email') {{ $message }} @enderror
           </div>
         </div>
 
@@ -42,6 +44,7 @@
           </div>
           <div class="number-input">
             <input class="number-text-input" type="number" name="phone" />
+            @error('phone') {{ $message }} @enderror
           </div>
         </div>
 
@@ -51,15 +54,25 @@
           </div>
           <div class="password-input">
             <input class="password-text-input" type="password" name="password" />
+            @error('password') {{ $message }} @enderror
           </div>
         </div>
 
-        <div class="re-password-section">
-          <div class="re-password-label">
-            <label class="label-text">Re-Password</label>
+        <div class="refferal-section">
+          <div class="refferal-label">
+            <label class="label-text">Refferal ID</label>
           </div>
-          <div class="re-password-input">
-            <input class="re-password-text-input" type="password" name="confirm-password" />
+          <div class="refferal-input">
+            <input class="refferal-text-input" type="text" name="referral" />
+          </div>
+        </div>
+
+        <div class="sponsor-section">
+          <div class="sponsor-label">
+            <label class="label-text">Sponsor Name</label>
+          </div>
+          <div class="sponsor-input">
+            <input class="sponsor-text-input" type="text" disabled />
           </div>
         </div>
 

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->mediumText('uuid')->nullable();
             $table->foreignId('role_id')->constrained();
             $table->mediumText('photo')->nullable();
-            $table->mediumText('referral_id')->nullable();
+            $table->string('referral_id', 15)->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->unique();

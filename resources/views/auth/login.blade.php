@@ -4,6 +4,9 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('css/guest/login.css') }}" />
+<style>
+
+</style>
 @endpush
 
 @section('content')
@@ -19,10 +22,11 @@
         @csrf
         <div class="email-section">
           <div class="email-sec-div">
-            <label class="email-label">Email Address</label>
+            <label class="email-label">Email / Phone</label>
           </div>
           <div class="email-input">
-            <input class="email-intext" type="email" name="email" />
+            <input class="email-intext" type="email" name="login" />
+            @error('login') {{ $message }} @enderror
           </div>
         </div>
 
@@ -32,11 +36,12 @@
           </div>
           <div class="pass-input">
             <input class="pass-intext" type="password" name="password" />
+            @error('password') {{ $message }} @enderror
           </div>
         </div>
 
         <div class="login">
-          <button class="login-btn">Login</button>
+          <button type="submit" class="login-btn">Login</button>
         </div>
       </form>
     </div>

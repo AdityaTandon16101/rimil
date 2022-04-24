@@ -26,7 +26,6 @@ header {
   }
   .main-div{
     /*background-color: rgb(29, 71, 57);*/
-    height: 370px;
     width: 85%;
     margin-left: 8%;
     margin-top: 5px;
@@ -212,4 +211,63 @@ header {
     border-radius: 3px;
     border: 2px solid rgb(19, 77, 185);
     margin-left: 60px;
+  }
+
+  .refferal-section {
+    /*background-color: rgb(54, 14, 119);*/
+    height: 50px;
+    width: 100%;
+    display: flex;
+  }
+
+  .refferal-label {
+    /*background-color: cadetblue;*/
+    height: 49px;
+    width: 50%;
+  }
+
+  .refferal-input {
+    /*background-color: chocolate;*/
+    height: 49px;
+    width: 50%;
+  }
+
+  .refferal-text-input {
+    height: 30px;
+    width: 250px;
+    margin-left: 30px;
+    margin-top: 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+  }
+
+  .main-div {
+    height: 390px;
+  }
+
+  .sponsor-section{
+    /*background-color: rgb(54, 14, 119);*/
+    height: 50px;
+    width: 100%;
+    display: flex;
+  }
+  .sponsor-label{
+    /*background-color: cadetblue;*/
+    height: 49px;
+    width: 50%;
+  }
+  .sponsor-input{
+    /*background-color: chocolate;*/
+    height: 49px;
+    width: 50%;
+  }
+  .sponsor-text-input{
+    height: 30px;
+    width: 250px;
+    margin-left: 30px;
+    margin-top: 8px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
   }

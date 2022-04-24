@@ -31,16 +31,18 @@ class RegistrationRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'numeric', 'digits:10', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8'],
+            'refferal' => ['nullable']
         ];
     }
 
     public function storeUser()
     {
-        $user = new User;
+        $user = new User();
         // uuid
         $user->role_id = Role::CUSTOMER;
         // photo
+        // $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 6);
         $user->name = $this->get('name');
         $user->email = $this->get('email');
         $user->phone = $this->get('phone');
