@@ -25,7 +25,7 @@
             <label class="email-label">Email / Phone</label>
           </div>
           <div class="email-input">
-            <input class="email-intext" type="email" name="login" />
+            <input class="email-intext" type="text" name="login" />
             @error('login') {{ $message }} @enderror
           </div>
         </div>

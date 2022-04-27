@@ -40,6 +40,12 @@
             <a class="dropdown-item" href="{{ route('profile') }}">
               {{ __('Profile') }}
             </a>
+            <a class="dropdown-item" href="{{ route('bank.details') }}">
+              {{ __('Bank Details') }}
+            </a>
+            <a class="dropdown-item" href="{{ route('change.password') }}">
+              {{ __('Change Password') }}
+            </a>
             <a class="dropdown-item" href="{{ route('logout') }}"
               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
               {{ __('Logout') }}
