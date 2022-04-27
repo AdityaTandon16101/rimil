@@ -277,6 +277,12 @@
 	@csrf
 	@method('PUT')
 
+	@if (session('success'))
+	<div class="alert alert-success mt-2">
+		{{ session('success') }}
+	</div>
+	@endif
+
 	<div class="user-d">
 		<div class="styling">
 			<div class="user-font">
@@ -295,7 +301,7 @@
 					<div class="email">
 						<label class="email-label">Email</label>
 						<div class="email-input">
-							<input class="email-label-input" type="text" name="" placeholder="email"
+							<input class="email-label-input" type="text" name="email" placeholder="email"
 								value="{{ auth()->user()->email }}" />
 						</div>
 					</div>
@@ -326,3 +332,6 @@
 		</div>
 	</div>
 </form>
+@push('scripts')
+<script src="{{ asset('js/closeAlert.js') }}"></script>
+@endpush

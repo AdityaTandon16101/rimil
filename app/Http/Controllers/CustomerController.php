@@ -9,13 +9,15 @@ class CustomerController extends Controller
 {
     public function editProfile(User $user, Request $request)
     {
-        dump($user);
-        dd($request->toArray());
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->save();
+        return back()->with('success', 'Profile Updated...');
     }
 
-    public function editBankDetails(User $user, Request $request)
+    public function storeBankDetails(Request $request)
     {
-        dump($user);
         dd($request->toArray());
     }
 

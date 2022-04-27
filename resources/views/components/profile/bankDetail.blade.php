@@ -240,7 +240,7 @@
 	}
 </style>
 @endpush
-<form action="{{ route('bankDetails.edit', auth()->id()) }}" method="POST">
+<form action="{{ route('bankDetails.store') }}" method="POST">
 	@csrf
 	@method('PUT')
 
@@ -254,35 +254,39 @@
 					<div class="name">
 						<label class="name-label">Account Number</label>
 						<div class="name-output">
-							<input class="name-label-output" type="text" name="" placeholder="Account Number" value="">
+							<input class="name-label-output" type="text" name="account_number"
+								placeholder="Account Number" value="">
 						</div>
 					</div>
 
 					<div class="email">
 						<label class="email-label">Account Name</label>
 						<div class="email-output">
-							<input class="email-label-output" type="text" name="" placeholder="Account Name" value="">
+							<input class="email-label-output" type="text" name="account_name" placeholder="Account Name"
+								value="">
 						</div>
 					</div>
 
 					<div class="idno">
 						<label class="idno-label">Bank Name</label>
 						<div class="idno-output">
-							<input class="idno-label-output" type="text" name="" placeholder="Bank Name" value="">
+							<input class="idno-label-output" type="text" name="bank_name" placeholder="Bank Name"
+								value="">
 						</div>
 					</div>
 
 					<div class="idno">
 						<label class="idno-label">Branch Name</label>
 						<div class="idno-output">
-							<input class="idno-label-output" type="text" name="" placeholder="Branch Name" value="">
+							<input class="idno-label-output" type="text" name="branch_name" placeholder="Branch Name"
+								value="">
 						</div>
 					</div>
 
 					<div class="idno">
 						<label class="idno-label">IFSC Code</label>
 						<div class="idno-output">
-							<input class="idno-label-output" type="text" name="" placeholder="IFSC Code" value="">
+							<input class="idno-label-output" type="text" name="ifsc" placeholder="IFSC Code" value="">
 						</div>
 					</div>
 				</form>
@@ -290,7 +294,7 @@
 
 				<div class="btn">
 					<div class="submit-btn">
-						<button><a class="btn-click" href="">Submit</a></button>
+						<input class="btn" type="submit" value="Add">
 					</div>
 				</div>
 			</div>
@@ -298,3 +302,6 @@
 		</div>
 	</div>
 </form>
+@push('scripts')
+<script src="{{ asset('js/closeAlert.js') }}"></script>
+@endpush

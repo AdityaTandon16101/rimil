@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::controller(CustomerController::class)->group(function () {
         Route::put('profile/{user}', 'editProfile')->name('profile.edit');
-        Route::put('bank-details/{user}', 'editBankDetails')->name('bankDetails.edit');
+        Route::post('bank-details', 'storeBankDetails')->name('bankDetails.store');
         Route::put('change-password/{user}', 'changePassword')->name('customer.changePassword');
     });
 });

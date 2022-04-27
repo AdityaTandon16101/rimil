@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('bank_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->string('name', 255);
+            $table->string('bank_name', 255);
+            $table->string('account_name', 255);
             $table->string('account_number', 50)->unique();
+            $table->string('branch_name', 255);
             $table->string('ifsc', 100);
-            $table->string('cif', 100);
+            // $table->string('cif', 100);
             $table->boolean('primary');
             $table->timestamps();
         });
