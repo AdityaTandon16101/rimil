@@ -40,3 +40,9 @@ header .navbar-brand,
 header .nav-link {
   color: #fff !important;
 }
+
+.referral {
+  margin-top: 1em;
+  height: 2.5em;
+  line-height: 2.5em;
+}

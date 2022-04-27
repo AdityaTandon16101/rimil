@@ -17,6 +17,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('withdraw', 'withdraw')->name('withdraw');
         Route::get('withdraws', 'withdraws')->name('withdraws');
     });
+
+    Route::controller(CustomerController::class)->group(function () {
+        Route::put('profile/{user}', 'editProfile')->name('profile.edit');
+        Route::put('bank-details/{user}', 'editBankDetails')->name('bankDetails.edit');
+        Route::put('change-password/{user}', 'changePassword')->name('customer.changePassword');
+    });
 });
 
 require_once __DIR__ . '/auth.php';

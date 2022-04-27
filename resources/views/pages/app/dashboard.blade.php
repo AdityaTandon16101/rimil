@@ -8,5 +8,6 @@
 
 @section('content')
 <x-partials.app.header />
+<x-dashboard.referral />
 <h1>Customer Dashboard</h1>
 @endsection
