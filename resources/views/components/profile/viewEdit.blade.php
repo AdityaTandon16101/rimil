@@ -7,7 +7,7 @@
 			box-sizing: border-box;
 		}
 		body{
-			background-color: #8D9FA5;
+			/*background-color: #8D9FA5;*/
 			background-size: cover;
 			background-position: center;
 			
@@ -114,7 +114,7 @@
 		.user-font{
 			color: white;
 			font-size: 25px;
-			background-color: #085685;
+			background-color: #6f42c1;
 			margin-top: 0px;
 			height: 50px;
 			padding-top: 10px;

@@ -8,5 +8,5 @@
 
 @section('content')
 <x-partials.app.header title="Deposites" />
-<h1>Deposites</h1>
+<h1>deposite</h1>
 @endsection
