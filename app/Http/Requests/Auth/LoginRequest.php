@@ -2,12 +2,11 @@
 
 namespace App\Http\Requests\Auth;
 
-use Illuminate\Auth\Events\Lockout;
+use App\Models\Role;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Str;
 
 class LoginRequest extends FormRequest
 {
@@ -26,68 +25,36 @@ class LoginRequest extends FormRequest
      *
      * @return array
      */
+    public function getLoginValidation()
+    {
+        return Str::of($this->request->get('login'))->contains('@')
+            ? ['login' => ['required', 'email', 'max:255']]
+            : ['login' => ['required', 'numeric', 'digits:10']];
+    }
+
     public function rules()
     {
+        return $this->getLoginValidation() + ['password' => ['required', 'min:8']];
+    }
+
+    public function attributes()
+    {
         return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'login' => 'Email Or Phone',
+            'password' => 'Password'
         ];
     }
 
-    /**
-     * Attempt to authenticate the request's credentials.
-     *
-     * @return void
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function authenticate()
+    public function authenticate($credentials)
     {
-        $this->ensureIsNotRateLimited();
-
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
-            RateLimiter::hit($this->throttleKey());
-
+        if (!Auth::attempt($credentials + [
+            'role_id' => Role::CUSTOMER,
+            'password' => $this->get('password'),
+            'banned' => false
+        ], $this->has('remember') ? true : false)) {
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'login' => __('auth.failed'),
             ]);
         }
-
-        RateLimiter::clear($this->throttleKey());
-    }
-
-    /**
-     * Ensure the login request is not rate limited.
-     *
-     * @return void
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
-    public function ensureIsNotRateLimited()
-    {
-        if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
-            return;
-        }
-
-        event(new Lockout($this));
-
-        $seconds = RateLimiter::availableIn($this->throttleKey());
-
-        throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
-                'seconds' => $seconds,
-                'minutes' => ceil($seconds / 60),
-            ]),
-        ]);
-    }
-
-    /**
-     * Get the rate limiting throttle key for the request.
-     *
-     * @return string
-     */
-    public function throttleKey()
-    {
-        return Str::lower($this->input('email')).'|'.$this->ip();
     }
 }

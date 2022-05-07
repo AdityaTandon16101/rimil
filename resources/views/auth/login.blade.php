@@ -19,20 +19,20 @@
         @csrf
         <div class="email-section">
           <div class="email-sec-div">
-            <x-label class="email-label">Email / Phone</x-label>
+            <label class="email-label">Email / Phone</label>
           </div>
           <div class="email-input">
-            <x-input type="text" name="login" />
+            <input type="text" name="login" />
             @error('login') {{ $message }} @enderror
           </div>
         </div>
 
         <div class="pass-section">
           <div class="pass-sec-div">
-            <x-label class="password-label">Password</x-label>
+            <label class="password-label">Password</label>
           </div>
           <div class="pass-input">
-            <x-input class="" type="password" name="password" />
+            <input class="" type="password" name="password" />
             @error('password') {{ $message }} @enderror
           </div>
         </div>
