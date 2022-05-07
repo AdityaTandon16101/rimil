@@ -23,11 +23,16 @@ $line-height-base: 1.6;
   border-radius: 1.2em;
   text-align: center;
   transition: all 0.2s;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
   &:hover {
     background-color: $secondary;
     border: none;
     transition: all 0.2s;
     a {
+      text-decoration: none;
       color: #333 !important;
     }
   }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 
@@ -17,12 +18,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('withdraw', 'withdraw')->name('withdraw');
         Route::get('withdraws', 'withdraws')->name('withdraws');
     });
-
-    Route::controller(CustomerController::class)->group(function () {
-        Route::put('profile/{user}', 'editProfile')->name('profile.edit');
-        Route::post('bank-details', 'storeBankDetails')->name('bankDetails.store');
-        Route::put('change-password/{user}', 'changePassword')->name('customer.changePassword');
-    });
 });
 
-require_once __DIR__ . '/auth.php';
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__ . '/auth.php';

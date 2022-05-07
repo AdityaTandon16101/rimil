@@ -1,9 +1,4 @@
 header {
-  position: fixed !important;
-  padding: 1.5rem 0 !important;
-  top: 0;
-  width: 100%;
-  z-index: 999;
   transition: all 0.3s ease-in-out;
 }
 header.scrolled {
@@ -11,8 +6,11 @@ header.scrolled {
   background-color: rgba(103, 107, 229, 0.85);
   transition: all 0.3s ease-in-out;
 }
-header .logo a {
-  color: #fff;
+header ul li {
+  list-style: none;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 1rem 0;
 }
 header ul li a {
   text-decoration: none;
@@ -20,6 +18,7 @@ header ul li a {
 }
 header ul.guestauth {
   margin-left: 1.65em;
+  line-height: 2em;
 }
 header ul.guestauth li {
   box-sizing: border-box;
@@ -31,12 +30,17 @@ header ul.guestauth li {
   text-align: center;
   transition: all 0.2s;
 }
+header ul.guestauth li a {
+  text-decoration: none;
+  color: #fff;
+}
 header ul.guestauth li:hover {
   background-color: #fdd282;
   border: none;
   transition: all 0.2s;
 }
 header ul.guestauth li:hover a {
+  text-decoration: none;
   color: #333 !important;
 }
 
@@ -48,9 +52,6 @@ footer > *,
 footer a {
   color: #fff;
 }
-footer ul {
-  margin-left: -2em;
-}
 footer ul li {
   list-style: none;
 }
@@ -58,34 +59,22 @@ footer ul li a {
   text-decoration: none;
 }
 footer .copyright {
+  margin: 3em 0 0 0;
   background-color: rgba(0, 0, 0, 0.15);
   height: 2rem;
   line-height: 2rem;
   text-align: center;
 }
 
-.hero {
-  padding: 4rem 0;
-  background-color: #676be5;
-  height: 90vh;
-}
 .hero * {
   color: #fff;
 }
 .hero p.head {
   margin: 1.4em 0 0 0;
-  font-size: 3.8em;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-weight: bold;
 }
 .hero p.subtitle {
   margin: 0.5em 0;
-  text-transform: uppercase;
-  font-size: 1.2em;
-}
-.hero ul {
-  display: flex;
-  margin-top: 1em;
 }
 .hero ul li {
   box-sizing: border-box;
@@ -98,12 +87,17 @@ footer .copyright {
   transition: all 0.2s;
   padding: 0.5em 2em;
 }
+.hero ul li a {
+  text-decoration: none;
+  color: #fff;
+}
 .hero ul li:hover {
   background-color: #fdd282;
   border: none;
   transition: all 0.2s;
 }
 .hero ul li:hover a {
+  text-decoration: none;
   color: #333 !important;
 }
 .hero ul li a {
@@ -112,12 +106,16 @@ footer .copyright {
   color: #fff;
 }
 .hero img {
+  -o-object-fit: fill;
+     object-fit: fill;
   width: 100%;
   height: 100%;
 }
 
 #about,
 #contact {
+  height: 100vh;
+  padding: 4rem 2.5rem;
   margin-top: 3em;
   margin-bottom: 3em;
 }
@@ -172,6 +170,8 @@ footer .copyright {
 }
 #about img,
 #contact img {
+  -o-object-fit: fill;
+     object-fit: fill;
   width: 100%;
   height: 100%;
 }
@@ -216,12 +216,17 @@ footer .copyright {
   font-size: 1.25em;
   font-weight: bold;
 }
+#contact form button a {
+  text-decoration: none;
+  color: #fff;
+}
 #contact form button:hover {
   background-color: #fdd282;
   border: none;
   transition: all 0.2s;
 }
 #contact form button:hover a {
+  text-decoration: none;
   color: #333 !important;
 }
 #contact form button:hover {

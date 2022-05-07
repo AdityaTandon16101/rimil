@@ -1,19 +1,17 @@
 <footer>
   <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="logo">
-          <a href="{{ route('index') }}">
-            <x-logo />
-          </a>
-          <p class="mt-3">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo alias asperiores eaque temporibus magni
-            laboriosam fugiat facilis animi nihil sapiente?
-          </p>
-        </div>
+    <div class="flex justify-between flex-col gap-4 px-5 md:flex-row md:gap-8 md:px-12">
+      <div class="logo w-1/3">
+        <a href="{{ route('index') }}">
+          <x-application-logo class="block h-20 w-auto fill-current text-gray-600" clr="#fff" />
+        </a>
+        <p class="mt-3">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo alias asperiores eaque temporibus magni
+          laboriosam fugiat facilis animi nihil sapiente?
+        </p>
       </div>
-      <div class="col-md-4">
-        <h4>Quick Links</h4>
+      <div class="w-1/3">
+        <h4 class="text-2xl mb-2">Quick Links</h4>
         <ul>
           @guest
           <li><a href="{{ route('login') }}">Login</a></li>
@@ -25,8 +23,8 @@
           @endif
         </ul>
       </div>
-      <div class="col-md-4">
-        <h4>Contact</h4>
+      <div class="w-1/3">
+        <h4 class="text-2xl mb-2">Contact</h4>
         <p>Email: xyz@gmail.com</p>
         <p>phone: 1234567890</p>
       </div>

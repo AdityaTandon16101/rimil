@@ -1,9 +1,4 @@
 header {
-  position: fixed !important;
-  padding: 1.5rem 0 !important;
-  top: 0;
-  width: 100%;
-  z-index: 999;
   transition: all 0.3s ease-in-out;
 }
 header.scrolled {
@@ -11,8 +6,11 @@ header.scrolled {
   background-color: rgba(103, 107, 229, 0.85);
   transition: all 0.3s ease-in-out;
 }
-header .logo a {
-  color: #fff;
+header ul li {
+  list-style: none;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 1rem 0;
 }
 header ul li a {
   text-decoration: none;
@@ -20,6 +18,7 @@ header ul li a {
 }
 header ul.guestauth {
   margin-left: 1.65em;
+  line-height: 2em;
 }
 header ul.guestauth li {
   box-sizing: border-box;
@@ -31,12 +30,17 @@ header ul.guestauth li {
   text-align: center;
   transition: all 0.2s;
 }
+header ul.guestauth li a {
+  text-decoration: none;
+  color: #fff;
+}
 header ul.guestauth li:hover {
   background-color: #fdd282;
   border: none;
   transition: all 0.2s;
 }
 header ul.guestauth li:hover a {
+  text-decoration: none;
   color: #333 !important;
 }
 
@@ -48,9 +52,6 @@ footer > *,
 footer a {
   color: #fff;
 }
-footer ul {
-  margin-left: -2em;
-}
 footer ul li {
   list-style: none;
 }
@@ -58,6 +59,7 @@ footer ul li a {
   text-decoration: none;
 }
 footer .copyright {
+  margin: 3em 0 0 0;
   background-color: rgba(0, 0, 0, 0.15);
   height: 2rem;
   line-height: 2rem;
@@ -66,7 +68,6 @@ footer .copyright {
 
 header {
   background-color: #676be5;
-  padding: 0.5em 0 !important;
 }
 
 [register] {

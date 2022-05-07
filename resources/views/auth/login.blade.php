@@ -3,14 +3,11 @@
 @section('title', 'Login to ' . config('app.name'))
 
 @push('css')
-<link rel="stylesheet" href="{{ asset('css/guest/login.css') }}" />
-<style>
-
-</style>
+<link rel="stylesheet" href="{{ mix('css/guest/login.css') }}" />
 @endpush
 
 @section('content')
-<div class="login-content">
+<div class="login-content" login>
 
   <div class="content-section">
 
@@ -22,20 +19,20 @@
         @csrf
         <div class="email-section">
           <div class="email-sec-div">
-            <label class="email-label">Email / Phone</label>
+            <x-label class="email-label">Email / Phone</x-label>
           </div>
           <div class="email-input">
-            <input class="email-intext" type="text" name="login" />
+            <x-input type="text" name="login" />
             @error('login') {{ $message }} @enderror
           </div>
         </div>
 
         <div class="pass-section">
           <div class="pass-sec-div">
-            <label class="password-label">Password</label>
+            <x-label class="password-label">Password</x-label>
           </div>
           <div class="pass-input">
-            <input class="pass-intext" type="password" name="password" />
+            <x-input class="" type="password" name="password" />
             @error('password') {{ $message }} @enderror
           </div>
         </div>
@@ -47,6 +44,5 @@
     </div>
 
   </div>
-</div>
 </div>
 @endsection
