@@ -20,9 +20,9 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .sass('resources/sass/app.scss', 'public/css')
     // Guest
-    .sass('resources/sass/guest/index.scss', 'public/css/guest')
-    .sass('resources/sass/guest/login.scss', 'public/css/guest')
-    .sass('resources/sass/guest/register.scss', 'public/css/guest')
+    // .sass('resources/sass/guest/index.scss', 'public/css/guest')
+    // .sass('resources/sass/guest/login.scss', 'public/css/guest')
+    // .sass('resources/sass/guest/register.scss', 'public/css/guest')
     // Customer
     // .sass('resources/sass/customer/dashboard.scss', 'public/css/customer')
     // .sass('resources/sass/customer/profile.scss', 'public/css/customer')
@@ -33,6 +33,7 @@ mix.js('resources/js/app.js', 'public/js')
         '@': 'resources/js',
         '@x': 'resources/js/Components',
         '@layouts': 'resources/js/Layouts',
+        '@scss': 'resources/sass',
     })
     .disableNotifications()
     .browserSync('127.0.0.1:8000');
