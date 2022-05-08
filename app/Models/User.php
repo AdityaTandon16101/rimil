@@ -51,9 +51,19 @@ class User extends Authenticatable
         'banned' => 'boolean',
     ];
 
+    public function scopeMyTeamMembers($query)
+    {
+        return $query->whereIn('id', auth()->user()->teamMembers()->pluck('team_member_id'));
+    }
+
     public function memberDetail(): HasOne
     {
         return $this->hasOne(MemberDetail::class);
+    }
+
+    public function teamMembers(): HasMany
+    {
+        return $this->hasMany(Team::class);
     }
 
     public function banks(): HasMany

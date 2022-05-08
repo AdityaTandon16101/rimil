@@ -32,6 +32,7 @@ mix.js('resources/js/app.js', 'public/js')
     .alias({
         '@': 'resources/js',
         '@x': 'resources/js/Components',
+        '@utils': 'resources/js/Components/Utils',
         '@layouts': 'resources/js/Layouts',
         '@scss': 'resources/sass',
     })

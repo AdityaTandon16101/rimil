@@ -65,7 +65,7 @@ header {
   background-color: $primary;
 }
 .forgotpasswordform {
-  margin-top: calc($guestHeaderHeight * 2);
+  margin: calc($guestHeaderHeight * 2) auto;
   padding: 0.8em;
 }
 </style>

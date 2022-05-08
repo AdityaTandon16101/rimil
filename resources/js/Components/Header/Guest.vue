@@ -9,11 +9,21 @@ import ResponsiveNavLink from "@x/ResponsiveNavLink.vue";
 
 defineProps(["title"]);
 
-const showingNavigationDropdown = ref(false);
+// const showingNavigationDropdown = ref(false);
+const isScrolled = ref(false);
+
+const scrollFunction = () => {
+  let st = document.documentElement.scrollTop;
+
+  isScrolled.value = st > 100 ? true : false;
+  // lastScrollTop = st <= 0 ? 0 : st;
+};
+
+window.addEventListener("scroll", scrollFunction, false);
 </script>
 
 <template>
-  <header>
+  <header :class="{ scrolled: isScrolled }">
     <div class="shrink-0 flex items-center">
       <Link :href="route('index')">
         <ApplicationLogo clr="#fff" class="block h-9 w-auto text-white" />
@@ -53,24 +63,34 @@ header {
   z-index: 999;
   transition: all 0.3s ease-in-out;
 
-  &.scrolled {
-    padding: 0.5rem 0 !important;
-    background-color: rgba($color: $primary, $alpha: 0.85);
-    transition: all 0.3s ease-in-out;
-  }
-
   ul {
     li {
       list-style: none;
-      height: 3rem;
-      line-height: 3rem;
-      margin: 1rem 0;
+      height: calc($guestHeaderHeight - 2rem);
+      line-height: calc($guestHeaderHeight - 2rem);
+      margin: 1.5rem 0;
       a {
         text-decoration: none;
         color: #fff !important;
       }
     }
   }
+
+  &.scrolled {
+    $guestHeaderHeight: 4rem;
+    height: $guestHeaderHeight;
+    background-color: rgba($color: $primary, $alpha: 0.85);
+    transition: all 0.3s ease-in-out;
+
+    ul {
+      li {
+        height: calc($guestHeaderHeight - 2rem);
+        line-height: calc($guestHeaderHeight - 2rem);
+        margin: 1rem 0;
+      }
+    }
+  }
+
   ul.guestauth {
     margin: auto 0 auto 1em;
     li {

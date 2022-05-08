@@ -145,3 +145,9 @@ const showingNavigationDropdown = ref(false);
     </div>
   </nav>
 </template>
+<style lang="scss" scoped>
+@import "@scss/_variables";
+nav {
+  height: $appHeaderHeight;
+}
+</style>
