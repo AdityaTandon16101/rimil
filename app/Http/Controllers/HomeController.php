@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Withdraw;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class HomeController extends Controller
 {
@@ -22,10 +23,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('pages.app.dashboard');
-    }
 
     public function profile()
     {

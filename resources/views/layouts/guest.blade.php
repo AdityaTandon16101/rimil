@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -6,9 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>@yield('title')</title>
-  <link rel="dns-prefetch" href="//fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-  <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" />
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet" />
   @stack('css')
 </head>
 
@@ -18,8 +17,7 @@
     @yield('content')
     <x-partials.guest.footer />
   </div>
-  <script src="{{ asset('js/app.js') }}"></script>
-  @stack('scripts')
+  <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>

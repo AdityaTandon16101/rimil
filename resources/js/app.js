@@ -1,15 +1,20 @@
 require('./bootstrap');
 
-const HEADER = document.getElementById("header");
+import { createApp, h } from 'vue';
+import { createInertiaApp } from '@inertiajs/inertia-vue3';
+import { InertiaProgress } from '@inertiajs/progress';
 
-const scrollFunction = () => {
-  let st = document.documentElement.scrollTop;
+const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
-  if (st > 100) 
-    HEADER.classList.add("scrolled");
-  else
-    HEADER.classList.remove("scrolled");
-  // lastScrollTop = st <= 0 ? 0 : st;
-}
+createInertiaApp({
+    title: (title) => `${title} - ${appName}`,
+    resolve: (name) => require(`./Pages/${name}.vue`),
+    setup({ el, app, props, plugin }) {
+        return createApp({ render: () => h(app, props) })
+            .use(plugin)
+            .mixin({ methods: { route } })
+            .mount(el);
+    },
+});
 
-window.addEventListener("scroll", scrollFunction, false);
+InertiaProgress.init({ color: '#4B5563' });
