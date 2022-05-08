@@ -64,4 +64,9 @@ class RegistrationRequest extends FormRequest
         $memberDetail->reward_income = 0;
         $memberDetail->save();
     }
+
+    public function attachToMyTeamIfReferralCode($user)
+    {
+        if (is_null($this->get('referral_code'))) return;
+    }
 }
