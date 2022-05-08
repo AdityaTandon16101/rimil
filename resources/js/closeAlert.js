@@ -1,0 +1,1 @@
+setTimeout(() => document.querySelector('.alert').style.display = `none`, 2500);

@@ -32,6 +32,16 @@ class HomeController extends Controller
         return view('pages.app.profile');
     }
 
+    public function bankDetails()
+    {
+        return view('pages.app.bankDetails');
+    }
+
+    public function changePassword()
+    {
+        return view('pages.app.changePassword');
+    }
+
     public function teams()
     {
         return view('pages.app.team');

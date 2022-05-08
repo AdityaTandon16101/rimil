@@ -4,26 +4,18 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('css/customer/teams.css') }}" />
+<style>
+  .team-sec{
+    background-color: blueviolet;
+    height: 600px;
+    width: 100%;
+  }
+</style>
 @endpush
 
 @section('content')
 <x-partials.app.header title="My Team" />
-<div class="container mt-3 bg-white">
-  <div class="row">
-    <div class="col-12">
-      <x-table>
-        <slot name="thead">
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-          </tr>
-        </slot>
-        <tr>
-          <td>ID</td>
-          <td>Name</td>
-        </tr>
-      </x-table>
-    </div>
-  </div>
+<div class="team-sec">
+  <div></div>
 </div>
 @endsection

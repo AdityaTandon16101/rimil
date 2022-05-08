@@ -12,6 +12,7 @@ class MemberDetail extends Model
 
     protected $fillable = [
         'user_id',
+        'total_deposites',
         'referral_income',
         'total_earnings',
         'withdraws',

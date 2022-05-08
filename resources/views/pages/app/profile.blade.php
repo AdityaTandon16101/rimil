@@ -14,6 +14,7 @@
     display: flex;
     background-color: blueviolet;
     display: block;
+
   }
 </style>
 @endpush
