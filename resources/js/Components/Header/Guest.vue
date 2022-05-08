@@ -68,7 +68,7 @@ header {
       list-style: none;
       height: calc($guestHeaderHeight - 2rem);
       line-height: calc($guestHeaderHeight - 2rem);
-      margin: 1.5rem 0;
+      margin: 1rem 0;
       a {
         text-decoration: none;
         color: #fff !important;
@@ -87,6 +87,7 @@ header {
         height: calc($guestHeaderHeight - 2rem);
         line-height: calc($guestHeaderHeight - 2rem);
         margin: 1rem 0;
+        transition: all 0.3s ease-in-out;
       }
     }
   }

@@ -1,4 +1,5 @@
 <script setup>
+import axios from "axios";
 import GuestLayout from "@/Layouts/Guest.vue";
 import Button from "@/Components/Button.vue";
 import Input from "@/Components/Input.vue";
@@ -25,12 +26,23 @@ const sponsor = ref({
 
 const getSponsorName = async () => {
   if (form.referral_code == ``) {
-    sponsor.value.error = ``;
+    sponsor.value.error = `Please enter Referral Code`;
     sponsor.value.searching = false;
     sponsor.value.name = ``;
     return;
   }
   sponsor.value.searching = true;
+  let sponsorResponse = await axios.get(`/api/sponsor-name/${form.referral_code}`);
+  sponsorResponse = sponsorResponse.data;
+  if (!sponsorResponse.success) {
+    sponsor.value.error = `No Sponsor Found`;
+    sponsor.value.searching = false;
+    sponsor.value.name = ``;
+    return;
+  }
+  sponsor.value.error = ``;
+  sponsor.value.searching = false;
+  sponsor.value.name = sponsorResponse.name;
 };
 
 const submit = () => {
@@ -41,7 +53,7 @@ const submit = () => {
 </script>
 
 <template>
-  <Head title="Register" />
+  <Head title="Join Now" />
 
   <GuestLayout>
     <div class="w-1/3 mx-auto shadow-md registerform">
@@ -75,7 +87,7 @@ const submit = () => {
         </div>
 
         <div class="mt-4">
-          <Label for="phone" value="phone" />
+          <Label for="phone" value="Phone" />
           <Input
             id="phone"
             type="tel"
@@ -118,10 +130,10 @@ const submit = () => {
               type="text"
               class="mt-1 block w-full"
               v-model="form.referral_code"
-              @keyup="getSponsorName"
               placeholder="Have a Referral Code?"
             />
           </div>
+          <Button @click="getSponsorName" class="mt-6 h-10">Verify</Button>
           <div class="w-1/2">
             <Label
               for="sponsor"
@@ -138,21 +150,24 @@ const submit = () => {
           </div>
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-          <Link
-            :href="route('login')"
-            class="underline text-sm text-gray-600 hover:text-gray-900"
-          >
-            Already registered?
-          </Link>
+        <div class="flex items-center justify-between mt-4">
+          <div v-html="sponsor.error"></div>
+          <div>
+            <Link
+              :href="route('login')"
+              class="underline text-sm text-gray-600 hover:text-gray-900"
+            >
+              Already registered?
+            </Link>
 
-          <Button
-            class="ml-4"
-            :class="{ 'opacity-25': form.processing }"
-            :disabled="form.processing"
-          >
-            Register
-          </Button>
+            <Button
+              class="ml-4"
+              :class="{ 'opacity-25': form.processing }"
+              :disabled="form.processing"
+            >
+              Register
+            </Button>
+          </div>
         </div>
       </form>
     </div>

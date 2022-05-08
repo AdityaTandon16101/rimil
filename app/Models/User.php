@@ -51,6 +51,11 @@ class User extends Authenticatable
         'banned' => 'boolean',
     ];
 
+    public function scopeReferralCode($query, $referralCode)
+    {
+        return $query->where('referral_id', $referralCode);
+    }
+
     public function scopeMyTeamMembers($query)
     {
         return $query->whereIn('id', auth()->user()->teamMembers()->pluck('team_member_id'));

@@ -32,7 +32,7 @@ class RegistrationRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'numeric', 'digits:10', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'refferal' => ['nullable']
+            'referral' => ['nullable']
         ];
     }
 
