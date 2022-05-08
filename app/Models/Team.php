@@ -15,6 +15,11 @@ class Team extends Model
         'team_member_id'
     ];
 
+    public function scopeMyTeam($query)
+    {
+        return $query->where('user_id', auth()->id());
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

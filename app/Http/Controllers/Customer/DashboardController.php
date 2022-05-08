@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -10,7 +11,8 @@ class DashboardController extends Controller
     public function index()
     {
         return inertia('Customer/Dashboard', [
-            'isDepositedUpto500' => auth()->user()->memberDetail->total_deposites >= 500
+            'memberDetail' => auth()->user()->memberDetail,
+            'teamMembersCount' => Team::query()->myTeam()->count()
         ]);
     }
 }

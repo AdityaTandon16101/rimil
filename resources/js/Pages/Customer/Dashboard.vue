@@ -3,141 +3,58 @@ import { Head } from "@inertiajs/inertia-vue3";
 import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
 import PageBody from "@x/Page/Body.vue";
 import Referral from "@x/Dashboard/Referral.vue";
+import Counter from "@x/Dashboard/Counter.vue";
 
 const props = defineProps({
-    isDepositedUpto500: Boolean,
+  memberDetail: Object,
+  teamMembersCount: String,
 });
 </script>
 
 <template>
-    <Head title="Dashboard" />
+  <Head title="Dashboard" />
 
-    <AuthenticatedLayout title="Dashboard">
-        <PageBody bgwhite>
-            <Referral :isDepositedUpto500="isDepositedUpto500" />
+  <AuthenticatedLayout title="Dashboard">
+    <PageBody bgwhite>
+      <Referral :isDepositedUpto500="props.memberDetail.total_deposites >= 500" />
 
-            <div class="row">
-                <div class="colum-1">
-                    <div class="data">
-                        <h2>ACTIVE</h2>
-                        <h5>STATUS</h5>
-                    </div>
-                </div>
+      <div class="grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <Counter value="Active" title="Status" />
+        <Counter
+          :value="props.memberDetail.total_deposites"
+          type="float"
+          title="DEPOSIT AMOUNT"
+        />
+        <Counter :value="$page.props.auth.user.id" title="ID" />
+        <Counter
+          :value="props.memberDetail.referral_income"
+          type="float"
+          title="REFERRAL INCOME"
+        />
 
-                <div class="colum-2">
-                    <div class="data">
-                        <h2>Rs 500.00</h2>
-                        <h5>DEPOSIT AMOUNT</h5>
-                    </div>
-                </div>
+        <Counter :value="props.teamMembersCount" title="TOTAL MEMBER" />
+        <Counter value="0" title="TOTAL ACTIVE IDs" />
+        <Counter
+          :value="props.memberDetail.total_earnings"
+          type="float"
+          title="TOTAL EARNING"
+        />
+        <Counter
+          :value="props.memberDetail.withdraws"
+          type="float"
+          title="TOTAL WIDTHDRAW"
+        />
 
-                <div class="colum-3">
-                    <div class="data">
-                        <h2>01</h2>
-                        <h5>YOUR ID NO.</h5>
-                    </div>
-                </div>
+        <Counter value="5000.00" type="float" title="PACKAGE" />
+        <Counter value="0" title="WINNERS" />
+        <Counter value="0" title="PHASE 1" />
+        <Counter value="0" title="PHASE 2" />
 
-                <div class="colum-4">
-                    <div class="data">
-                        <h2>Rs 0000.00</h2>
-                        <h5>REFERRAL INCOME</h5>
-                    </div>
-                </div>
-              </div>
-
-              <div class="row">
-                  <div class="colum-1">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>TOTAL MEMBER</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-2">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>TOTAL ACTIVE IDs</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-3">
-                      <div class="data">
-                          <h2>Rs 0000.00</h2>
-                          <h5>TOTAL EARNING</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-4">
-                      <div class="data">
-                          <h2>Rs 0000.00</h2>
-                          <h5>TOTAL WIDTHDRAW</h5>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  
-                  <div class="colum-1">
-                      <div class="data">
-                          <h2>Rs 5000.00</h2>
-                          <h5>PACKAGE</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-2">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>WINNERS</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-3">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>PHASE 1</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-4">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>PHASE 2</h5>
-                      </div>
-                  </div>
-
-              </div>
-
-              <div class="row">
-                  
-                  <div class="colum-1">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>PHASE 3</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-2">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>PHASE 4</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-3">
-                      <div class="data">
-                          <h2>00</h2>
-                          <h5>PHASE 5</h5>
-                      </div>
-                  </div>
-
-                  <div class="colum-4">
-                      <div class="data">
-                          <h2>Rs 0000.00</h2>
-                          <h5>REWARD INCOME</h5>
-                      </div>
-                  </div>
-              </div>
-        </PageBody>
-    </AuthenticatedLayout>
+        <Counter value="0" title="PHASE 3" />
+        <Counter value="0" title="PHASE 4" />
+        <Counter value="0" title="PHASE 5" />
+        <Counter value="0" type="float" title="REWARD INCOME" />
+      </div>
+    </PageBody>
+  </AuthenticatedLayout>
 </template>

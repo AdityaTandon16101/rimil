@@ -4,6 +4,7 @@ namespace App\Http\Requests\Auth;
 
 use App\Models\MemberDetail;
 use App\Models\Role;
+use App\Models\Team;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Hash;
@@ -32,7 +33,7 @@ class RegistrationRequest extends FormRequest
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'numeric', 'digits:10', 'unique:users'],
             'password' => ['required', 'string', 'min:8'],
-            'referral' => ['nullable']
+            'referral_code' => ['nullable']
         ];
     }
 
@@ -42,7 +43,7 @@ class RegistrationRequest extends FormRequest
         // uuid
         $user->role_id = Role::CUSTOMER;
         // photo
-        $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ"), 0, 8);
+        $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $user->name = $this->get('name');
         $user->email = $this->get('email');
         $user->phone = $this->get('phone');
@@ -68,5 +69,11 @@ class RegistrationRequest extends FormRequest
     public function attachToMyTeamIfReferralCode($user)
     {
         if (is_null($this->get('referral_code'))) return;
+        $referredUser = User::referralCode($this->get('referral_code'))->first();
+        if (!$referredUser) return;
+        $team = new Team();
+        $team->user_id = $referredUser->id;
+        $team->team_member_id = $user->id;
+        $team->save();
     }
 }
