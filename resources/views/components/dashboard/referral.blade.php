@@ -1,6 +1,3 @@
-@php
-$isDepositedUpto500 = auth()->user()->memberDetail->total_deposites >= 500; @endphp
-
 <div class="container">
   <div class="row">
     <div class="col-lg-12 referral">
