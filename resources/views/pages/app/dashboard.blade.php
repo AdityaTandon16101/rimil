@@ -57,7 +57,6 @@
 
 @section('content')
 <x-partials.app.header />
-<<<<<<< HEAD
 <div class="row">
     <div class="colum-1">
         <div class="data">
@@ -179,8 +178,5 @@
             <h5>REWARD INCOME</h4>
         </div>
     </div>
-=======
-<x-dashboard.referral />
-<h1>Customer Dashboard</h1>
->>>>>>> 7346467a7a40824303b284637deb22dfde09c586
+</div>
 @endsection
