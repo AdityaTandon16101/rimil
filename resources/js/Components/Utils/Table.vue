@@ -1,5 +1,18 @@
+<script setup>
+const props = defineProps({
+  isEmpty: {
+    type: Boolean,
+    default: false,
+  },
+  emptyMessage: {
+    type: String,
+    default: "",
+  },
+});
+</script>
+
 <template>
-  <table class="table w-full">
+  <table v-if="!props.isEmpty" class="table w-full">
     <thead v-if="$slots.thead">
       <slot name="thead" />
     </thead>
@@ -8,4 +21,5 @@
       <slot name="tfoot" />
     </tfoot>
   </table>
+  <div class="text-center text-2xl" v-else>{{ props.emptyMessage }}</div>
 </template>

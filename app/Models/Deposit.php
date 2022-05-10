@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Diposite extends Model
+class Deposit extends Model
 {
     use HasFactory;
 
@@ -15,6 +15,11 @@ class Diposite extends Model
         'date',
         'amount'
     ];
+
+    public function scopeMy($query)
+    {
+        return $query->where('user_id', auth()->id());
+    }
 
     public function user(): BelongsTo
     {
