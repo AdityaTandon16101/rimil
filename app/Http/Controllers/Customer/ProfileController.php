@@ -6,9 +6,16 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class ProfileController extends Controller
 {
-    public function editProfile(User $user, Request $request)
+    public function profile()
+    {
+        return inertia('Customer/Profile/Index', [
+            'user' => auth()->user()
+        ]);
+    }
+
+    public function updateProfile(User $user, Request $request)
     {
         $user->name = $request->name;
         $user->email = $request->email;

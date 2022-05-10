@@ -40,6 +40,7 @@ const save = () => {
             id="amount"
             type="tel"
             class="mt-1 block w-full"
+            name="amount"
             v-model="form.amount"
             required
             autofocus

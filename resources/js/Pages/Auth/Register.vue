@@ -7,6 +7,23 @@ import Label from "@/Components/Label.vue";
 import ValidationErrors from "@/Components/ValidationErrors.vue";
 import { Head, Link, useForm } from "@inertiajs/inertia-vue3";
 import { ref } from "@vue/reactivity";
+import { onMounted } from "@vue/runtime-core";
+
+const props = defineProps({
+  referralCode: String,
+});
+
+onMounted(async () => {
+  if (props.referralCode == "") {
+    hasReferralCode.value = false;
+    return;
+  }
+  form.referral_code = props.referralCode;
+  await getSponsorName();
+  hasReferralCode.value = true;
+});
+
+const hasReferralCode = ref(false);
 
 const form = useForm({
   name: ``,
@@ -131,9 +148,12 @@ const submit = () => {
               class="mt-1 block w-full"
               v-model="form.referral_code"
               placeholder="Have a Referral Code?"
+              :disabled="hasReferralCode"
             />
           </div>
-          <Button @click="getSponsorName" class="mt-6 h-10">Verify</Button>
+          <Button v-if="!hasReferralCode" @click="getSponsorName" class="mt-6 h-10"
+            >Verify</Button
+          >
           <div class="w-1/2">
             <Label
               for="sponsor"

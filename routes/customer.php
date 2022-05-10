@@ -14,3 +14,5 @@ Route::resource('permanent-members', PermanentMemberController::class)->only(['i
 Route::prefix('profile')->group(function () {
     Route::get('/', [ProfileController::class, 'profile'])->name('profile');
 });
+
+Route::put('profile/{user}', [ProfileController::class, 'updateProfile'])->name('profile.update');
