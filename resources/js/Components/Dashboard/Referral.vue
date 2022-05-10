@@ -33,7 +33,7 @@ const props = defineProps({
     <div v-else>
       You havn't referral ID, To get your New Referral ID and link, Deposit upto
       &#8377;500
-      <Link class="ml-4" :href="route('deposites.index')">Deposit Now</Link>
+      <Link class="ml-4" :href="route('deposits.index')">Deposit Now</Link>
     </div>
     <div v-if="props.isDepositedUpto500">
       <Button class="h-10" type="button">Copy</Button>

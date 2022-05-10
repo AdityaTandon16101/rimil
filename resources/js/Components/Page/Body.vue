@@ -20,7 +20,9 @@ defineProps({
     class="p-4 ml-2 mt-2 overflow-x-hidden overflow-y-auto"
     :class="{
       'bg-white': bgwhite,
-      'only-body mt-6': !header && !footer,
+      'only-body': !header && !footer,
+      'only-header': header && !footer,
+      'only-footer': !header && footer,
       'has-header': header,
       'has-footer': footer,
     }"
@@ -32,12 +34,16 @@ defineProps({
 <style lang="scss" scoped>
 @import "@scss/_variables";
 .only-body {
-  height: calc(100vh - $appHeaderHeight - 2rem);
+  height: calc(100vh - $appHeaderHeight - 1rem);
 }
-.has-header {
-  height: calc(100vh - $appHeaderHeight - 3rem - 2rem);
-}
+.has-header,
 .has-footer {
   height: calc(100vh - $appHeaderHeight - 3rem - 3rem - 2rem);
+}
+.only-header {
+  height: calc(100vh - $appHeaderHeight - 3rem - 2rem);
+}
+.only-footer {
+  height: calc(100vh - $appHeaderHeight - 3rem - 2rem);
 }
 </style>

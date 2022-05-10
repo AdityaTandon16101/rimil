@@ -1,7 +1,7 @@
 <script setup>
-import { Head } from "@inertiajs/inertia-vue3";
+import { Head, Link } from "@inertiajs/inertia-vue3";
 import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
-import PageHead from "@x/Page/Head.vue";
+import Button from "@x/Button.vue";
 import PageBody from "@x/Page/Body.vue";
 import Table from "@utils/Table.vue";
 import Paginate from "@utils/Paginate.vue";
@@ -13,9 +13,11 @@ const props = defineProps(["teamMembers"]);
   <Head title="My Team" />
 
   <AuthenticatedLayout title="My Team">
-    <PageHead> Hello </PageHead>
-    <PageBody header footer bgwhite>
-      <Table>
+    <PageBody :footer="props.teamMembers.data.length > 0" bgwhite>
+      <Table
+        :isEmpty="props.teamMembers.data.length == 0"
+        emptyMessage="You havn't Team Member yet"
+      >
         <template #thead>
           <tr class="text-left">
             <th>Sr.No.</th>
@@ -34,6 +36,6 @@ const props = defineProps(["teamMembers"]);
         </tr>
       </Table>
     </PageBody>
-    <Paginate :data="props.teamMembers" />
+    <Paginate v-if="props.teamMembers.data.length > 0" :data="props.teamMembers" />
   </AuthenticatedLayout>
 </template>
