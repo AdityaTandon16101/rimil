@@ -18,13 +18,17 @@ const props = defineProps(["teamMembers"]);
       <Table>
         <template #thead>
           <tr class="text-left">
+            <th>Sr.No.</th>
+            <th>Id</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th>JoingDate</th>
+            <th>Number</th>
+            <th>Total Invest</th>
+            <th>Status</th>
           </tr>
         </template>
         <tr v-for="teamMember in props.teamMembers.data" :key="teamMember.id">
-          <td>{{ teamMember.name }}</td>
+          <td>{{ teamMember.Sr.No. }}</td>
           <td>{{ teamMember.email }}</td>
           <td>{{ teamMember.phone }}</td>
         </tr>
