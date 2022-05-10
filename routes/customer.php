@@ -12,5 +12,5 @@ Route::resource('withdraws', WithdrawController::class)->only(['index']);
 Route::resource('permanent-members', PermanentMemberController::class)->only(['index']);
 
 Route::prefix('profile')->group(function () {
-    Route::get('/', [CustomerController::class, 'profile'])->name('profile');
+    Route::get('/', [ProfileController::class, 'profile'])->name('profile');
 });
