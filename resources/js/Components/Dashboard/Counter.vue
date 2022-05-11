@@ -12,11 +12,16 @@ const props = defineProps({
 <template>
   <div class="shadow-md text-center">
     <div class="text-2xl my-4">
-      {{
-        props.type == "float"
-          ? `&#8377;${parseFloat(props.value).toFixed(2)}`
-          : props.value
-      }}
+      <div v-if="$slots.value">
+        <slot name="value" />
+      </div>
+      <div v-else>
+        {{
+          props.type == "float"
+            ? `&#8377;${parseFloat(props.value).toFixed(2)}`
+            : props.value
+        }}
+      </div>
     </div>
     <div class="uppercase mb-3">{{ props.title }}</div>
   </div>

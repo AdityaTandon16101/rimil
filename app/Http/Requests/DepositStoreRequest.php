@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use App\Models\Deposit;
+use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 class DepositStoreRequest extends FormRequest
 {
@@ -41,6 +43,19 @@ class DepositStoreRequest extends FormRequest
 
     public function addToMyMemberDeposits()
     {
-        auth()->user()->memberDetail()->increment('total_deposits', $this->get('amount'));
+        $memberDetail = User::find(auth()->id())->memberDetail;
+        $totalDeposits = $memberDetail->total_deposits + $this->get('amount');
+        $memberDetail->total_deposits = $totalDeposits;
+        $memberDetail->save();
+        return $totalDeposits;
+    }
+
+    public function makeUserActiveAndAssignReferralCode()
+    {
+        $user = User::find(auth()->id());
+        // $user->uuid = Str::orderedUuid();
+        $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
+        $user->status = true;
+        $user->save();
     }
 }

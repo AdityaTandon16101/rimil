@@ -42,6 +42,7 @@ class RegisteredUserController extends Controller
             $user = $request->storeUser();
             $request->storeMemberDetails($user);
             $request->attachToMyTeamIfReferralCode($user);
+            $request->makePermanentMemberIf500th($user);
             Auth::login($user);
         });
 

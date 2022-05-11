@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\{HasMany, HasOne};
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -27,6 +29,7 @@ class User extends Authenticatable
         'phone',
         'password',
         'status',
+        'is_permanent',
         'banned'
     ];
 
@@ -48,6 +51,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'status' => 'boolean',
+        'is_permanent' => 'boolean',
         'banned' => 'boolean',
     ];
 
@@ -59,6 +63,26 @@ class User extends Authenticatable
     public function scopeMyTeamMembers($query)
     {
         return $query->whereIn('id', auth()->user()->teamMembers()->pluck('team_member_id'));
+    }
+
+    public function scopeDepositedUpTo500($query)
+    {
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('total_deposits', '>', 500));
+    }
+
+    public function scopePermanent($query)
+    {
+        return $query->where('is_permanent', true);
+    }
+
+    public function scopeNonPermanent($query)
+    {
+        return $query->where('is_permanent', false);
+    }
+
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])->format('d-M-Y');
     }
 
     public function memberDetail(): HasOne

@@ -1,0 +1,41 @@
+<script setup>
+import { Head, Link } from "@inertiajs/inertia-vue3";
+import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
+import PageHead from "@x/Page/Head.vue";
+import Button from "@x/Button.vue";
+import PageBody from "@x/Page/Body.vue";
+import Table from "@utils/Table.vue";
+import Paginate from "@utils/Paginate.vue";
+
+const props = defineProps(["withdraws"]);
+</script>
+
+<template>
+  <Head title="My Withdraws" />
+
+  <AuthenticatedLayout title="My Withdraws">
+    <PageHead>
+      <Link :href="route('withdraws.create')">
+        <Button>Make Withdraw</Button>
+      </Link>
+    </PageHead>
+    <PageBody header :footer="props.withdraws.data.length > 0" bgwhite>
+      <Table
+        :isEmpty="props.withdraws.data.length == 0"
+        emptyMessage="No Any Withdraw yet"
+      >
+        <template #thead>
+          <tr class="text-left">
+            <th>Date</th>
+            <th width="100">Amount</th>
+          </tr>
+        </template>
+        <tr v-for="withdraw in props.withdraws.data" :key="withdraw.id">
+          <td>{{ withdraw.date }}</td>
+          <td>{{ withdraw.amount }}</td>
+        </tr>
+      </Table>
+    </PageBody>
+    <Paginate v-if="props.withdraws.data.length > 0" :data="props.withdraws" />
+  </AuthenticatedLayout>
+</template>

@@ -11,7 +11,7 @@ class TeamController extends Controller
 {
     public function index()
     {
-        $teamMembers = User::query()->myTeamMembers()->paginate(20);
+        $teamMembers = User::query()->myTeamMembers()->with('memberDetail')->paginate(20);
         return inertia('Customer/Team/Index', compact('teamMembers'));
     }
 }
