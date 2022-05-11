@@ -24,7 +24,7 @@ const props = defineProps(["teamMembers"]);
             <th>S.No</th>
             <th>ID</th>
             <th>Name</th>
-            <th>Jioning Date</th>
+            <th>Joining Date</th>
             <th>Phone</th>
             <th>Total Deposits</th>
             <th>Status</th>
