@@ -21,20 +21,6 @@ const props = defineProps(["teamMembers"]);
       >
         <template #thead>
           <tr class="text-left">
-<<<<<<< HEAD
-            <th>Sr.No.</th>
-            <th>Id</th>
-            <th>Name</th>
-            <th>JoingDate</th>
-            <th>Number</th>
-            <th>Total Invest</th>
-            <th>Status</th>
-          </tr>
-        </template>
-        <tr v-for="teamMember in props.teamMembers.data" :key="teamMember.id">
-          <td>{{ teamMember.Sr.No. }}</td>
-          <td>{{ teamMember.email }}</td>
-=======
             <th>S.No</th>
             <th>ID</th>
             <th>Name</th>
@@ -49,7 +35,6 @@ const props = defineProps(["teamMembers"]);
           <td>{{ teamMember.id }}</td>
           <td>{{ teamMember.name }}</td>
           <td>{{ teamMember.created_at }}</td>
->>>>>>> 1b90ac583f2d24175fd4ada951ca30b69422e8fc
           <td>{{ teamMember.phone }}</td>
           <td>
             &#8377;{{ parseFloat(teamMember.member_detail.total_deposits).toFixed(2) }}
