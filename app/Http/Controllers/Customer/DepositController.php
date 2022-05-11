@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\DepositStoreRequest;
 use App\Models\Deposit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DepositController extends Controller
 {
@@ -19,18 +21,14 @@ class DepositController extends Controller
         return inertia('Customer/Deposit/Create');
     }
 
-    public function store(Request $request)
+    public function store(DepositStoreRequest $request)
     {
-        $request->validate([
-            'amount' => ['required', 'numeric']
-        ]);
+        DB::transaction(function () use ($request) {
+            $request->storeDeposit();
+            $request->addToMyMemberDeposits();
+        });
+        return back();
 
         // TODO deposite into Company's Bank
-        $deposit = new Deposit();
-        $deposit->user_id = auth()->id();
-        $deposit->date = date('Y-m-d');
-        $deposit->amount = $request->amount;
-        $deposit->save();
-        return back();
     }
 }

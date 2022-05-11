@@ -16,12 +16,12 @@ const props = defineProps({
 
   <AuthenticatedLayout title="Dashboard">
     <PageBody bgwhite>
-      <Referral :isDepositedUpto500="props.memberDetail.total_deposites >= 500" />
+      <Referral :isDepositedUpto500="props.memberDetail.total_deposits >= 500" />
 
       <div class="grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <Counter value="Active" title="Status" />
         <Counter
-          :value="props.memberDetail.total_deposites"
+          :value="props.memberDetail.total_deposits"
           type="float"
           title="DEPOSIT AMOUNT"
         />

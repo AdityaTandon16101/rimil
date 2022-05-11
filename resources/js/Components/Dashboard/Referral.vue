@@ -2,13 +2,23 @@
 import Input from "@x/Input.vue";
 import Button from "@x/Button.vue";
 import { Link } from "@inertiajs/inertia-vue3";
+import { ref } from "@vue/reactivity";
 
 const props = defineProps({
   isDepositedUpto500: Boolean,
 });
+
+const copied = ref(false);
+
+const copy = () => {
+  copied.value = false;
+  navigator.clipboard.writeText();
+  copied.value = true;
+};
 </script>
 
 <template>
+  {{ toCopy }}
   <div
     class="flex px-4 mb-2 h-auto lg:h-10 lg:leading-10"
     :class="{ 'bg-red-200': !props.isDepositedUpto500 }"
@@ -36,7 +46,9 @@ const props = defineProps({
       <Link class="ml-4" :href="route('deposits.index')">Deposit Now</Link>
     </div>
     <div v-if="props.isDepositedUpto500">
-      <Button class="h-10" type="button">Copy</Button>
+      <Button @click="copy" class="h-10" type="button" :disabled="copied">
+        {{ copied ? "Copied" : "Copy" }}
+      </Button>
     </div>
   </div>
 </template>
