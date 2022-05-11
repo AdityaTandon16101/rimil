@@ -43,12 +43,13 @@ class RegistrationRequest extends FormRequest
         // uuid
         $user->role_id = Role::CUSTOMER;
         // photo
-        $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
+        // $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $user->name = $this->get('name');
         $user->email = $this->get('email');
         $user->phone = $this->get('phone');
         $user->password = Hash::make($this->get('password'));
-        $user->status = true;
+        $user->status = false;
+        $user->is_permanent = false;
         $user->banned = User::NON_BANNED;
         $user->save();
         return $user;
@@ -75,5 +76,14 @@ class RegistrationRequest extends FormRequest
         $team->user_id = $referredUser->id;
         $team->team_member_id = $user->id;
         $team->save();
+    }
+
+    public function makePermanentMemberIf500th($user)
+    {
+        if ($user->id % 500 != 0) return;
+        $toBecomePermanentMember = User::query()->depositedUpTo500()->nonPermanent()->first();
+        if (!$toBecomePermanentMember) return;
+        $toBecomePermanentMember->is_permanent = true;
+        $toBecomePermanentMember->save();
     }
 }

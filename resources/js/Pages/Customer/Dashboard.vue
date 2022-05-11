@@ -4,6 +4,7 @@ import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
 import PageBody from "@x/Page/Body.vue";
 import Referral from "@x/Dashboard/Referral.vue";
 import Counter from "@x/Dashboard/Counter.vue";
+import Status from "@utils/Status.vue";
 
 const props = defineProps({
   memberDetail: Object,
@@ -19,13 +20,20 @@ const props = defineProps({
       <Referral :isDepositedUpto500="props.memberDetail.total_deposits >= 500" />
 
       <div class="grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        <Counter value="Active" title="Status" />
+        <Counter title="Status">
+          <template #value>
+            <Status :status="$page.props.auth.user.status" />
+          </template>
+        </Counter>
         <Counter
           :value="props.memberDetail.total_deposits"
           type="float"
           title="DEPOSIT AMOUNT"
         />
-        <Counter :value="$page.props.auth.user.id" title="ID" />
+        <Counter
+          :value="props.memberDetail.total_deposits ? $page.props.auth.user.id : '-'"
+          title="ID"
+        />
         <Counter
           :value="props.memberDetail.referral_income"
           type="float"
@@ -33,7 +41,10 @@ const props = defineProps({
         />
 
         <Counter :value="props.teamMembersCount" title="TOTAL MEMBER" />
-        <Counter value="0" title="TOTAL ACTIVE IDs" />
+        <Counter
+          :value="props.teamMembersCount == 0 ? '0' : '-'"
+          title="TOTAL ACTIVE IDs"
+        />
         <Counter
           :value="props.memberDetail.total_earnings"
           type="float"
@@ -53,7 +64,11 @@ const props = defineProps({
         <Counter value="0" title="PHASE 3" />
         <Counter value="0" title="PHASE 4" />
         <Counter value="0" title="PHASE 5" />
-        <Counter value="0" type="float" title="REWARD INCOME" />
+        <Counter
+          :value="props.memberDetail.reward_income"
+          type="float"
+          title="REWARD INCOME"
+        />
       </div>
     </PageBody>
   </AuthenticatedLayout>

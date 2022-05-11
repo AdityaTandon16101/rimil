@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Withdraw;
 use Illuminate\Http\Request;
 
 class WithdrawController extends Controller
@@ -14,7 +15,8 @@ class WithdrawController extends Controller
      */
     public function index()
     {
-        //
+        $withdraws = Withdraw::query()->my()->paginate(20);
+        return inertia('Customer/Withdraw/Index', compact('withdraws'));
     }
 
     /**
@@ -24,7 +26,7 @@ class WithdrawController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Customer/Withdraw/Create');
     }
 
     /**
