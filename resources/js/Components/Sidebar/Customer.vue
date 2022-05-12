@@ -25,6 +25,14 @@ const menus = [
     name: `My Profile`,
     routeName: `profile`,
   },
+  {
+    name: "Bank Details",
+    routeName: "profile.showbankdetails",
+  },
+  {
+    name: "Change Password",
+    routeName: "profile.show.passwordchange",
+  },
 ];
 </script>
 

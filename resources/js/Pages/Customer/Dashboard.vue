@@ -20,11 +20,10 @@ const props = defineProps({
       <Referral :isDepositedUpto500="props.memberDetail.total_deposits >= 500" />
 
       <div class="grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-        <Counter title="Status">
-          <template #value>
-            <Status :status="$page.props.auth.user.status" />
-          </template>
-        </Counter>
+        <Counter
+          :value="$page.props.auth.user.status ? 'Active' : 'Inactive'"
+          title="Status"
+        />
         <Counter
           :value="props.memberDetail.total_deposits"
           type="float"

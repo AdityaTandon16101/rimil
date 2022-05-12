@@ -13,17 +13,16 @@ class BankDetail extends Model
     protected $fillable = [
         'user_id',
         'bank_name',
+        'branch_name',
         'account_name',
         'account_number',
         'branch_name',
-        'ifsc',
-        // 'cif',
-        'primary'
+        'ifsc'
     ];
 
-    protected $casts = [
-        'primary' => 'boolean'
-    ];
+    // protected $casts = [
+    //     'primary' => 'boolean'
+    // ];
 
     public function user(): BelongsTo
     {
