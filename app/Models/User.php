@@ -53,6 +53,11 @@ class User extends Authenticatable
         'banned' => 'boolean',
     ];
 
+    public function scopeCustomer($query)
+    {
+        return $query->where('role_id', Role::CUSTOMER);
+    }
+
     public function scopeReferralCode($query, $referralCode)
     {
         return $query->where('referral_Code', $referralCode);

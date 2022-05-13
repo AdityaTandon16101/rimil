@@ -17,7 +17,7 @@ const props = defineProps({
 
   <AuthenticatedLayout title="Dashboard">
     <PageBody bgwhite>
-      <Referral :isDepositedUpto500="props.memberDetail.total_deposits >= 500" />
+      <Referral :isDepositedUpto500="props.memberDetail.total_deposit >= 500" />
 
       <div class="grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <Counter
@@ -25,12 +25,12 @@ const props = defineProps({
           title="Status"
         />
         <Counter
-          :value="props.memberDetail.total_deposits"
+          :value="props.memberDetail.total_deposit"
           type="float"
           title="DEPOSIT AMOUNT"
         />
         <Counter
-          :value="props.memberDetail.total_deposits ? $page.props.auth.user.id : '-'"
+          :value="props.memberDetail.total_deposit ? $page.props.auth.user.id : '-'"
           title="ID"
         />
         <Counter
@@ -45,12 +45,12 @@ const props = defineProps({
           title="TOTAL ACTIVE IDs"
         />
         <Counter
-          :value="props.memberDetail.total_earnings"
+          :value="props.memberDetail.total_earning"
           type="float"
           title="TOTAL EARNING"
         />
         <Counter
-          :value="props.memberDetail.withdraws"
+          :value="props.memberDetail.total_withdraw"
           type="float"
           title="TOTAL WIDTHDRAW"
         />

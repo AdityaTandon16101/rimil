@@ -37,7 +37,7 @@ const props = defineProps(["teamMembers"]);
           <td>{{ teamMember.created_at }}</td>
           <td>{{ teamMember.phone }}</td>
           <td>
-            &#8377;{{ parseFloat(teamMember.member_detail.total_deposits).toFixed(2) }}
+            &#8377;{{ parseFloat(teamMember.member_detail.total_deposit).toFixed(2) }}
           </td>
           <td>
             <Status :status="teamMember.status" />

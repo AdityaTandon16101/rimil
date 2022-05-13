@@ -41,8 +41,11 @@ class RegisteredUserController extends Controller
         DB::transaction(function () use ($request) {
             $user = $request->storeUser();
             $request->storeMemberDetails($user);
-            $request->attachToMyTeamIfReferralCode($user);
             $request->makePermanentMemberIf500th($user);
+            if (!is_null($request->referral_code)) {
+                $referredUser = $request->attachToMyTeam($user);
+                $request->giveReferralReward($referredUser, 50);
+            }
             Auth::login($user);
         });
 

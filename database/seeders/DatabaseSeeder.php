@@ -56,7 +56,7 @@ class DatabaseSeeder extends Seeder
             2, 0, 0, 0, 0, 0, false, NULL
         ]);
 
-        \App\Models\User::factory(497)
+        \App\Models\User::factory(498)
             ->has(\App\Models\MemberDetail::factory()->count(1))
             ->create();
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Auth;
 
 use App\Models\MemberDetail;
+use App\Models\ReferralIncome;
 use App\Models\Role;
 use App\Models\Team;
 use App\Models\User;
@@ -63,29 +64,43 @@ class RegistrationRequest extends FormRequest
         $memberDetail->total_withdraw = 0;
         $memberDetail->reward_income = 0;
         $memberDetail->total_earning = 0;
-        $user->is_permanent = false;
+        $memberDetail->is_permanent = false;
         $memberDetail->save();
     }
 
-    public function attachToMyTeamIfReferralCode($user)
+    public function makePermanentMemberIf500th($user)
     {
-        if (is_null($this->get('referral_code'))) return;
+        if ($user->id % 500 != 0) return;
+        $toBecomePermanentMember = User::query()->customer()
+            ->depositedUpTo500()->nonPermanent()->first();
+        if (!$toBecomePermanentMember) return;
+        $memberDetail = $toBecomePermanentMember->memberDetail;
+        $memberDetail->phase_id = $this->getPhaseId($memberDetail);
+        $memberDetail->is_permanent = true;
+        $memberDetail->save();
+    }
+
+    public function attachToMyTeam($user)
+    {
         $referredUser = User::referralCode($this->get('referral_code'))->first();
         if (!$referredUser) return;
         $team = new Team();
         $team->user_id = $referredUser->id;
         $team->team_member_id = $user->id;
         $team->save();
+        return $referredUser;
     }
 
-    public function makePermanentMemberIf500th($user)
+    public function giveReferralReward($referredUser, $amount)
     {
-        if ($user->id % 500 != 0) return;
-        $toBecomePermanentMember = User::query()->depositedUpTo500()->nonPermanent()->first();
-        if (!$toBecomePermanentMember) return;
-        $memberDetail = $toBecomePermanentMember->memberDetail;
-        $memberDetail->phase_id = $this->getPhaseId($memberDetail);
-        $memberDetail->is_permanent = true;
+        $referralIncome = new ReferralIncome();
+        $referralIncome->user_id = $referredUser->id;
+        $referralIncome->date = date('Y-m-d');
+        $referralIncome->amount = 50;
+        $referralIncome->save();
+
+        $memberDetail = $referredUser->memberDetail;
+        $memberDetail->referral_income = $memberDetail->referral_income + $amount;
         $memberDetail->save();
     }
 

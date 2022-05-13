@@ -36,7 +36,7 @@ const props = defineProps(["members"]);
           <td>{{ member.name }}</td>
           <td>{{ member.created_at }}</td>
           <td>{{ member.phone }}</td>
-          <td>&#8377;{{ parseFloat(member.member_detail.total_deposits).toFixed(2) }}</td>
+          <td>&#8377;{{ parseFloat(member.member_detail.total_deposit).toFixed(2) }}</td>
           <td>
             <Status :status="member.status" />
           </td>

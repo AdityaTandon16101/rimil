@@ -33,7 +33,7 @@ const copy = () => {
       class="flex-1"
       :value="
         route('register', {
-          referral: $page.props.auth.user.referral_id,
+          referral: $page.props.auth.user.referral_code,
         })
       "
       placeholder=" Referral ID"

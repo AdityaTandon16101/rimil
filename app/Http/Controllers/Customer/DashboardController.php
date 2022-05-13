@@ -12,6 +12,7 @@ class DashboardController extends Controller
     {
         return inertia('Customer/Dashboard', [
             'memberDetail' => auth()->user()->memberDetail,
+            // 'counters' => [],
             'teamMembersCount' => Team::query()->myTeam()->count()
         ]);
     }

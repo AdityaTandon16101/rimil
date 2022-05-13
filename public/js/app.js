@@ -27131,7 +27131,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "text",
     "class": "flex-1",
     value: _ctx.route('register', {
-      referral: _ctx.$page.props.auth.user.referral_id
+      referral: _ctx.$page.props.auth.user.referral_code
     }),
     placeholder: " Referral ID",
     "aria-describedby": "basic-addon2",
@@ -29176,7 +29176,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Referral"], {
-            isDepositedUpto500: $setup.props.memberDetail.total_deposits >= 500
+            isDepositedUpto500: $setup.props.memberDetail.total_deposit >= 500
           }, null, 8
           /* PROPS */
           , ["isDepositedUpto500"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
@@ -29185,13 +29185,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, null, 8
           /* PROPS */
           , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.total_deposits,
+            value: $setup.props.memberDetail.total_deposit,
             type: "float",
             title: "DEPOSIT AMOUNT"
           }, null, 8
           /* PROPS */
           , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.total_deposits ? _ctx.$page.props.auth.user.id : '-',
+            value: $setup.props.memberDetail.total_deposit ? _ctx.$page.props.auth.user.id : '-',
             title: "ID"
           }, null, 8
           /* PROPS */
@@ -29212,13 +29212,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, null, 8
           /* PROPS */
           , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.total_earnings,
+            value: $setup.props.memberDetail.total_earning,
             type: "float",
             title: "TOTAL EARNING"
           }, null, 8
           /* PROPS */
           , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.withdraws,
+            value: $setup.props.memberDetail.total_withdraw,
             type: "float",
             title: "TOTAL WIDTHDRAW"
           }, null, 8
@@ -29520,7 +29520,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 /* TEXT */
                 ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(member.phone), 1
                 /* TEXT */
-                ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "₹" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(parseFloat(member.member_detail.total_deposits).toFixed(2)), 1
+                ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "₹" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(parseFloat(member.member_detail.total_deposit).toFixed(2)), 1
                 /* TEXT */
                 ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Status"], {
                   status: member.status
@@ -30038,7 +30038,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 /* TEXT */
                 ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(teamMember.phone), 1
                 /* TEXT */
-                ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, " ₹" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(parseFloat(teamMember.member_detail.total_deposits).toFixed(2)), 1
+                ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, " ₹" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(parseFloat(teamMember.member_detail.total_deposit).toFixed(2)), 1
                 /* TEXT */
                 ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Status"], {
                   status: teamMember.status
