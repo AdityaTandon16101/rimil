@@ -48,7 +48,6 @@ class LoginRequest extends FormRequest
     public function authenticate($credentials)
     {
         if (!Auth::attempt($credentials + [
-            'role_id' => Role::CUSTOMER,
             'password' => $this->get('password'),
             'banned' => false
         ], $this->has('remember') ? true : false)) {

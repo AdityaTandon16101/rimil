@@ -1,6 +1,6 @@
 <script setup>
 import { Head, Link, useForm } from "@inertiajs/inertia-vue3";
-import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
+import AuthenticatedLayout from "@layouts/Customer.vue";
 import Button from "@x/Button.vue";
 import PageHead from "@x/Page/Head.vue";
 import PageBody from "@x/Page/Body.vue";

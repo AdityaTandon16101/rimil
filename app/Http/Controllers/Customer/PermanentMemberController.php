@@ -10,7 +10,7 @@ class PermanentMemberController extends Controller
 {
     public function index()
     {
-        $members = User::query()->permanent()->with('memberDetail')->paginate(20);
+        $members = User::query()->winners()->with('memberDetail')->paginate(20);
         return inertia('Customer/PermanentMembers', compact('members'));
     }
 }

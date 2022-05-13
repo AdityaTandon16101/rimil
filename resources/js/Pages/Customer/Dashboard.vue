@@ -1,6 +1,6 @@
 <script setup>
 import { Head } from "@inertiajs/inertia-vue3";
-import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
+import AuthenticatedLayout from "@layouts/Customer.vue";
 import PageBody from "@x/Page/Body.vue";
 import Referral from "@x/Dashboard/Referral.vue";
 import Counter from "@x/Dashboard/Counter.vue";
@@ -8,8 +8,12 @@ import Status from "@utils/Status.vue";
 
 const props = defineProps({
   memberDetail: Object,
-  teamMembersCount: String,
+  counters: Object,
 });
+
+const getPhasePackageRate = () => {
+  return 5000;
+};
 </script>
 
 <template>
@@ -22,6 +26,7 @@ const props = defineProps({
       <div class="grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <Counter
           :value="$page.props.auth.user.status ? 'Active' : 'Inactive'"
+          :clr="$page.props.auth.user.status ? 'text-[#008000]' : 'text-[#ff0000]'"
           title="Status"
         />
         <Counter
@@ -39,7 +44,7 @@ const props = defineProps({
           title="REFERRAL INCOME"
         />
 
-        <Counter :value="props.teamMembersCount" title="TOTAL MEMBER" />
+        <Counter :value="props.counters.team" title="TOTAL MEMBER" />
         <Counter
           :value="props.teamMembersCount == 0 ? '0' : '-'"
           title="TOTAL ACTIVE IDs"
@@ -55,14 +60,14 @@ const props = defineProps({
           title="TOTAL WIDTHDRAW"
         />
 
-        <Counter value="5000.00" type="float" title="PACKAGE" />
-        <Counter value="0" title="WINNERS" />
-        <Counter value="0" title="PHASE 1" />
-        <Counter value="0" title="PHASE 2" />
+        <Counter :value="getPhasePackageRate()" type="float" title="PACKAGE" />
+        <Counter :value="props.counters.winners" title="WINNERS" />
+        <Counter :value="props.counters.phase_one" title="PHASE 1" />
+        <Counter :value="props.counters.phase_two" title="PHASE 2" />
 
-        <Counter value="0" title="PHASE 3" />
-        <Counter value="0" title="PHASE 4" />
-        <Counter value="0" title="PHASE 5" />
+        <Counter :value="props.counters.phase_three" title="PHASE 3" />
+        <Counter :value="props.counters.phase_four" title="PHASE 4" />
+        <Counter :value="props.counters.phase_five" title="PHASE 5" />
         <Counter
           :value="props.memberDetail.reward_income"
           type="float"

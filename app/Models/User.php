@@ -53,6 +53,11 @@ class User extends Authenticatable
         'banned' => 'boolean',
     ];
 
+    public function getCreatedAtAttribute()
+    {
+        return Carbon::parse($this->attributes['created_at'])->format('d-M-Y');
+    }
+
     public function scopeCustomer($query)
     {
         return $query->where('role_id', Role::CUSTOMER);
@@ -78,19 +83,34 @@ class User extends Authenticatable
         return $query->whereHas('memberDetail', fn ($member) => $member->whereNull('phase_id'));
     }
 
-    // public function scopeNonPermanent($query)
-    // {
-    //     return $query->whereHas('memberDetail', fn ($member) => $member->where('is_permanent', false));
-    // }
-
-    // public function scopePhase($query, $phaseNumber)
-    // {
-    //     return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_number', $phaseNumber));
-    // }
-
-    public function getCreatedAtAttribute()
+    public function scopeWinners($query)
     {
-        return Carbon::parse($this->attributes['created_at'])->format('d-M-Y');
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 1));
+    }
+
+    public function scopePhase01($query)
+    {
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 2));
+    }
+
+    public function scopePhase02($query)
+    {
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 3));
+    }
+
+    public function scopePhase03($query)
+    {
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 4));
+    }
+
+    public function scopePhase04($query)
+    {
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 5));
+    }
+
+    public function scopePhase05($query)
+    {
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 6));
     }
 
     public function memberDetail(): HasOne

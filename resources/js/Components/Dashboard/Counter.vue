@@ -6,6 +6,10 @@ const props = defineProps({
     type: String,
     default: "number",
   },
+  clr: {
+    type: String,
+    default: "text-[#333]",
+  },
 });
 </script>
 
@@ -15,7 +19,7 @@ const props = defineProps({
       <div v-if="$slots.value">
         <slot name="value" />
       </div>
-      <div v-else>
+      <div v-else :class="props.clr">
         {{
           props.type == "float"
             ? `&#8377;${parseFloat(props.value).toFixed(2)}`

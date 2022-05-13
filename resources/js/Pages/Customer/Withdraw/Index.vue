@@ -1,6 +1,6 @@
 <script setup>
 import { Head, Link } from "@inertiajs/inertia-vue3";
-import AuthenticatedLayout from "@/Layouts/Authenticated.vue";
+import AuthenticatedLayout from "@layouts/Customer.vue";
 import PageHead from "@x/Page/Head.vue";
 import Button from "@x/Button.vue";
 import PageBody from "@x/Page/Body.vue";
