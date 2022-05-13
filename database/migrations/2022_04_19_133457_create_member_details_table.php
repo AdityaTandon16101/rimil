@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -25,6 +26,13 @@ return new class extends Migration
             $table->boolean('is_permanent');
             $table->timestamps();
         });
+
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, is_permanent, phase_id) values (?, ?, ?, ?, ?, ?, ?, ?)', [
+            1, 0, 0, 0, 0, 0, false, NULL
+        ]);
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, is_permanent, phase_id) values (?, ?, ?, ?, ?, ?, ?, ?)', [
+            2, 0, 0, 0, 0, 0, false, NULL
+        ]);
     }
 
     /**
