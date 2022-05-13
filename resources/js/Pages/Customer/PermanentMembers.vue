@@ -32,7 +32,7 @@ const props = defineProps(["members"]);
         </template>
         <tr v-for="(member, index) in props.members.data" :key="member.id">
           <td>{{ index + 1 }}</td>
-          <td>{{ member.id }}</td>
+          <td>{{ member.alloted_id }}</td>
           <td>{{ member.name }}</td>
           <td>{{ member.created_at }}</td>
           <td>{{ member.phone }}</td>

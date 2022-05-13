@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Models\Deposit;
+use App\Models\MemberDetail;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Str;
@@ -56,5 +57,13 @@ class DepositStoreRequest extends FormRequest
         $user->referral_code = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $user->status = true;
         $user->save();
+
+        $maxAllotedId = MemberDetail::query()->max('alloted_id');
+        $memberDetail = $user->memberDetail;
+        $memberDetail->alloted_id = is_null($maxAllotedId)
+            ? 1
+            : $memberDetail->alloted_id = ++$maxAllotedId;
+        $memberDetail->save();
+        return;
     }
 }

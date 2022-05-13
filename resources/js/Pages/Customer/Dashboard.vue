@@ -35,7 +35,7 @@ const getPhasePackageRate = () => {
           title="DEPOSIT AMOUNT"
         />
         <Counter
-          :value="props.memberDetail.total_deposit ? $page.props.auth.user.id : '-'"
+          :value="props.memberDetail.total_deposit ? props.memberDetail.alloted_id : '-'"
           title="ID"
         />
         <Counter
