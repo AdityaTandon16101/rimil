@@ -18,13 +18,14 @@ class MemberDetailFactory extends Factory
     public function definition()
     {
         return [
-            'total_deposit' => 0,
+            // 'referral_code' => null,
+            // 'alloted_id' => null,
             // 'phase_id' => null,
+            'total_deposit' => 500,
             'referral_income' => 0,
             'total_withdraw' => 0,
             'reward_income' => 0,
             'total_earning' => 0,
-            'is_permanent' => false,
         ];
     }
 }

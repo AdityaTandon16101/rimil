@@ -41,10 +41,8 @@ class RegistrationRequest extends FormRequest
     public function storeUser()
     {
         $user = new User();
-        // uuid
         $user->role_id = Role::CUSTOMER;
         // photo
-        // $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $user->name = $this->get('name');
         $user->email = $this->get('email');
         $user->phone = $this->get('phone');
@@ -59,12 +57,13 @@ class RegistrationRequest extends FormRequest
     {
         $memberDetail = new MemberDetail();
         $memberDetail->user_id = $user->id;
+        $memberDetail->referral_code = null;
+        $memberDetail->alloted_id = null;
         $memberDetail->total_deposit = 0;
         $memberDetail->referral_income = 0;
         $memberDetail->total_withdraw = 0;
         $memberDetail->reward_income = 0;
         $memberDetail->total_earning = 0;
-        $memberDetail->is_permanent = false;
         $memberDetail->save();
     }
 
@@ -72,7 +71,8 @@ class RegistrationRequest extends FormRequest
     {
         if ($user->id % 500 != 0) return;
         $toBecomePermanentMember = User::query()->customer()
-            ->depositedUpTo500()->nonPermanent()->first();
+            ->depositedUpTo500()->first();
+
         if (!$toBecomePermanentMember) return;
         $memberDetail = $toBecomePermanentMember->memberDetail;
         $memberDetail->phase_id = $this->getPhaseId($memberDetail);

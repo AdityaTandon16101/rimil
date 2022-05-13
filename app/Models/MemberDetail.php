@@ -13,6 +13,7 @@ class MemberDetail extends Model
     protected $fillable = [
         'user_id',
         // 'phase_id',
+        // 'allotd_id',
         'total_deposit',
         'referral_income',
         'withdraws',

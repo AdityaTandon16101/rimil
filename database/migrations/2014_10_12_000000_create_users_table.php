@@ -20,7 +20,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('role_id')->constrained();
             $table->mediumText('photo')->nullable();
-            $table->string('referral_code', 15)->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->unique();

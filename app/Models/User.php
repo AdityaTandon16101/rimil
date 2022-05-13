@@ -73,15 +73,15 @@ class User extends Authenticatable
         return $query->whereHas('memberDetail', fn ($member) => $member->where('total_deposit', '>', 500));
     }
 
-    public function scopePermanent($query)
+    public function scopeNotInAnyPhase($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('is_permanent', true));
+        return $query->whereHas('memberDetail', fn ($member) => $member->whereNull('phase_id'));
     }
 
-    public function scopeNonPermanent($query)
-    {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('is_permanent', false));
-    }
+    // public function scopeNonPermanent($query)
+    // {
+    //     return $query->whereHas('memberDetail', fn ($member) => $member->where('is_permanent', false));
+    // }
 
     // public function scopePhase($query, $phaseNumber)
     // {

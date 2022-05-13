@@ -17,21 +17,22 @@ return new class extends Migration
         Schema::create('member_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
+            $table->string('referral_code', 15)->nullable();
+            $table->bigInteger('alloted_id')->nullable();
             $table->foreignId('phase_id')->nullable()->constrained();
             $table->double('total_deposit', 10, 2);
             $table->double('referral_income', 10, 2);
             $table->double('total_withdraw', 10, 2);
             $table->double('reward_income', 10, 2);
             $table->double('total_earning', 10, 2);
-            $table->boolean('is_permanent');
             $table->timestamps();
         });
 
-        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, is_permanent, phase_id) values (?, ?, ?, ?, ?, ?, ?, ?)', [
-            1, 0, 0, 0, 0, 0, false, NULL
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning) values (?, ?, ?, ?, ?, ?)', [
+            1, 0, 0, 0, 0, 0
         ]);
-        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, is_permanent, phase_id) values (?, ?, ?, ?, ?, ?, ?, ?)', [
-            2, 0, 0, 0, 0, 0, false, NULL
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning) values (?, ?, ?, ?, ?, ?)', [
+            2, 0, 0, 0, 0, 0
         ]);
     }
 
