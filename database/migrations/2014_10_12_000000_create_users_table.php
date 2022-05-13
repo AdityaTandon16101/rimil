@@ -16,10 +16,9 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->mediumText('uuid')->nullable();
             $table->foreignId('role_id')->constrained();
             $table->mediumText('photo')->nullable();
-            $table->string('referral_id', 15)->nullable();
+            $table->string('referral_code', 15)->nullable();
             $table->string('name');
             $table->string('email')->unique();
             $table->string('phone')->unique();

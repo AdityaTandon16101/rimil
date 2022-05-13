@@ -44,8 +44,8 @@ class DepositStoreRequest extends FormRequest
     public function addToMyMemberDeposits()
     {
         $memberDetail = User::find(auth()->id())->memberDetail;
-        $totalDeposits = $memberDetail->total_deposits + $this->get('amount');
-        $memberDetail->total_deposits = $totalDeposits;
+        $totalDeposits = $memberDetail->total_deposit + $this->get('amount');
+        $memberDetail->total_deposit = $totalDeposits;
         $memberDetail->save();
         return $totalDeposits;
     }
@@ -53,8 +53,7 @@ class DepositStoreRequest extends FormRequest
     public function makeUserActiveAndAssignReferralCode()
     {
         $user = User::find(auth()->id());
-        // $user->uuid = Str::orderedUuid();
-        $user->referral_id = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
+        $user->referral_code = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $user->status = true;
         $user->save();
     }

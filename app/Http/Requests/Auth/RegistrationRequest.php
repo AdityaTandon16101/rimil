@@ -49,7 +49,6 @@ class RegistrationRequest extends FormRequest
         $user->phone = $this->get('phone');
         $user->password = Hash::make($this->get('password'));
         $user->status = false;
-        $user->is_permanent = false;
         $user->banned = User::NON_BANNED;
         $user->save();
         return $user;
@@ -59,11 +58,12 @@ class RegistrationRequest extends FormRequest
     {
         $memberDetail = new MemberDetail();
         $memberDetail->user_id = $user->id;
-        $memberDetail->total_deposits = 0;
+        $memberDetail->total_deposit = 0;
         $memberDetail->referral_income = 0;
-        $memberDetail->total_earnings = 0;
-        $memberDetail->withdraws = 0;
+        $memberDetail->total_withdraw = 0;
         $memberDetail->reward_income = 0;
+        $memberDetail->total_earning = 0;
+        $user->is_permanent = false;
         $memberDetail->save();
     }
 
@@ -83,7 +83,16 @@ class RegistrationRequest extends FormRequest
         if ($user->id % 500 != 0) return;
         $toBecomePermanentMember = User::query()->depositedUpTo500()->nonPermanent()->first();
         if (!$toBecomePermanentMember) return;
-        $toBecomePermanentMember->is_permanent = true;
-        $toBecomePermanentMember->save();
+        $memberDetail = $toBecomePermanentMember->memberDetail;
+        $memberDetail->phase_id = $this->getPhaseId($memberDetail);
+        $memberDetail->is_permanent = true;
+        $memberDetail->save();
+    }
+
+    public function getPhaseId($memberDetail)
+    {
+        $currentPhase = $memberDetail->phase_id;
+        if (is_null($currentPhase)) return 1;
+        return ++$currentPhase;
     }
 }

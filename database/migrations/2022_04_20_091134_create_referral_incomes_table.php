@@ -13,16 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('member_details', function (Blueprint $table) {
+        Schema::create('referral_incomes', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('phase_id')->nullable()->constrained();
-            $table->double('total_deposit', 10, 2);
-            $table->double('referral_income', 10, 2);
-            $table->double('total_withdraw', 10, 2);
-            $table->double('reward_income', 10, 2);
-            $table->double('total_earning', 10, 2);
-            $table->boolean('is_permanent');
+            $table->date('date');
+            $table->decimal('amount', 8, 2);
             $table->timestamps();
         });
     }
@@ -34,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('member_details');
+        Schema::dropIfExists('referral_incomes');
     }
 };

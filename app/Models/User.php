@@ -55,7 +55,7 @@ class User extends Authenticatable
 
     public function scopeReferralCode($query, $referralCode)
     {
-        return $query->where('referral_id', $referralCode);
+        return $query->where('referral_Code', $referralCode);
     }
 
     public function scopeMyTeamMembers($query)
@@ -65,7 +65,7 @@ class User extends Authenticatable
 
     public function scopeDepositedUpTo500($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('total_deposits', '>', 500));
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('total_deposit', '>', 500));
     }
 
     public function scopePermanent($query)
@@ -78,10 +78,10 @@ class User extends Authenticatable
         return $query->whereHas('memberDetail', fn ($member) => $member->where('is_permanent', false));
     }
 
-    public function scopePhase($query, $phaseNumber)
-    {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_number', $phaseNumber));
-    }
+    // public function scopePhase($query, $phaseNumber)
+    // {
+    //     return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_number', $phaseNumber));
+    // }
 
     public function getCreatedAtAttribute()
     {

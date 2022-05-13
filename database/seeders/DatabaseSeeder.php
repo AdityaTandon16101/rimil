@@ -21,6 +21,13 @@ class DatabaseSeeder extends Seeder
         DB::insert('insert into roles (name, status) values (?, ?)', ['Admin', 1]);
         DB::insert('insert into roles (name, status) values (?, ?)', ['Customer', 1]);
 
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['WINNERS', 5000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 01', 5000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 02', 5000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 03', 5000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 04', 5000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 05', 5000]);
+
         DB::insert('insert into users (role_id, name, email, phone, password, status, banned) values (?, ?, ?, ?, ?, ?, ?)', [
             Role::ADMIN,
             'Admin',
@@ -31,8 +38,8 @@ class DatabaseSeeder extends Seeder
             false
         ]);
 
-        DB::insert('insert into member_details (user_id, total_deposits, referral_income, total_earnings, withdraws, reward_income, is_permanent, phase_number) values (?, ?, ?, ?, ?, ?, ?, ?)', [
-            1, 0, 0, 0, 0, 0, false, MemberDetail::PHASE_ZERO
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, is_permanent, phase_id) values (?, ?, ?, ?, ?, ?, ?, ?)', [
+            1, 0, 0, 0, 0, 0, false, NULL
         ]);
 
         DB::insert('insert into users (role_id, name, email, phone, password, status, banned) values (?, ?, ?, ?, ?, ?, ?)', [
@@ -45,11 +52,11 @@ class DatabaseSeeder extends Seeder
             false
         ]);
 
-        DB::insert('insert into member_details (user_id, total_deposits, referral_income, total_earnings, withdraws, reward_income, is_permanent, phase_number) values (?, ?, ?, ?, ?, ?, ?, ?)', [
-            2, 0, 0, 0, 0, 0, false, MemberDetail::PHASE_ZERO
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, is_permanent, phase_id) values (?, ?, ?, ?, ?, ?, ?, ?)', [
+            2, 0, 0, 0, 0, 0, false, NULL
         ]);
 
-        \App\Models\User::factory(498)
+        \App\Models\User::factory(497)
             ->has(\App\Models\MemberDetail::factory()->count(1))
             ->create();
     }

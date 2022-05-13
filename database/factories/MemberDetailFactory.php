@@ -18,13 +18,13 @@ class MemberDetailFactory extends Factory
     public function definition()
     {
         return [
-            'total_deposits' => 0,
+            'total_deposit' => 0,
+            // 'phase_id' => null,
             'referral_income' => 0,
-            'total_earnings' => 0,
-            'withdraws' => 0,
+            'total_withdraw' => 0,
             'reward_income' => 0,
+            'total_earning' => 0,
             'is_permanent' => false,
-            'phase_number' => MemberDetail::PHASE_ZERO
         ];
     }
 }
