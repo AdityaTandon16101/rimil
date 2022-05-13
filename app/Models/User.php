@@ -29,7 +29,6 @@ class User extends Authenticatable
         'phone',
         'password',
         'status',
-        'is_permanent',
         'banned'
     ];
 
@@ -51,7 +50,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'status' => 'boolean',
-        'is_permanent' => 'boolean',
         'banned' => 'boolean',
     ];
 
@@ -72,12 +70,17 @@ class User extends Authenticatable
 
     public function scopePermanent($query)
     {
-        return $query->where('is_permanent', true);
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('is_permanent', true));
     }
 
     public function scopeNonPermanent($query)
     {
-        return $query->where('is_permanent', false);
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('is_permanent', false));
+    }
+
+    public function scopePhase($query, $phaseNumber)
+    {
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_number', $phaseNumber));
     }
 
     public function getCreatedAtAttribute()
@@ -95,9 +98,9 @@ class User extends Authenticatable
         return $this->hasMany(Team::class);
     }
 
-    public function banks(): HasMany
+    public function bank(): HasOne
     {
-        return $this->hasMany(BankDetail::class);
+        return $this->hasOne(BankDetail::class);
     }
 
     public function withdraws(): HasMany

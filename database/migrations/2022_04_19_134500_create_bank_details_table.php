@@ -21,8 +21,6 @@ return new class extends Migration
             $table->string('account_number', 50)->unique();
             $table->string('branch_name', 255);
             $table->string('ifsc', 100);
-            // $table->string('cif', 100);
-            $table->boolean('primary');
             $table->timestamps();
         });
     }

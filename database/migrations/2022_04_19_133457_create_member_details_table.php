@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
@@ -22,12 +21,10 @@ return new class extends Migration
             $table->double('total_earnings', 10, 2);
             $table->double('withdraws', 10, 2);
             $table->double('reward_income', 10, 2);
+            $table->boolean('is_permanent');
+            $table->tinyInteger('phase_number');
             $table->timestamps();
         });
-
-        DB::insert('insert into member_details (user_id, total_deposits, referral_income, total_earnings, withdraws, reward_income) values (?, ?, ?, ?, ?, ?)', [
-            1, 0, 0, 0, 0, 0
-        ]);
     }
 
     /**

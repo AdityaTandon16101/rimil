@@ -59,7 +59,7 @@ class RegistrationRequest extends FormRequest
     {
         $memberDetail = new MemberDetail();
         $memberDetail->user_id = $user->id;
-        $memberDetail->total_deposites = 0;
+        $memberDetail->total_deposits = 0;
         $memberDetail->referral_income = 0;
         $memberDetail->total_earnings = 0;
         $memberDetail->withdraws = 0;
