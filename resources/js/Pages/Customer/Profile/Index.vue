@@ -4,6 +4,7 @@ import AuthenticatedLayout from "@layouts/Customer.vue";
 import Button from "@x/Button.vue";
 import PageHead from "@x/Page/Head.vue";
 import PageBody from "@x/Page/Body.vue";
+import Form from "@utils/Form.vue";
 import ValidationErrors from "@x/ValidationErrors.vue";
 import Label from "@x/Label.vue";
 import Input from "@x/Input.vue";
@@ -34,13 +35,10 @@ const save = () => {
   <Head title="My Profile" />
 
   <AuthenticatedLayout title="My Profile">
-    <PageHead>
-      <Button @click="save">Save</Button>
-    </PageHead>
-    <PageBody header bgwhite>
+    <PageBody>
       <ValidationErrors class="mb-4" />
-      <form class="flex gap-4">
-        <div class="">
+      <Form :submit="save">
+        <div>
           <Label for="name" value="Name" />
           <Input
             id="name"
@@ -52,7 +50,7 @@ const save = () => {
             autofocus
           />
         </div>
-        <div class="w-1/3">
+        <div class="mt-4">
           <Label for="email" value="Email" />
           <Input
             id="email"
@@ -64,7 +62,7 @@ const save = () => {
             autofocus
           />
         </div>
-        <div class="">
+        <div class="mt-4">
           <Label for="phone" value="Phone" />
           <Input
             id="phone"
@@ -76,7 +74,15 @@ const save = () => {
             autofocus
           />
         </div>
-      </form>
+        <div class="flex items-center justify-end mt-4">
+          <Button
+            type="submit"
+            :class="{ 'opacity-25': form.processing }"
+            :disabled="form.processing"
+            >Update</Button
+          >
+        </div>
+      </Form>
     </PageBody>
   </AuthenticatedLayout>
 </template>

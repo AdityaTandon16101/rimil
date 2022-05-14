@@ -26,12 +26,10 @@ class DepositController extends Controller
         DB::transaction(function () use ($request) {
             $request->storeDeposit();
             $totalDeposits = $request->addToMyMemberDeposits();
-            if ($totalDeposits > 500) {
+            if ($totalDeposits >= 500) {
                 $request->makeUserActiveAndAssignReferralCode();
             }
         });
         return back();
-
-        // TODO deposite into Company's Bank
     }
 }

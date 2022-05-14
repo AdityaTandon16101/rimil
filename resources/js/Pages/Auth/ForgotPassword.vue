@@ -61,11 +61,15 @@ const submit = () => {
 
 <style lang="scss">
 @import "@scss/_variables";
+body {
+  background-color: #eee;
+}
 header {
   background-color: $primary;
 }
 .forgotpasswordform {
   margin: calc($guestHeaderHeight * 2) auto;
   padding: 0.8em;
+  background-color: #fff;
 }
 </style>

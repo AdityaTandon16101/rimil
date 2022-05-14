@@ -26806,10 +26806,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
 /* harmony import */ var _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Page/Head.vue */ "./resources/js/Components/Page/Head.vue");
 /* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
-/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
-/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
-/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
-/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
+/* harmony import */ var _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @utils/Form.vue */ "./resources/js/Components/Utils/Form.vue");
+/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
+/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
+/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
+/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
+
 
 
 
@@ -26825,7 +26827,7 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var props = __props;
-    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_8__.onMounted)(function () {
+    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_9__.onMounted)(function () {
       form.name = props.user.name;
       form.email = props.user.email;
       form.phone = props.user.phone;
@@ -26855,10 +26857,11 @@ __webpack_require__.r(__webpack_exports__);
       Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       PageHead: _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
       PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-      onMounted: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_8__.onMounted
+      Form: _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+      onMounted: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_9__.onMounted
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -30175,21 +30178,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
-
+var _hoisted_1 = {
+  "class": "mt-4"
+};
 var _hoisted_2 = {
-  "class": "flex gap-4"
+  "class": "mt-4"
 };
 var _hoisted_3 = {
-  "class": ""
+  "class": "flex items-center justify-end mt-4"
 };
-var _hoisted_4 = {
-  "class": "w-1/3"
-};
-var _hoisted_5 = {
-  "class": ""
-};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Update");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
     title: "My Profile"
@@ -30197,78 +30197,83 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: "My Profile"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageHead"], null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-            onClick: $setup.save
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
+            "class": "mb-4"
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Form"], {
+            submit: $setup.save
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [_hoisted_1];
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "name",
+                value: "Name"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "name",
+                type: "text",
+                "class": "mt-1 block w-full",
+                name: "name",
+                modelValue: $setup.form.name,
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+                  return $setup.form.name = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "email",
+                value: "Email"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "email",
+                type: "tel",
+                "class": "mt-1 block w-full",
+                name: "email",
+                modelValue: $setup.form.email,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+                  return $setup.form.email = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "phone",
+                value: "Phone"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "phone",
+                type: "tel",
+                "class": "mt-1 block w-full",
+                name: "phone",
+                modelValue: $setup.form.phone,
+                "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+                  return $setup.form.phone = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+                type: "submit",
+                "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+                  'opacity-25': $setup.form.processing
+                }),
+                disabled: $setup.form.processing
+              }, {
+                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                  return [_hoisted_4];
+                }),
+                _: 1
+                /* STABLE */
+
+              }, 8
+              /* PROPS */
+              , ["class", "disabled"])])];
             }),
             _: 1
             /* STABLE */
 
           })];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], {
-        header: "",
-        bgwhite: ""
-      }, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
-            "class": "mb-4"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "name",
-            value: "Name"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "name",
-            type: "text",
-            "class": "mt-1 block w-full",
-            name: "name",
-            modelValue: $setup.form.name,
-            "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-              return $setup.form.name = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "email",
-            value: "Email"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "email",
-            type: "tel",
-            "class": "mt-1 block w-full",
-            name: "email",
-            modelValue: $setup.form.email,
-            "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-              return $setup.form.email = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "phone",
-            value: "Phone"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "phone",
-            type: "tel",
-            "class": "mt-1 block w-full",
-            name: "phone",
-            modelValue: $setup.form.phone,
-            "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-              return $setup.form.phone = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])])])];
         }),
         _: 1
         /* STABLE */
@@ -36045,7 +36050,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "header {\n  background-color: #676be5;\n}\n.forgotpasswordform {\n  margin: 10rem auto;\n  padding: 0.8em;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #eee;\n}\nheader {\n  background-color: #676be5;\n}\n.forgotpasswordform {\n  margin: 10rem auto;\n  padding: 0.8em;\n  background-color: #fff;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36069,7 +36074,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "header {\n  background-color: #676be5;\n}\n.loginform {\n  margin: 10rem auto;\n  padding: 0.8em;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #eee;\n}\nheader {\n  background-color: #676be5;\n}\n.loginform {\n  margin: 10rem auto;\n  padding: 0.8em;\n  background-color: #fff;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -36093,7 +36098,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "header {\n  background-color: #676be5;\n}\n.registerform {\n  margin: 7.5rem auto;\n  padding: 0.8em;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #eee;\n}\nheader {\n  background-color: #676be5;\n}\n.registerform {\n  margin: 7.5rem auto;\n  padding: 0.8em;\n  background-color: #fff;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
