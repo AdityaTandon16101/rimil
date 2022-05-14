@@ -65,7 +65,7 @@ class User extends Authenticatable
 
     public function scopeReferralCode($query, $referralCode)
     {
-        return $query->where('referral_Code', $referralCode);
+        return $query->whereHas('memberDetail', fn ($member) => $member->where('referral_Code', $referralCode));
     }
 
     public function scopeMyTeamMembers($query)
