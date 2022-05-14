@@ -20,6 +20,11 @@ class Team extends Model
         return $query->where('user_id', auth()->id());
     }
 
+    public function scopeActive($query)
+    {
+        return $query->whereHas('teamMember', fn ($user) => $user->active());
+    }
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

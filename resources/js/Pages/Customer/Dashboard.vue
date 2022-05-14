@@ -45,7 +45,7 @@ const getPhasePackageRate = () => {
 
         <Counter :value="props.counters.team" title="TOTAL MEMBER" />
         <Counter
-          :value="props.teamMembersCount == 0 ? '0' : '-'"
+          :value="props.counters.team != 0 ? props.counters.active_team : '-'"
           title="TOTAL ACTIVE IDs"
         />
         <Counter

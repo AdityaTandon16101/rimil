@@ -29475,7 +29475,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           }, null, 8
           /* PROPS */
           , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.teamMembersCount == 0 ? '0' : '-',
+            value: $setup.props.counters.team != 0 ? $setup.props.counters.active_team : '-',
             title: "TOTAL ACTIVE IDs"
           }, null, 8
           /* PROPS */

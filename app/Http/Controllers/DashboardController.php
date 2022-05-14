@@ -19,6 +19,7 @@ class DashboardController extends Controller
                 'memberDetail' => auth()->user()->memberDetail,
                 'counters' => [
                     'team' => Team::query()->myTeam()->count(),
+                    'active_team' => Team::query()->myTeam()->active()->count(),
                     'winners' => User::query()->winners()->count(),
                     'phase_one' => User::query()->phase01()->count(),
                     'phase_two' => User::query()->phase02()->count(),

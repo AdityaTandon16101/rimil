@@ -65,17 +65,27 @@ class User extends Authenticatable
 
     public function scopeReferralCode($query, $referralCode)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('referral_Code', $referralCode));
+        return $query->whereRelation('memberDetail', 'referral_Code', $referralCode);
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', true);
+    }
+
+    public function scopeInMyTeam($query)
+    {
+        return $query->whereRelation('teamMembers', 'user_id', '=', auth()->id());
     }
 
     public function scopeMyTeamMembers($query)
     {
-        return $query->whereIn('id', auth()->user()->teamMembers()->pluck('team_member_id'));
+        return $query->whereIn('id', self::find(auth()->id())->teamMembers()->pluck('team_member_id'));
     }
 
     public function scopeDepositedUpTo500($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('total_deposit', '>', 500));
+        return $query->whereRelation('memberDetail', 'total_deposit', '>', 500);
     }
 
     public function scopeNotInAnyPhase($query)
@@ -85,32 +95,32 @@ class User extends Authenticatable
 
     public function scopeWinners($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 1));
+        return $query->whereRelation('memberDetail', 'phase_id', 1);
     }
 
     public function scopePhase01($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 2));
+        return $query->whereRelation('memberDetail', 'phase_id', 2);
     }
 
     public function scopePhase02($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 3));
+        return $query->whereRelation('memberDetail', 'phase_id', 3);
     }
 
     public function scopePhase03($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 4));
+        return $query->whereRelation('memberDetail', 'phase_id', 4);
     }
 
     public function scopePhase04($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 5));
+        return $query->whereRelation('memberDetail', 'phase_id', 5);
     }
 
     public function scopePhase05($query)
     {
-        return $query->whereHas('memberDetail', fn ($member) => $member->where('phase_id', 6));
+        return $query->whereRelation('memberDetail', 'phase_id', 6);
     }
 
     public function memberDetail(): HasOne
