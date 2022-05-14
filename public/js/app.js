@@ -24926,35 +24926,39 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
 /* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
+/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
+/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
+
 
 
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    isDepositedUpto500: Boolean
+    member: Object
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
     var props = __props;
-    var copied = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
-
-    var copy = function copy() {
-      copied.value = false;
-      navigator.clipboard.writeText();
-      copied.value = true;
-    };
+    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.onMounted)(function () {
+      isDepositedUpto500.value = props.member.total_deposit >= 500;
+    });
+    var isDepositedUpto500 = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_4__.ref)(false); // const copied = ref(false);
+    // const copy = () => {
+    //   copied.value = false;
+    //   navigator.clipboard.writeText();
+    //   copied.value = true;
+    // };
 
     var __returned__ = {
       props: props,
-      copied: copied,
-      copy: copy,
+      isDepositedUpto500: isDepositedUpto500,
       Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
       Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Link,
-      ref: _vue_reactivity__WEBPACK_IMPORTED_MODULE_3__.ref
+      onMounted: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.onMounted,
+      ref: _vue_reactivity__WEBPACK_IMPORTED_MODULE_4__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -26386,8 +26390,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
 /* harmony import */ var _x_Dashboard_Referral_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Dashboard/Referral.vue */ "./resources/js/Components/Dashboard/Referral.vue");
 /* harmony import */ var _x_Dashboard_Counter_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @x/Dashboard/Counter.vue */ "./resources/js/Components/Dashboard/Counter.vue");
-/* harmony import */ var _utils_Status_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @utils/Status.vue */ "./resources/js/Components/Utils/Status.vue");
-
 
 
 
@@ -26414,8 +26416,7 @@ __webpack_require__.r(__webpack_exports__);
       AuthenticatedLayout: _layouts_Customer_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
       PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       Referral: _x_Dashboard_Referral_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      Counter: _x_Dashboard_Counter_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      Status: _utils_Status_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+      Counter: _x_Dashboard_Counter_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -26440,9 +26441,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
 /* harmony import */ var _layouts_Customer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @layouts/Customer.vue */ "./resources/js/Layouts/Customer.vue");
-/* harmony import */ var _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Page/Head.vue */ "./resources/js/Components/Page/Head.vue");
-/* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
-/* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
+/* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
+/* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
+/* harmony import */ var _utils_Form_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @utils/Form.vue */ "./resources/js/Components/Utils/Form.vue");
 /* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
 /* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
 /* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
@@ -26462,24 +26463,29 @@ __webpack_require__.r(__webpack_exports__);
       amount: 0
     });
 
+    var depositAmountChoosen = function depositAmountChoosen(amount) {
+      return form.amount = amount;
+    };
+
     var save = function save() {
       form.post(route("deposits.store"), {
         onFinish: function onFinish() {
-          return form.reset("amount");
+          return form.amount = "";
         }
       });
     };
 
     var __returned__ = {
       form: form,
+      depositAmountChoosen: depositAmountChoosen,
       save: save,
       Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
       Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
       useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm,
       AuthenticatedLayout: _layouts_Customer_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      PageHead: _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-      Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      Form: _utils_Form_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
       ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
       Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
       Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
@@ -26660,14 +26666,20 @@ __webpack_require__.r(__webpack_exports__);
       password: ""
     });
 
-    var addBankDetails = function addBankDetails() {
-      form.put(route(isAdding.value ? "profile.bank.store" : "profile.bank.update", props.user.id), {
+    var addOrUpdateBankDetails = function addOrUpdateBankDetails() {
+      var options = {
         onFinish: function onFinish() {
           form.bank_name = "";
           form.branch_name = "";
+          form.account_name = "";
           form.account_number = "";
           form.ifsc = "";
           form.password = "";
+        }
+      };
+      isAdding ? form.post(route("profile.bank.store"), options) : form.put(route("profile.bank.update", props.user.id), {
+        onFinish: function onFinish() {
+          return form.password = "";
         }
       });
     };
@@ -26676,7 +26688,7 @@ __webpack_require__.r(__webpack_exports__);
       props: props,
       isAdding: isAdding,
       form: form,
-      addBankDetails: addBankDetails,
+      addOrUpdateBankDetails: addOrUpdateBankDetails,
       Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
       Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
       useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm,
@@ -27256,26 +27268,21 @@ var _hoisted_2 = {
   key: 2
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" You havn't referral ID, To get your New Referral ID and link, Deposit upto ₹500 ");
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" You havn't referral Code, To get your New Referral Code and link, Deposit upto ₹500 ");
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Deposit Now");
 
-var _hoisted_5 = {
-  key: 3
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.toCopy) + " ", 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["flex px-4 mb-2 h-auto lg:h-10 lg:leading-10", {
-      'bg-red-200': !$setup.props.isDepositedUpto500
+      'bg-red-200': !$setup.isDepositedUpto500
     }])
-  }, [$setup.props.isDepositedUpto500 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, " Your Referral Link ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.props.isDepositedUpto500 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Input"], {
+  }, [$setup.isDepositedUpto500 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, " Your Referral Link ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.isDepositedUpto500 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Input"], {
     key: 1,
     type: "text",
     "class": "flex-1",
     value: _ctx.route('register', {
-      referral: _ctx.$page.props.auth.user.referral_code
+      referral: $setup.props.member.referral_code
     }),
     placeholder: " Referral ID",
     "aria-describedby": "basic-addon2",
@@ -27294,26 +27301,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["href"])])), $setup.props.isDepositedUpto500 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-    onClick: $setup.copy,
-    "class": "h-10",
-    type: "button",
-    disabled: $setup.copied
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.copied ? "Copied" : "Copy"), 1
-      /* TEXT */
-      )];
-    }),
-    _: 1
-    /* STABLE */
-
-  }, 8
-  /* PROPS */
-  , ["disabled"])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 2
+  , ["href"])])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div v-if=\"isDepositedUpto500\">\n      <Button @click=\"copy\" class=\"h-10\" type=\"button\" :disabled=\"copied\">\n        {{ copied ? \"Copied\" : \"Copy\" }}\n      </Button>\n    </div> ")], 2
   /* CLASS */
-  )], 64
-  /* STABLE_FRAGMENT */
   );
 }
 
@@ -29455,10 +29444,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Referral"], {
-            isDepositedUpto500: $setup.props.memberDetail.total_deposit >= 500
+            member: $setup.props.memberDetail
           }, null, 8
           /* PROPS */
-          , ["isDepositedUpto500"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+          , ["member"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
             value: _ctx.$page.props.auth.user.status ? 'Active' : 'Inactive',
             clr: _ctx.$page.props.auth.user.status ? 'text-[#008000]' : 'text-[#ff0000]',
             title: "Status"
@@ -29575,12 +29564,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
-
-var _hoisted_2 = {
-  "class": "w-1/5"
+var _hoisted_1 = {
+  "class": "flex gap-4 mb-4"
 };
+var _hoisted_2 = ["onClick"];
+var _hoisted_3 = {
+  "class": "flex justify-end mt-4"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Deposit");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
     title: "New Deposit"
@@ -29588,52 +29581,63 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: "New Deposit"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageHead"], null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-            onClick: $setup.save,
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-              'opacity-25': $setup.form.processing
-            }),
-            disabled: $setup.form.processing
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
+            "class": "mb-4"
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Form"], {
+            submit: $setup.save
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [_hoisted_1];
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)([300, 500, 800, 1000, 1500], function (option) {
+                return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+                  key: option,
+                  "class": "cursor-pointer shadow-md rounded-md px-3",
+                  onClick: function onClick($event) {
+                    return $setup.depositAmountChoosen(option);
+                  }
+                }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(option), 9
+                /* TEXT, PROPS */
+                , _hoisted_2);
+              }), 64
+              /* STABLE_FRAGMENT */
+              ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "amount",
+                value: "Enter Deposit Amount"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "amount",
+                type: "tel",
+                "class": "mt-1 block w-full",
+                name: "amount",
+                modelValue: $setup.form.amount,
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+                  return $setup.form.amount = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+                type: "submit",
+                "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+                  'opacity-25': $setup.form.processing
+                }),
+                disabled: $setup.form.processing
+              }, {
+                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                  return [_hoisted_4];
+                }),
+                _: 1
+                /* STABLE */
+
+              }, 8
+              /* PROPS */
+              , ["class", "disabled"])])];
             }),
             _: 1
             /* STABLE */
 
-          }, 8
-          /* PROPS */
-          , ["class", "disabled"])];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], {
-        header: "",
-        bgwhite: ""
-      }, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
-            "class": "mb-4"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "amount",
-            value: "Amount"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "amount",
-            type: "tel",
-            "class": "mt-1 block w-full",
-            name: "amount",
-            modelValue: $setup.form.amount,
-            "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-              return $setup.form.amount = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])])])];
+          })];
         }),
         _: 1
         /* STABLE */
@@ -29895,7 +29899,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Form"], {
-            submit: $setup.addBankDetails
+            submit: $setup.addOrUpdateBankDetails
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
               return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
@@ -30446,7 +30450,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
                   'opacity-25': $setup.form.processing
                 }),
-                disabled: $setup.form.processing
+                disabled: $setup.form.processing || $setup.props.withdrawableAmount <= 100
               }, {
                 "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
                   return [_hoisted_3];

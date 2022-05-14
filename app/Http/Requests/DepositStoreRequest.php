@@ -54,12 +54,12 @@ class DepositStoreRequest extends FormRequest
     public function makeUserActiveAndAssignReferralCode()
     {
         $user = User::find(auth()->id());
-        $user->referral_code = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $user->status = true;
         $user->save();
 
         $maxAllotedId = MemberDetail::query()->max('alloted_id');
         $memberDetail = $user->memberDetail;
+        $memberDetail->referral_code = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $memberDetail->alloted_id = is_null($maxAllotedId)
             ? 1
             : $memberDetail->alloted_id = ++$maxAllotedId;

@@ -53,7 +53,9 @@ const withdraw = () => {
           />
         </div>
         <div class="flex mt-4 justify-end">
-          <Button :class="{ 'opacity-25': form.processing }" :disabled="form.processing"
+          <Button
+            :class="{ 'opacity-25': form.processing }"
+            :disabled="form.processing || props.withdrawableAmount <= 100"
             >Withdraw</Button
           >
         </div>

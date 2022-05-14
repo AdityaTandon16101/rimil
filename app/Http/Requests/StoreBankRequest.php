@@ -30,7 +30,7 @@ class StoreBankRequest extends FormRequest
             'bank_name' => ['required', 'string'],
             'branch_name' => ['required', 'string'],
             'account_name' => ['required', 'string'],
-            'account_number' => ['required', 'numeric', 'between:8,20'],
+            'account_number' => ['required', 'numeric'],
             'ifsc' => ['required', 'string'],
             'password' => ['required', 'string', 'min:8']
         ];

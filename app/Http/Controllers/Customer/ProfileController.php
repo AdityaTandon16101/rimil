@@ -31,7 +31,7 @@ class ProfileController extends Controller
     {
         return inertia('Customer/Profile/BankDetails', [
             'user' => auth()->user(),
-            'bankDetails' => auth()->user()->bankDetails
+            'bankDetails' => auth()->user()->bank
         ]);
     }
 

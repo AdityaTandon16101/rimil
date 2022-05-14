@@ -4,7 +4,6 @@ import AuthenticatedLayout from "@layouts/Customer.vue";
 import PageBody from "@x/Page/Body.vue";
 import Referral from "@x/Dashboard/Referral.vue";
 import Counter from "@x/Dashboard/Counter.vue";
-import Status from "@utils/Status.vue";
 
 const props = defineProps({
   memberDetail: Object,
@@ -21,7 +20,7 @@ const getPhasePackageRate = () => {
 
   <AuthenticatedLayout title="Dashboard">
     <PageBody bgwhite>
-      <Referral :isDepositedUpto500="props.memberDetail.total_deposit >= 500" />
+      <Referral :member="props.memberDetail" />
 
       <div class="grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
         <Counter

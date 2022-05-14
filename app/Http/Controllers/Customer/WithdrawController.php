@@ -26,7 +26,8 @@ class WithdrawController extends Controller
      */
     public function create()
     {
-        return inertia('Customer/Withdraw/Create');
+        $withdrawableAmount = auth()->user()->memberDetail->withdrawable_amount;
+        return inertia('Customer/Withdraw/Create', compact('withdrawableAmount'));
     }
 
     /**

@@ -37,19 +37,22 @@ const form = useForm({
   password: "",
 });
 
-const addBankDetails = () => {
-  form.put(
-    route(isAdding.value ? "profile.bank.store" : "profile.bank.update", props.user.id),
-    {
-      onFinish: () => {
-        form.bank_name = "";
-        form.branch_name = "";
-        form.account_number = "";
-        form.ifsc = "";
-        form.password = "";
-      },
-    }
-  );
+const addOrUpdateBankDetails = () => {
+  let options = {
+    onFinish: () => {
+      form.bank_name = "";
+      form.branch_name = "";
+      form.account_name = "";
+      form.account_number = "";
+      form.ifsc = "";
+      form.password = "";
+    },
+  };
+  isAdding
+    ? form.post(route("profile.bank.store"), options)
+    : form.put(route("profile.bank.update", props.user.id), {
+        onFinish: () => (form.password = ""),
+      });
 };
 </script>
 
@@ -58,7 +61,7 @@ const addBankDetails = () => {
 
   <AuthenticatedLayout title="Bank Details">
     <PageBody>
-      <Form :submit="addBankDetails">
+      <Form :submit="addOrUpdateBankDetails">
         <ValidationErrors class="mb-4" />
         <div>
           <Label for="bank_name" value="Bank Name" />

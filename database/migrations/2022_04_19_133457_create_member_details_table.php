@@ -29,11 +29,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning) values (?, ?, ?, ?, ?, ?)', [
-            1, 0, 0, 0, 0, 0
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, withdrawable_amount) values (?, ?, ?, ?, ?, ?, ?)', [
+            1, 0, 0, 0, 0, 0, 0
         ]);
-        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning) values (?, ?, ?, ?, ?, ?)', [
-            2, 0, 0, 0, 0, 0
+        DB::insert('insert into member_details (user_id, total_deposit, referral_income, total_withdraw, reward_income, total_earning, withdrawable_amount) values (?, ?, ?, ?, ?, ?, ?)', [
+            2, 0, 0, 0, 0, 0, 0
         ]);
     }
 
