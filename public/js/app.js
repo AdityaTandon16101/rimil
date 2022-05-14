@@ -25460,6 +25460,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Form.vue?vue&type=script&setup=true&lang=js":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Form.vue?vue&type=script&setup=true&lang=js ***!
+  \***************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    submit: Function
+  },
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+    var props = __props;
+    var __returned__ = {
+      props: props
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js ***!
@@ -26582,10 +26614,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
 /* harmony import */ var _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Page/Head.vue */ "./resources/js/Components/Page/Head.vue");
 /* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
-/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
-/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
-/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
-/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
+/* harmony import */ var _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @utils/Form.vue */ "./resources/js/Components/Utils/Form.vue");
+/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
+/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
+/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
+/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
+/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
+
 
 
 
@@ -26601,10 +26636,21 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var props = __props;
-    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_8__.onMounted)(function () {
-      if (props.bankDetails == null) return;
-      form.bank_name = props.bankDetails.name;
+    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_9__.onMounted)(function () {
+      if (props.bankDetails == null) {
+        isAdding.value = true;
+        return;
+      }
+
+      isAdding.value = false;
+      form.bank_name = props.bankDetails.bank_name;
+      form.branch_name = props.bankDetails.branch_name;
+      form.account_name = props.bankDetails.account_name;
+      form.account_number = props.bankDetails.account_number;
+      form.account_name = props.bankDetails.account_name;
+      form.ifsc = props.bankDetails.ifsc;
     });
+    var isAdding = (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_10__.ref)(false);
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
       bank_name: "",
       branch_name: "",
@@ -26615,7 +26661,7 @@ __webpack_require__.r(__webpack_exports__);
     });
 
     var addBankDetails = function addBankDetails() {
-      form.put(route("profile.bank.update", props.user.id), {
+      form.put(route(isAdding.value ? "profile.bank.store" : "profile.bank.update", props.user.id), {
         onFinish: function onFinish() {
           form.bank_name = "";
           form.branch_name = "";
@@ -26628,6 +26674,7 @@ __webpack_require__.r(__webpack_exports__);
 
     var __returned__ = {
       props: props,
+      isAdding: isAdding,
       form: form,
       addBankDetails: addBankDetails,
       Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
@@ -26637,10 +26684,12 @@ __webpack_require__.r(__webpack_exports__);
       Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       PageHead: _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
       PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-      onMounted: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_8__.onMounted
+      Form: _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+      onMounted: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_9__.onMounted,
+      ref: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_10__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -26668,9 +26717,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
 /* harmony import */ var _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Page/Head.vue */ "./resources/js/Components/Page/Head.vue");
 /* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
-/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
-/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
-/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
+/* harmony import */ var _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @utils/Form.vue */ "./resources/js/Components/Utils/Form.vue");
+/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
+/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
+/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
+
 
 
 
@@ -26712,9 +26763,10 @@ __webpack_require__.r(__webpack_exports__);
       Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       PageHead: _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
       PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+      Form: _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -26874,9 +26926,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Page/Head.vue */ "./resources/js/Components/Page/Head.vue");
 /* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
 /* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
-/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
-/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
-/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
+/* harmony import */ var _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @utils/Form.vue */ "./resources/js/Components/Utils/Form.vue");
+/* harmony import */ var _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/ValidationErrors.vue */ "./resources/js/Components/ValidationErrors.vue");
+/* harmony import */ var _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @x/Label.vue */ "./resources/js/Components/Label.vue");
+/* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
+
 
 
 
@@ -26886,14 +26940,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ["withdrawableAmount"],
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
+    var props = __props;
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
-      amount: 0
+      withdrawing_amount: 0
     });
 
-    var save = function save() {
+    var withdraw = function withdraw() {
       form.post(route("withdraws.store"), {
         onFinish: function onFinish() {
           return form.reset("amount");
@@ -26902,8 +26958,9 @@ __webpack_require__.r(__webpack_exports__);
     };
 
     var __returned__ = {
+      props: props,
       form: form,
-      save: save,
+      withdraw: withdraw,
       Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
       Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link,
       useForm: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm,
@@ -26911,9 +26968,10 @@ __webpack_require__.r(__webpack_exports__);
       PageHead: _x_Page_Head_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
       PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
+      Form: _utils_Form_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      ValidationErrors: _x_ValidationErrors_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      Label: _x_Label_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+      Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -28012,6 +28070,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 64
   /* STABLE_FRAGMENT */
   ))])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Form.vue?vue&type=template&id=6151030d":
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Form.vue?vue&type=template&id=6151030d ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
+    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $props.submit && $props.submit.apply($props, arguments);
+    }, ["prevent"])),
+    "class": "w-1/3 mx-auto mt-5 p-4 bg-white shadow-md"
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")], 32
+  /* HYDRATE_EVENTS */
+  );
 }
 
 /***/ }),
@@ -29783,9 +29867,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = ["onSubmit"];
+var _hoisted_1 = {
+  "class": "mt-4"
+};
 var _hoisted_2 = {
-  "class": ""
+  "class": "mt-4"
 };
 var _hoisted_3 = {
   "class": "mt-4"
@@ -29797,17 +29883,8 @@ var _hoisted_5 = {
   "class": "mt-4"
 };
 var _hoisted_6 = {
-  "class": "mt-4"
-};
-var _hoisted_7 = {
-  "class": "mt-4"
-};
-var _hoisted_8 = {
   "class": "flex items-center justify-end mt-4"
 };
-
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("add");
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
     title: "Bank Details"
@@ -29817,120 +29894,126 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-            onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.addBankDetails, ["prevent"]),
-            "class": "w-1/3 mx-auto mt-5 p-4 bg-white shadow-md"
-          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
-            "class": "mb-4"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "bank_name",
-            value: "Bank Name"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "bank_name",
-            type: "text",
-            "class": "mt-1 block w-full",
-            name: "bank_name",
-            modelValue: $setup.form.bank_name,
-            "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-              return $setup.form.bank_name = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "branch_name",
-            value: "Branch Name"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "branch_name",
-            type: "text",
-            "class": "mt-1 block w-full",
-            name: "branch_name",
-            modelValue: $setup.form.branch_name,
-            "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-              return $setup.form.branch_name = $event;
-            }),
-            required: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "account_name",
-            value: "Bank Account Name"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "account_name",
-            type: "text",
-            "class": "mt-1 block w-full",
-            name: "account_name",
-            modelValue: $setup.form.account_name,
-            "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-              return $setup.form.account_name = $event;
-            }),
-            required: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "account_number",
-            value: "Bank Account Number"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "account_number",
-            type: "tel",
-            "class": "mt-1 block w-full",
-            name: "account_number",
-            modelValue: $setup.form.account_number,
-            "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
-              return $setup.form.account_number = $event;
-            }),
-            required: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "ifsc",
-            value: "IFSC Code"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "ifsc",
-            type: "text",
-            "class": "mt-1 block w-full",
-            name: "ifsc",
-            modelValue: $setup.form.ifsc,
-            "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
-              return $setup.form.ifsc = $event;
-            }),
-            required: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "password",
-            value: "Account Password"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "password",
-            type: "password",
-            "class": "mt-1 block w-full",
-            name: "password",
-            modelValue: $setup.form.password,
-            "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-              return $setup.form.password = $event;
-            }),
-            required: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-            type: "submit",
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-              'opacity-25': $setup.form.processing
-            }),
-            disabled: $setup.form.processing
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Form"], {
+            submit: $setup.addBankDetails
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [_hoisted_9];
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
+                "class": "mb-4"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "bank_name",
+                value: "Bank Name"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "bank_name",
+                type: "text",
+                "class": "mt-1 block w-full",
+                name: "bank_name",
+                modelValue: $setup.form.bank_name,
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+                  return $setup.form.bank_name = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "branch_name",
+                value: "Branch Name"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "branch_name",
+                type: "text",
+                "class": "mt-1 block w-full",
+                name: "branch_name",
+                modelValue: $setup.form.branch_name,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+                  return $setup.form.branch_name = $event;
+                }),
+                required: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "account_name",
+                value: "Bank Account Name"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "account_name",
+                type: "text",
+                "class": "mt-1 block w-full",
+                name: "account_name",
+                modelValue: $setup.form.account_name,
+                "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+                  return $setup.form.account_name = $event;
+                }),
+                required: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "account_number",
+                value: "Bank Account Number"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "account_number",
+                type: "tel",
+                "class": "mt-1 block w-full",
+                name: "account_number",
+                modelValue: $setup.form.account_number,
+                "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+                  return $setup.form.account_number = $event;
+                }),
+                required: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "ifsc",
+                value: "IFSC Code"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "ifsc",
+                type: "text",
+                "class": "mt-1 block w-full",
+                name: "ifsc",
+                modelValue: $setup.form.ifsc,
+                "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+                  return $setup.form.ifsc = $event;
+                }),
+                required: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "password",
+                value: "Account Password"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "password",
+                type: "password",
+                "class": "mt-1 block w-full",
+                name: "password",
+                modelValue: $setup.form.password,
+                "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+                  return $setup.form.password = $event;
+                }),
+                required: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+                type: "submit",
+                "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+                  'opacity-25': $setup.form.processing
+                }),
+                disabled: $setup.form.processing
+              }, {
+                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                  return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.isAdding ? "Add" : "Update"), 1
+                  /* TEXT */
+                  )];
+                }),
+                _: 1
+                /* STABLE */
+
+              }, 8
+              /* PROPS */
+              , ["class", "disabled"])])];
             }),
             _: 1
             /* STABLE */
 
-          }, 8
-          /* PROPS */
-          , ["class", "disabled"])])], 40
-          /* PROPS, HYDRATE_EVENTS */
-          , _hoisted_1)];
+          })];
         }),
         _: 1
         /* STABLE */
@@ -29960,21 +30043,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = ["onSubmit"];
-var _hoisted_2 = {
+var _hoisted_1 = {
   "class": ""
+};
+var _hoisted_2 = {
+  "class": "mt-4"
 };
 var _hoisted_3 = {
   "class": "mt-4"
 };
 var _hoisted_4 = {
-  "class": "mt-4"
-};
-var _hoisted_5 = {
   "class": "flex items-center justify-end mt-4"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Update");
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Update");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
@@ -29985,77 +30067,81 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-            onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.changePassword, ["prevent"]),
-            "class": "w-1/3 mx-auto mt-5 p-4 bg-white shadow-md"
-          }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
-            "class": "mb-4"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "current_password",
-            value: "Current Password"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "current_password",
-            type: "password",
-            "class": "mt-1 block w-full",
-            name: "current_password",
-            modelValue: $setup.form.current_password,
-            "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-              return $setup.form.current_password = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "password",
-            value: "New Password"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "password",
-            type: "password",
-            "class": "mt-1 block w-full",
-            name: "password",
-            modelValue: $setup.form.password,
-            "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-              return $setup.form.password = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "password_confirmation",
-            value: "Confirm New Password"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "password_confirmation",
-            type: "password",
-            "class": "mt-1 block w-full",
-            name: "password_confirmation",
-            modelValue: $setup.form.password_confirmation,
-            "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-              return $setup.form.password_confirmation = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-            type: "submit",
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-              'opacity-25': $setup.form.processing
-            }),
-            disabled: $setup.form.processing
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Form"], {
+            submit: $setup.changePassword
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [_hoisted_6];
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
+                "class": "mb-4"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "current_password",
+                value: "Current Password"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "current_password",
+                type: "password",
+                "class": "mt-1 block w-full",
+                name: "current_password",
+                modelValue: $setup.form.current_password,
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+                  return $setup.form.current_password = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "password",
+                value: "New Password"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "password",
+                type: "password",
+                "class": "mt-1 block w-full",
+                name: "password",
+                modelValue: $setup.form.password,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+                  return $setup.form.password = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "password_confirmation",
+                value: "Confirm New Password"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "password_confirmation",
+                type: "password",
+                "class": "mt-1 block w-full",
+                name: "password_confirmation",
+                modelValue: $setup.form.password_confirmation,
+                "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+                  return $setup.form.password_confirmation = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+                type: "submit",
+                "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+                  'opacity-25': $setup.form.processing
+                }),
+                disabled: $setup.form.processing
+              }, {
+                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                  return [_hoisted_5];
+                }),
+                _: 1
+                /* STABLE */
+
+              }, 8
+              /* PROPS */
+              , ["class", "disabled"])])];
             }),
             _: 1
             /* STABLE */
 
-          }, 8
-          /* PROPS */
-          , ["class", "disabled"])])], 40
-          /* PROPS, HYDRATE_EVENTS */
-          , _hoisted_1)];
+          })];
         }),
         _: 1
         /* STABLE */
@@ -30301,12 +30387,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Save");
-
-var _hoisted_2 = {
-  "class": "w-1/5"
+var _hoisted_1 = {
+  "class": "mt-4"
 };
+var _hoisted_2 = {
+  "class": "flex mt-4 justify-end"
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Withdraw");
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
     title: "New Withdraw"
@@ -30314,52 +30403,65 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: "New Withdraw"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageHead"], null, {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], null, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
-            onClick: $setup.save,
-            "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-              'opacity-25': $setup.form.processing
-            }),
-            disabled: $setup.form.processing
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
+            "class": "mb-4"
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Form"], {
+            submit: $setup.withdraw
           }, {
             "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-              return [_hoisted_1];
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "withdrawable_amount",
+                value: "Withdrawable Amount"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "withdrawable_amount",
+                type: "tel",
+                "class": "mt-1 block w-full",
+                name: "withdrawable_amount",
+                modelValue: $setup.props.withdrawableAmount,
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+                  return $setup.props.withdrawableAmount = $event;
+                }),
+                required: "",
+                autofocus: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+                "for": "withdrawing_amount",
+                value: "Enter Withdraw Amount"
+              }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
+                id: "withdrawing_amount",
+                type: "tel",
+                "class": "mt-1 block w-full",
+                name: "withdrawing_amount",
+                modelValue: $setup.form.withdrawing_amount,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+                  return $setup.form.withdrawing_amount = $event;
+                }),
+                required: ""
+              }, null, 8
+              /* PROPS */
+              , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Button"], {
+                "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
+                  'opacity-25': $setup.form.processing
+                }),
+                disabled: $setup.form.processing
+              }, {
+                "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+                  return [_hoisted_3];
+                }),
+                _: 1
+                /* STABLE */
+
+              }, 8
+              /* PROPS */
+              , ["class", "disabled"])])];
             }),
             _: 1
             /* STABLE */
 
-          }, 8
-          /* PROPS */
-          , ["class", "disabled"])];
-        }),
-        _: 1
-        /* STABLE */
-
-      }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["PageBody"], {
-        header: "",
-        bgwhite: ""
-      }, {
-        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ValidationErrors"], {
-            "class": "mb-4"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
-            "for": "amount",
-            value: "Amount"
-          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
-            id: "amount",
-            type: "tel",
-            "class": "mt-1 block w-full",
-            name: "amount",
-            modelValue: $setup.form.amount,
-            "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-              return $setup.form.amount = $event;
-            }),
-            required: "",
-            autofocus: ""
-          }, null, 8
-          /* PROPS */
-          , ["modelValue"])])])];
+          })];
         }),
         _: 1
         /* STABLE */
@@ -60573,6 +60675,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Components/Utils/Form.vue":
+/*!************************************************!*\
+  !*** ./resources/js/Components/Utils/Form.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Form_vue_vue_type_template_id_6151030d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Form.vue?vue&type=template&id=6151030d */ "./resources/js/Components/Utils/Form.vue?vue&type=template&id=6151030d");
+/* harmony import */ var _Form_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Utils/Form.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _home_aditya_Documents_laravel_rimil_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_home_aditya_Documents_laravel_rimil_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Form_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Form_vue_vue_type_template_id_6151030d__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/Utils/Form.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Components/Utils/Paginate.vue":
 /*!****************************************************!*\
   !*** ./resources/js/Components/Utils/Paginate.vue ***!
@@ -61660,6 +61790,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/Utils/Form.vue?vue&type=script&setup=true&lang=js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/Components/Utils/Form.vue?vue&type=script&setup=true&lang=js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Form_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Form_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Form.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Form.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js":
 /*!***************************************************************************************!*\
   !*** ./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js ***!
@@ -62376,6 +62522,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Customer_vue_vue_type_template_id_a65889c8_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Customer_vue_vue_type_template_id_a65889c8_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Customer.vue?vue&type=template&id=a65889c8&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Sidebar/Customer.vue?vue&type=template&id=a65889c8&scoped=true");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Utils/Form.vue?vue&type=template&id=6151030d":
+/*!******************************************************************************!*\
+  !*** ./resources/js/Components/Utils/Form.vue?vue&type=template&id=6151030d ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Form_vue_vue_type_template_id_6151030d__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Form_vue_vue_type_template_id_6151030d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Form.vue?vue&type=template&id=6151030d */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Form.vue?vue&type=template&id=6151030d");
 
 
 /***/ }),

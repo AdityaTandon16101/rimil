@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('bank_name', 255);
+            $table->string('branch_name', 255);
             $table->string('account_name', 255);
             $table->string('account_number', 50)->unique();
-            $table->string('branch_name', 255);
             $table->string('ifsc', 100);
             $table->timestamps();
         });

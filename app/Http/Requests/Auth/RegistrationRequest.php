@@ -64,6 +64,7 @@ class RegistrationRequest extends FormRequest
         $memberDetail->total_withdraw = 0;
         $memberDetail->reward_income = 0;
         $memberDetail->total_earning = 0;
+        $memberDetail->withdrawable_amount = 0;
         $memberDetail->save();
     }
 

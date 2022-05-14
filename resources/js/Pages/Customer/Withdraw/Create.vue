@@ -4,15 +4,18 @@ import AuthenticatedLayout from "@layouts/Customer.vue";
 import PageHead from "@x/Page/Head.vue";
 import Button from "@x/Button.vue";
 import PageBody from "@x/Page/Body.vue";
+import Form from "@utils/Form.vue";
 import ValidationErrors from "@x/ValidationErrors.vue";
 import Label from "@x/Label.vue";
 import Input from "@x/Input.vue";
 
+const props = defineProps(["withdrawableAmount"]);
+
 const form = useForm({
-  amount: 0,
+  withdrawing_amount: 0,
 });
 
-const save = () => {
+const withdraw = () => {
   form.post(route("withdraws.store"), {
     onFinish: () => form.reset("amount"),
   });
@@ -23,30 +26,38 @@ const save = () => {
   <Head title="New Withdraw" />
 
   <AuthenticatedLayout title="New Withdraw">
-    <PageHead>
-      <Button
-        @click="save"
-        :class="{ 'opacity-25': form.processing }"
-        :disabled="form.processing"
-        >Save</Button
-      >
-    </PageHead>
-    <PageBody header bgwhite>
+    <PageBody>
       <ValidationErrors class="mb-4" />
-      <form>
-        <div class="w-1/5">
-          <Label for="amount" value="Amount" />
+      <Form :submit="withdraw">
+        <div>
+          <Label for="withdrawable_amount" value="Withdrawable Amount" />
           <Input
-            id="amount"
+            id="withdrawable_amount"
             type="tel"
             class="mt-1 block w-full"
-            name="amount"
-            v-model="form.amount"
+            name="withdrawable_amount"
+            v-model="props.withdrawableAmount"
             required
             autofocus
           />
         </div>
-      </form>
+        <div class="mt-4">
+          <Label for="withdrawing_amount" value="Enter Withdraw Amount" />
+          <Input
+            id="withdrawing_amount"
+            type="tel"
+            class="mt-1 block w-full"
+            name="withdrawing_amount"
+            v-model="form.withdrawing_amount"
+            required
+          />
+        </div>
+        <div class="flex mt-4 justify-end">
+          <Button :class="{ 'opacity-25': form.processing }" :disabled="form.processing"
+            >Withdraw</Button
+          >
+        </div>
+      </Form>
     </PageBody>
   </AuthenticatedLayout>
 </template>

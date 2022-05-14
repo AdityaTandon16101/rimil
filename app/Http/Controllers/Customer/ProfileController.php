@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreBankRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -32,6 +33,15 @@ class ProfileController extends Controller
             'user' => auth()->user(),
             'bankDetails' => auth()->user()->bankDetails
         ]);
+    }
+
+    public function storeBankDetails(StoreBankRequest $request)
+    {
+        $user = User::find(auth()->id());
+
+        $request->isPasswordCorrect($user);
+        $request->storeBankDetails($user);
+        return back();
     }
 
     public function updateBankDetails(User $user, Request $request)

@@ -19,11 +19,7 @@ class MemberDetail extends Model
         'withdraws',
         'reward_income',
         'total_earning',
-        'is_permanent',
-    ];
-
-    protected $casts = [
-        'is_permanent' => 'boolean',
+        'withdrawable_amount'
     ];
 
     public function user(): BelongsTo

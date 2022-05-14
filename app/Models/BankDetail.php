@@ -16,13 +16,8 @@ class BankDetail extends Model
         'branch_name',
         'account_name',
         'account_number',
-        'branch_name',
         'ifsc'
     ];
-
-    // protected $casts = [
-    //     'primary' => 'boolean'
-    // ];
 
     public function user(): BelongsTo
     {

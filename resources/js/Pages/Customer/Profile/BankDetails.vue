@@ -4,17 +4,29 @@ import AuthenticatedLayout from "@layouts/Customer.vue";
 import Button from "@x/Button.vue";
 import PageHead from "@x/Page/Head.vue";
 import PageBody from "@x/Page/Body.vue";
+import Form from "@utils/Form.vue";
 import ValidationErrors from "@x/ValidationErrors.vue";
 import Label from "@x/Label.vue";
 import Input from "@x/Input.vue";
-import { onMounted } from "@vue/runtime-core";
+import { onMounted, ref } from "@vue/runtime-core";
 
 const props = defineProps(["user", "bankDetails"]);
 
 onMounted(() => {
-  if (props.bankDetails == null) return;
-  form.bank_name = props.bankDetails.name;
+  if (props.bankDetails == null) {
+    isAdding.value = true;
+    return;
+  }
+  isAdding.value = false;
+  form.bank_name = props.bankDetails.bank_name;
+  form.branch_name = props.bankDetails.branch_name;
+  form.account_name = props.bankDetails.account_name;
+  form.account_number = props.bankDetails.account_number;
+  form.account_name = props.bankDetails.account_name;
+  form.ifsc = props.bankDetails.ifsc;
 });
+
+const isAdding = ref(false);
 
 const form = useForm({
   bank_name: "",
@@ -26,15 +38,18 @@ const form = useForm({
 });
 
 const addBankDetails = () => {
-  form.put(route("profile.bank.update", props.user.id), {
-    onFinish: () => {
-      form.bank_name = "";
-      form.branch_name = "";
-      form.account_number = "";
-      form.ifsc = "";
-      form.password = "";
-    },
-  });
+  form.put(
+    route(isAdding.value ? "profile.bank.store" : "profile.bank.update", props.user.id),
+    {
+      onFinish: () => {
+        form.bank_name = "";
+        form.branch_name = "";
+        form.account_number = "";
+        form.ifsc = "";
+        form.password = "";
+      },
+    }
+  );
 };
 </script>
 
@@ -43,12 +58,9 @@ const addBankDetails = () => {
 
   <AuthenticatedLayout title="Bank Details">
     <PageBody>
-      <form
-        @submit.prevent="addBankDetails"
-        class="w-1/3 mx-auto mt-5 p-4 bg-white shadow-md"
-      >
+      <Form :submit="addBankDetails">
         <ValidationErrors class="mb-4" />
-        <div class="">
+        <div>
           <Label for="bank_name" value="Bank Name" />
           <Input
             id="bank_name"
@@ -120,10 +132,11 @@ const addBankDetails = () => {
             type="submit"
             :class="{ 'opacity-25': form.processing }"
             :disabled="form.processing"
-            >add</Button
           >
+            {{ isAdding ? "Add" : "Update" }}
+          </Button>
         </div>
-      </form>
+      </Form>
     </PageBody>
   </AuthenticatedLayout>
 </template>

@@ -25,6 +25,7 @@ return new class extends Migration
             $table->double('total_withdraw', 10, 2);
             $table->double('reward_income', 10, 2);
             $table->double('total_earning', 10, 2);
+            $table->double('withdrawable_amount', 10, 2);
             $table->timestamps();
         });
 

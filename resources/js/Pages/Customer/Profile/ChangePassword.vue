@@ -4,6 +4,7 @@ import AuthenticatedLayout from "@layouts/Customer.vue";
 import Button from "@x/Button.vue";
 import PageHead from "@x/Page/Head.vue";
 import PageBody from "@x/Page/Body.vue";
+import Form from "@utils/Form.vue";
 import ValidationErrors from "@x/ValidationErrors.vue";
 import Label from "@x/Label.vue";
 import Input from "@x/Input.vue";
@@ -32,10 +33,7 @@ const changePassword = () => {
 
   <AuthenticatedLayout title="Change Password">
     <PageBody>
-      <form
-        @submit.prevent="changePassword"
-        class="w-1/3 mx-auto mt-5 p-4 bg-white shadow-md"
-      >
+      <Form :submit="changePassword">
         <ValidationErrors class="mb-4" />
         <div class="">
           <Label for="current_password" value="Current Password" />
@@ -81,8 +79,8 @@ const changePassword = () => {
             >Update</Button
           >
         </div>
-      </form>
+      </Form>
     </PageBody>
   </AuthenticatedLayout>
 </template>
-ationErr
+ationErr Erro
