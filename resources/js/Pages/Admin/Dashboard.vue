@@ -28,7 +28,7 @@ const props = defineProps(["users"]);
           </tr>
         </template>
         <tr v-for="user in props.users.data" :key="user.id">
-          <td>{{ user.alloted_id ?? "-" }}</td>
+          <td>{{ user.member_detail.alloted_id ?? "-" }}</td>
           <td>{{ user.name }}</td>
           <td>{{ user.created_at }}</td>
           <td>{{ user.phone }}</td>
