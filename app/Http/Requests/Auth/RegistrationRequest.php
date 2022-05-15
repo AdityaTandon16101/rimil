@@ -102,6 +102,8 @@ class RegistrationRequest extends FormRequest
 
         $memberDetail = $referredUser->memberDetail;
         $memberDetail->referral_income = $memberDetail->referral_income + $amount;
+        $memberDetail->total_earning = $memberDetail->total_earning + $amount;
+        $memberDetail->withdrawable_amount = $memberDetail->withdrawable_amount + $amount;
         $memberDetail->save();
     }
 

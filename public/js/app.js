@@ -25496,6 +25496,49 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Grid.vue?vue&type=script&setup=true&lang=js":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Grid.vue?vue&type=script&setup=true&lang=js ***!
+  \***************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    sm: {
+      type: String,
+      "default": "grid-cols-1"
+    },
+    md: {
+      type: String,
+      "default": "md:grid-cols-2"
+    },
+    lg: {
+      type: String,
+      "default": "lg:grid-cols-4"
+    }
+  },
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+    var props = __props;
+    var __returned__ = {
+      props: props
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js ***!
@@ -26389,7 +26432,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_Customer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @layouts/Customer.vue */ "./resources/js/Layouts/Customer.vue");
 /* harmony import */ var _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @x/Page/Body.vue */ "./resources/js/Components/Page/Body.vue");
 /* harmony import */ var _x_Dashboard_Referral_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @x/Dashboard/Referral.vue */ "./resources/js/Components/Dashboard/Referral.vue");
-/* harmony import */ var _x_Dashboard_Counter_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @x/Dashboard/Counter.vue */ "./resources/js/Components/Dashboard/Counter.vue");
+/* harmony import */ var _utils_Grid_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @utils/Grid.vue */ "./resources/js/Components/Utils/Grid.vue");
+/* harmony import */ var _utils_Status_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @utils/Status.vue */ "./resources/js/Components/Utils/Status.vue");
+/* harmony import */ var _x_Dashboard_Counter_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @x/Dashboard/Counter.vue */ "./resources/js/Components/Dashboard/Counter.vue");
+
+
 
 
 
@@ -26416,7 +26463,9 @@ __webpack_require__.r(__webpack_exports__);
       AuthenticatedLayout: _layouts_Customer_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
       PageBody: _x_Page_Body_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       Referral: _x_Dashboard_Referral_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      Counter: _x_Dashboard_Counter_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+      Grid: _utils_Grid_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      Status: _utils_Status_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      Counter: _x_Dashboard_Counter_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -28088,6 +28137,33 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Grid.vue?vue&type=template&id=580a708f":
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Grid.vue?vue&type=template&id=580a708f ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  key: 0,
+  "class": "col-span-full"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)("grid gap-6 mt-4 ".concat($setup.props.sm, " ").concat($setup.props.md, " ").concat($setup.props.lg))
+  }, [_ctx.$slots.head ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "head")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")], 2
+  /* CLASS */
+  );
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Paginate.vue?vue&type=template&id=73ce00c0":
 /*!************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Paginate.vue?vue&type=template&id=73ce00c0 ***!
@@ -29429,7 +29505,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "grid gap-6 mt-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+  "class": "mt-4 flex justify-between"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, "Account", -1
+/* HOISTED */
+);
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Status: ");
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mt-4"
+}, "Income", -1
+/* HOISTED */
+);
+
+var _hoisted_5 = {
+  "class": "mt-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
@@ -29446,94 +29538,122 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             member: $setup.props.memberDetail
           }, null, 8
           /* PROPS */
-          , ["member"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: _ctx.$page.props.auth.user.status ? 'Active' : 'Inactive',
-            clr: _ctx.$page.props.auth.user.status ? 'text-[#008000]' : 'text-[#ff0000]',
-            title: "Status"
-          }, null, 8
-          /* PROPS */
-          , ["value", "clr"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.total_deposit,
-            type: "float",
-            title: "DEPOSIT AMOUNT"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.total_deposit ? $setup.props.memberDetail.alloted_id : '-',
-            title: "ID"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.referral_income,
-            type: "float",
-            title: "REFERRAL INCOME"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.team,
-            title: "TOTAL MEMBER"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.team != 0 ? $setup.props.counters.active_team : '-',
-            title: "TOTAL ACTIVE IDs"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.total_earning,
-            type: "float",
-            title: "TOTAL EARNING"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.total_withdraw,
-            type: "float",
-            title: "TOTAL WIDTHDRAW"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.getPhasePackageRate(),
-            type: "float",
-            title: "PACKAGE"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.winners,
-            title: "WINNERS"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.phase_one,
-            title: "PHASE 1"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.phase_two,
-            title: "PHASE 2"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.phase_three,
-            title: "PHASE 3"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.phase_four,
-            title: "PHASE 4"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.counters.phase_five,
-            title: "PHASE 5"
-          }, null, 8
-          /* PROPS */
-          , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
-            value: $setup.props.memberDetail.reward_income,
-            type: "float",
-            title: "REWARD INCOME"
-          }, null, 8
-          /* PROPS */
-          , ["value"])])];
+          , ["member"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Grid"], {
+            lg: "lg:grid-cols-5"
+          }, {
+            head: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Status"], {
+                status: _ctx.$page.props.auth.user.status
+              }, null, 8
+              /* PROPS */
+              , ["status"])])])];
+            }),
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.memberDetail.total_deposit,
+                type: "float",
+                title: "DEPOSIT AMOUNT"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.memberDetail.total_deposit ? $setup.props.memberDetail.alloted_id : '-',
+                title: "ID"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.team,
+                title: "TOTAL MEMBER"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.team != 0 ? $setup.props.counters.active_team : '-',
+                title: "TOTAL ACTIVE IDs"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.memberDetail.total_withdraw,
+                type: "float",
+                title: "TOTAL WIDTHDRAW"
+              }, null, 8
+              /* PROPS */
+              , ["value"])];
+            }),
+            _: 1
+            /* STABLE */
+
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Grid"], null, {
+            head: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [_hoisted_4];
+            }),
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.memberDetail.referral_income,
+                type: "float",
+                title: "REFERRAL INCOME"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.memberDetail.reward_income,
+                type: "float",
+                title: "REWARD INCOME"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.memberDetail.total_earning,
+                type: "float",
+                title: "TOTAL EARNING"
+              }, null, 8
+              /* PROPS */
+              , ["value"])];
+            }),
+            _: 1
+            /* STABLE */
+
+          }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Grid"], {
+            lg: "lg:grid-cols-6"
+          }, {
+            head: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, "Package ₹" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.getPhasePackageRate()), 1
+              /* TEXT */
+              )];
+            }),
+            "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+              return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.winners,
+                title: "WINNERS"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.phase_one,
+                title: "PHASE 01"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.phase_two,
+                title: "PHASE 02"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.phase_three,
+                title: "PHASE 03"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.phase_four,
+                title: "PHASE 04"
+              }, null, 8
+              /* PROPS */
+              , ["value"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Counter"], {
+                value: $setup.props.counters.phase_five,
+                title: "PHASE 05"
+              }, null, 8
+              /* PROPS */
+              , ["value"])];
+            }),
+            _: 1
+            /* STABLE */
+
+          })];
         }),
         _: 1
         /* STABLE */
@@ -60708,6 +60828,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Components/Utils/Grid.vue":
+/*!************************************************!*\
+  !*** ./resources/js/Components/Utils/Grid.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Grid_vue_vue_type_template_id_580a708f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Grid.vue?vue&type=template&id=580a708f */ "./resources/js/Components/Utils/Grid.vue?vue&type=template&id=580a708f");
+/* harmony import */ var _Grid_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Grid.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Components/Utils/Grid.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _home_aditya_Documents_laravel_rimil_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_home_aditya_Documents_laravel_rimil_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Grid_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Grid_vue_vue_type_template_id_580a708f__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Components/Utils/Grid.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Components/Utils/Paginate.vue":
 /*!****************************************************!*\
   !*** ./resources/js/Components/Utils/Paginate.vue ***!
@@ -61811,6 +61959,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Components/Utils/Grid.vue?vue&type=script&setup=true&lang=js":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/Components/Utils/Grid.vue?vue&type=script&setup=true&lang=js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grid_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grid_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grid.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Grid.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js":
 /*!***************************************************************************************!*\
   !*** ./resources/js/Components/Utils/Paginate.vue?vue&type=script&setup=true&lang=js ***!
@@ -62543,6 +62707,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Form_vue_vue_type_template_id_6151030d__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Form_vue_vue_type_template_id_6151030d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Form.vue?vue&type=template&id=6151030d */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Form.vue?vue&type=template&id=6151030d");
+
+
+/***/ }),
+
+/***/ "./resources/js/Components/Utils/Grid.vue?vue&type=template&id=580a708f":
+/*!******************************************************************************!*\
+  !*** ./resources/js/Components/Utils/Grid.vue?vue&type=template&id=580a708f ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grid_vue_vue_type_template_id_580a708f__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Grid_vue_vue_type_template_id_580a708f__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Grid.vue?vue&type=template&id=580a708f */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Components/Utils/Grid.vue?vue&type=template&id=580a708f");
 
 
 /***/ }),
