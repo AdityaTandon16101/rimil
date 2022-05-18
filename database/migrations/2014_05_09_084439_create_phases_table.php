@@ -21,11 +21,11 @@ return new class extends Migration
             $table->timestamps();
         });
         DB::insert('insert into phases (name, package_amount) values (?, ?)', ['WINNERS', 5000]);
-        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 01', 5000]);
-        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 02', 5000]);
-        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 03', 5000]);
-        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 04', 5000]);
-        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 05', 5000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 01', 10000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 02', 20000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 03', 40000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 04', 80000]);
+        DB::insert('insert into phases (name, package_amount) values (?, ?)', ['PHASE 05', 160000]);
     }
 
     /**
