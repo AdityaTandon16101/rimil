@@ -6,7 +6,7 @@ defineProps(["title"]);
 </script>
 
 <template>
-  <div class="flex bg-[#eee]">
+  <div class="relative flex bg-[#eee]">
     <Sidebar />
     <div class="flex-1">
       <Header :title="title" />

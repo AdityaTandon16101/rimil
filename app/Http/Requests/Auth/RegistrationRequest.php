@@ -57,7 +57,7 @@ class RegistrationRequest extends FormRequest
     {
         $memberDetail = new MemberDetail();
         $memberDetail->user_id = $user->id;
-        $memberDetail->referral_code = null;
+        $memberDetail->referral_code = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $memberDetail->alloted_id = null;
         $memberDetail->total_deposit = 0;
         $memberDetail->referral_income = 0;

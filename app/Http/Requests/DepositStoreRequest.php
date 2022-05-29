@@ -59,7 +59,6 @@ class DepositStoreRequest extends FormRequest
 
         $maxAllotedId = MemberDetail::query()->max('alloted_id');
         $memberDetail = $user->memberDetail;
-        $memberDetail->referral_code = substr(str_shuffle("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"), 0, 8);
         $memberDetail->alloted_id = is_null($maxAllotedId)
             ? 1
             : $memberDetail->alloted_id = ++$maxAllotedId;
