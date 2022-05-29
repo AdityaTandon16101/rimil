@@ -8,7 +8,7 @@ const props = defineProps(["canLogin", "canRegister"]);
   <div class="flex flex-col h-[90vh] pt-16 px-16 lg:flex-row hero">
     <div>
       <p class="text-[3.1em] font-bold lg:text-[4.2em] head">
-        Welcome to Rimil Trading Company
+        Welcome to Rimil Trades
       </p>
       <p class="text-[1.2em] uppercase lg:text-[1.4em] subtitle">
         Lorem ipsum dolor sit amet consectetur
