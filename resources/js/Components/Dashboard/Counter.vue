@@ -8,7 +8,7 @@ const props = defineProps({
   },
   clr: {
     type: String,
-    default: "text-[#333]",
+    default: "",
   },
 });
 </script>

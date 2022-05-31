@@ -88,3 +88,16 @@ const getPhasePackageRate = () => {
     </PageBody>
   </AuthenticatedLayout>
 </template>
+
+<style lang="scss" scoped>
+@import "@scss/_variables";
+.grid.gap-6 {
+  & > div:not(.col-span-full):nth-child(odd) {
+    background-color: $secondary;
+  }
+  & > div:not(.col-span-full):nth-child(even) {
+    background-color: $primary;
+    color: #fff;
+  }
+}
+</style>
