@@ -7,22 +7,22 @@
       <h4>About Us</h4>
       <h3>Who we are</h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam soluta rem,
-        tenetur cum ex aspernatur facilis tempora ipsa provident, unde similique iure
-        placeat qui sunt amet aperiam eaque mollitia. Possimus consequatur quidem suscipit
-        autem sed eaque minus assumenda quae nesciunt hic inventore laboriosam, sint
-        cumque aut amet. Repudiandae illum totam necessitatibus velit nesciunt omnis,
-        nulla maiores quos id voluptatum dicta doloremque, corporis minus voluptas officia
-        et repellendus laboriosam ullam aspernatur. Cum deleniti placeat rem, minus
-        consectetur possimus sapiente, sunt quisquam ipsam accusantium adipisci, voluptas
-        architecto vitae reiciendis voluptatum officiis magni iure dolor repudiandae nisi
-        ut non culpa eligendi explicabo! Saepe tenetur aliquid alias possimus repellendus?
-        Labore ipsam fugit beatae omnis necessitatibus praesentium suscipit nihil. Sed,
-        ad? Similique vel architecto ex quo unde odit nam quae illum rem quam? Obcaecati
-        id aperiam adipisci magni voluptatem expedita fugit. Beatae quia, expedita placeat
-        animi cum architecto aliquam voluptatem in iste magnam debitis dignissimos maiores
-        exercitationem eos consectetur temporibus, possimus illo porro qui molestiae fuga
-        velit.
+        The pain itself is a lot of pain Life's a great unmoored affair
+        he is obliged when he rejects it from the easy times;
+        please let people who are interested in the system open up and make them flexible. We can achieve even exciting
+        however, if these measures are less likely to be assumed, those who are unaware of the troublesome finder are here
+        or when he loves them. Everyone wants to know how to repudiate all their needs;
+        there is no greater pleasure than pain, less pleasure in the services of the body
+        and he rejects any hardship to be avoided. Soothes when you have to do something less
+        we can be the main sage
+        the architect of life rejecting the pleasures and the obligations of great pain must be repudiated only
+        so that I can't explain my fault for choosing! Are we often obliged to do something else that can be avoided?
+        She shuns all the labor of the Blessed One and receives nothing from the needs of the present. But
+        to? Or like an architect, from which source do he hate for such a thing as much as that? Blinded by
+        it flies unencumbered with the system to gain great pleasure. Blessed because, ready to please
+        some pleasure in the mind of an architect with great debts worthy of his ancestors
+        the main training period for them, so that we can avoid further discomfort
+        please.
       </p>
     </div>
   </div>
