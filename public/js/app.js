@@ -28480,7 +28480,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "lg:w-1/2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "About Us"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Who we are"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae magnam soluta rem, tenetur cum ex aspernatur facilis tempora ipsa provident, unde similique iure placeat qui sunt amet aperiam eaque mollitia. Possimus consequatur quidem suscipit autem sed eaque minus assumenda quae nesciunt hic inventore laboriosam, sint cumque aut amet. Repudiandae illum totam necessitatibus velit nesciunt omnis, nulla maiores quos id voluptatum dicta doloremque, corporis minus voluptas officia et repellendus laboriosam ullam aspernatur. Cum deleniti placeat rem, minus consectetur possimus sapiente, sunt quisquam ipsam accusantium adipisci, voluptas architecto vitae reiciendis voluptatum officiis magni iure dolor repudiandae nisi ut non culpa eligendi explicabo! Saepe tenetur aliquid alias possimus repellendus? Labore ipsam fugit beatae omnis necessitatibus praesentium suscipit nihil. Sed, ad? Similique vel architecto ex quo unde odit nam quae illum rem quam? Obcaecati id aperiam adipisci magni voluptatem expedita fugit. Beatae quia, expedita placeat animi cum architecto aliquam voluptatem in iste magnam debitis dignissimos maiores exercitationem eos consectetur temporibus, possimus illo porro qui molestiae fuga velit. ")], -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", null, "About Us"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", null, "Who we are"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " The pain itself is a lot of pain Life's a great unmoored affair he is obliged when he rejects it from the easy times; please let people who are interested in the system open up and make them flexible. We can achieve even exciting however, if these measures are less likely to be assumed, those who are unaware of the troublesome finder are here or when he loves them. Everyone wants to know how to repudiate all their needs; there is no greater pleasure than pain, less pleasure in the services of the body and he rejects any hardship to be avoided. Soothes when you have to do something less we can be the main sage the architect of life rejecting the pleasures and the obligations of great pain must be repudiated only so that I can't explain my fault for choosing! Are we often obliged to do something else that can be avoided? She shuns all the labor of the Blessed One and receives nothing from the needs of the present. But to? Or like an architect, from which source do he hate for such a thing as much as that? Blinded by it flies unencumbered with the system to gain great pleasure. Blessed because, ready to please some pleasure in the mind of an architect with great debts worthy of his ancestors the main training period for them, so that we can avoid further discomfort please. ")], -1
 /* HOISTED */
 );
 
@@ -28646,13 +28646,13 @@ var _withScopeId = function _withScopeId(n) {
 };
 
 var _hoisted_1 = {
-  "class": "flex flex-col h-[90vh] pt-16 px-16 lg:flex-row hero"
+  "class": "flex flex-col py-8 px-16 lg:flex-row hero"
 };
 
 var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": "text-[3.1em] font-bold lg:text-[4.2em] head"
-  }, " Welcome to Rimil Trading Company ", -1
+    "class": "text-[2.85em] font-bold lg:text-[4.2em] head"
+  }, "Welcome to Rimil Trades", -1
   /* HOISTED */
   );
 });
@@ -29060,7 +29060,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "w-1/4 mx-auto shadow-md loginform"
+  "class": "w-4/5 md:w-1/4 mx-auto shadow-md loginform"
 };
 var _hoisted_2 = {
   key: 0,
@@ -29203,7 +29203,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "w-1/3 mx-auto shadow-md registerform"
+  "class": "w-4/5 md:w-1/4 mx-auto shadow-md registerform"
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
@@ -29228,23 +29228,20 @@ var _hoisted_7 = {
 var _hoisted_8 = {
   "class": "flex gap-4 mt-4 w-full"
 };
-var _hoisted_9 = {
-  "class": "w-1/2"
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Verify");
+
+var _hoisted_10 = {
+  "class": "mt-4"
 };
-
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Verify");
-
 var _hoisted_11 = {
-  "class": "w-1/2"
-};
-var _hoisted_12 = {
   "class": "flex items-center justify-between mt-4"
 };
-var _hoisted_13 = ["innerHTML"];
+var _hoisted_12 = ["innerHTML"];
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Already registered? ");
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Already registered? ");
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register ");
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Head"], {
@@ -29331,7 +29328,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         autocomplete: "new-password"
       }, null, 8
       /* PROPS */
-      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
         "for": "referral",
         value: "Referral Code"
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Input"], {
@@ -29352,12 +29349,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "mt-6 h-10"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_10];
+          return [_hoisted_9];
         }),
         _: 1
         /* STABLE */
 
-      })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
+      })) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Label"], {
         "for": "sponsor",
         value: $setup.sponsor.searching ? 'Searching' : 'Sponsor Name'
       }, null, 8
@@ -29374,16 +29371,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         disabled: ""
       }, null, 8
       /* PROPS */
-      , ["modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      , ["modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
         innerHTML: $setup.sponsor.error
       }, null, 8
       /* PROPS */
-      , _hoisted_13), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
+      , _hoisted_12), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Link"], {
         href: _ctx.route('login'),
         "class": "underline text-sm text-gray-600 hover:text-gray-900"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_14];
+          return [_hoisted_13];
         }),
         _: 1
         /* STABLE */
@@ -29394,17 +29391,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["ml-4", {
           'opacity-25': $setup.form.processing
         }]),
-        disabled: $setup.form.processing
+        leddisabled: "form.processing"
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [_hoisted_15];
+          return [_hoisted_14];
         }),
         _: 1
         /* STABLE */
 
       }, 8
       /* PROPS */
-      , ["class", "disabled"])])])], 40
+      , ["class"])])])], 40
       /* PROPS, HYDRATE_EVENTS */
       , _hoisted_3)])];
     }),
@@ -36353,7 +36350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#about,\n#contact {\n  height: 100vh;\n  padding: 4rem 3.5rem;\n  margin-top: 3em;\n  margin-bottom: 3em;\n}\n#about h4,\n#contact h4 {\n  position: relative;\n  padding: 0 0 0 1em;\n  color: #676be5;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  transition: all 0.2s ease-in-out;\n}\n#about h4::before,\n#contact h4::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 5%;\n  background-color: rgba(253, 210, 130, 0.85);\n  z-index: -1;\n  transition: all 0.2s ease-in-out;\n}\n#about h4:hover,\n#contact h4:hover {\n  color: #333;\n  padding: 0.3em 0 0.3em 1em;\n  transition: all 0.2s ease-in-out;\n}\n#about h4:hover::before,\n#contact h4:hover::before {\n  width: 110%;\n  border-left: 0.5em solid #ae7203;\n}\n#about h3,\n#contact h3 {\n  margin: 0 0 0.5em 1em;\n  font-size: 2.5em;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  color: #ae7203;\n  border: none;\n  transition: all 0.2s ease-in-out;\n}\n#about h3:hover,\n#contact h3:hover {\n  border-bottom: 2px solid #fdd282;\n  transition: all 0.2s ease-in-out;\n}\n#about img,\n#contact img {\n  -o-object-fit: fill;\n     object-fit: fill;\n  width: 100%;\n  height: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#about,\n#contact {\n  height: 100vh;\n  padding: 3rem 3.5rem;\n  margin-top: 3em;\n  margin-bottom: 3em;\n}\n#about h4,\n#contact h4 {\n  position: relative;\n  padding: 0 0 0 1em;\n  color: #676be5;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  transition: all 0.2s ease-in-out;\n}\n#about h4::before,\n#contact h4::before {\n  content: \"\";\n  position: absolute;\n  top: 0;\n  left: 0;\n  height: 100%;\n  width: 5%;\n  background-color: rgba(253, 210, 130, 0.85);\n  z-index: -1;\n  transition: all 0.2s ease-in-out;\n}\n#about h4:hover,\n#contact h4:hover {\n  color: #333;\n  padding: 0.3em 0 0.3em 1em;\n  transition: all 0.2s ease-in-out;\n}\n#about h4:hover::before,\n#contact h4:hover::before {\n  width: 110%;\n  border-left: 0.5em solid #ae7203;\n}\n#about h3,\n#contact h3 {\n  margin: 0 0 0.5em 1em;\n  font-size: 2.5em;\n  width: -webkit-fit-content;\n  width: -moz-fit-content;\n  width: fit-content;\n  color: #ae7203;\n  border: none;\n  transition: all 0.2s ease-in-out;\n}\n#about h3:hover,\n#contact h3:hover {\n  border-bottom: 2px solid #fdd282;\n  transition: all 0.2s ease-in-out;\n}\n#about img,\n#contact img {\n  -o-object-fit: fill;\n     object-fit: fill;\n  width: 100%;\n  height: 100%;\n}\n@media only screen and (max-width: 600px) {\n#about,\n#contact {\n    height: auto;\n    padding: 1.5rem 3.5rem;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

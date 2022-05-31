@@ -73,7 +73,7 @@ const submit = () => {
   <Head title="Join Now" />
 
   <GuestLayout>
-    <div class="w-1/3 mx-auto shadow-md registerform">
+    <div class="w-4/5 md:w-1/4 mx-auto shadow-md registerform">
       <div class="text-3xl text-center uppercase">Register now</div>
       <ValidationErrors class="mb-4" />
 
@@ -140,7 +140,7 @@ const submit = () => {
         </div>
 
         <div class="flex gap-4 mt-4 w-full">
-          <div class="w-1/2">
+          <div>
             <Label for="referral" value="Referral Code" />
             <Input
               id="referral"
@@ -154,20 +154,20 @@ const submit = () => {
           <Button v-if="!hasReferralCode" @click="getSponsorName" class="mt-6 h-10"
             >Verify</Button
           >
-          <div class="w-1/2">
-            <Label
-              for="sponsor"
-              :value="sponsor.searching ? 'Searching' : 'Sponsor Name'"
-            />
-            <Input
-              id="sponsor"
-              type="text"
-              class="mt-1 block w-full"
-              v-model="sponsor.name"
-              placeholder="Sponsor Name"
-              disabled
-            />
-          </div>
+        </div>
+        <div class="mt-4">
+          <Label
+            for="sponsor"
+            :value="sponsor.searching ? 'Searching' : 'Sponsor Name'"
+          />
+          <Input
+            id="sponsor"
+            type="text"
+            class="mt-1 block w-full"
+            v-model="sponsor.name"
+            placeholder="Sponsor Name"
+            disabled
+          />
         </div>
 
         <div class="flex items-center justify-between mt-4">
@@ -183,7 +183,7 @@ const submit = () => {
             <Button
               class="ml-4"
               :class="{ 'opacity-25': form.processing }"
-              :disabled="form.processing"
+              leddisabled="form.processing"
             >
               Register
             </Button>

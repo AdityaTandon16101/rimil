@@ -29,7 +29,7 @@ const submit = () => {
   <Head title="Log in" />
 
   <GuestLayout>
-    <div class="w-1/4 mx-auto shadow-md loginform">
+    <div class="w-4/5 md:w-1/4 mx-auto shadow-md loginform">
       <ValidationErrors class="mb-4" />
 
       <div v-if="status" class="mb-4 font-medium text-sm text-green-600">

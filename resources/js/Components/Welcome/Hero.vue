@@ -5,11 +5,9 @@ const props = defineProps(["canLogin", "canRegister"]);
 </script>
 
 <template>
-  <div class="flex flex-col h-[90vh] pt-16 px-16 lg:flex-row hero">
+  <div class="flex flex-col py-8 px-16 lg:flex-row hero">
     <div>
-      <p class="text-[3.1em] font-bold lg:text-[4.2em] head">
-        Welcome to Rimil Trades
-      </p>
+      <p class="text-[2.85em] font-bold lg:text-[4.2em] head">Welcome to Rimil Trades</p>
       <p class="text-[1.2em] uppercase lg:text-[1.4em] subtitle">
         Lorem ipsum dolor sit amet consectetur
       </p>

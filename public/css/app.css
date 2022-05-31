@@ -906,6 +906,9 @@ select {
 .w-1\/2 {
   width: 50%;
 }
+.w-4\/5 {
+  width: 80%;
+}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -1183,6 +1186,10 @@ select {
   padding-left: 4rem;
   padding-right: 4rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -1215,6 +1222,9 @@ select {
 }
 .pl-4 {
   padding-left: 1rem;
+}
+.pt-12 {
+  padding-top: 3rem;
 }
 .text-left {
   text-align: left;
@@ -1261,6 +1271,9 @@ select {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+.text-\[2\.85em\] {
+  font-size: 2.85em;
 }
 .font-medium {
   font-weight: 500;
@@ -1717,6 +1730,14 @@ select {
 
   .md\:hidden {
     display: none;
+  }
+
+  .md\:w-1\/4 {
+    width: 25%;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:grid-cols-2 {

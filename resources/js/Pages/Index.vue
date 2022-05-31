@@ -20,7 +20,7 @@ const props = defineProps(["canLogin", "canRegister"]);
 #about,
 #contact {
   height: 100vh;
-  padding: 4rem 3.5rem;
+  padding: 3rem 3.5rem;
   margin-top: 3em;
   margin-bottom: 3em;
   h4 {
@@ -33,6 +33,13 @@ const props = defineProps(["canLogin", "canRegister"]);
     object-fit: fill;
     width: 100%;
     height: 100%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #about,
+  #contact {
+    height: auto;
+    padding: 1.5rem 3.5rem;
   }
 }
 </style>
