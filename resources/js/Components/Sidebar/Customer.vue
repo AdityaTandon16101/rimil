@@ -97,9 +97,22 @@ const menus = [
   }
   &.sidebar {
     [sidebar] {
-      width: auto;
+      width: 15vw;
       overflow: visible;
       transition: all 0.2s;
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  #app {
+    &.sidebar {
+      [sidebar] {
+        position: absolute;
+        top: $appHeaderHeight;
+        left: 0;
+        width: 80vw;
+        height: 100%;
+      }
     }
   }
 }

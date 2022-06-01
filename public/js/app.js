@@ -28240,7 +28240,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $props.submit && $props.submit.apply($props, arguments);
     }, ["prevent"])),
-    "class": "w-1/3 mx-auto mt-5 p-4 bg-white shadow-md"
+    "class": "w-4/5 md:w-1/3 mx-auto mt-5 p-4 bg-white shadow-md"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default")], 32
   /* HYDRATE_EVENTS */
   );
@@ -36212,7 +36212,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#app [sidebar] {\n  width: 0;\n  height: 100%;\n  overflow: hidden;\n  background-color: #676be5;\n  transition: all 0.2s;\n}\n#app [sidebar] .title {\n  padding-left: 1rem;\n  height: 4rem;\n  line-height: 4rem;\n  font-size: 1.5em;\n  color: #fff;\n}\n#app [sidebar] ul {\n  height: calc(100vh - 4rem);\n}\n#app [sidebar] ul li a span {\n  color: #fff;\n}\n#app [sidebar] ul li.border-l-4 {\n  background: #fff;\n  border-color: #676be5;\n}\n#app [sidebar] ul li.border-l-4 a span {\n  color: #333;\n}\n#app.sidebar [sidebar] {\n  width: auto;\n  overflow: visible;\n  transition: all 0.2s;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#app [sidebar] {\n  width: 0;\n  height: 100%;\n  overflow: hidden;\n  background-color: #676be5;\n  transition: all 0.2s;\n}\n#app [sidebar] .title {\n  padding-left: 1rem;\n  height: 4rem;\n  line-height: 4rem;\n  font-size: 1.5em;\n  color: #fff;\n}\n#app [sidebar] ul {\n  height: calc(100vh - 4rem);\n}\n#app [sidebar] ul li a span {\n  color: #fff;\n}\n#app [sidebar] ul li.border-l-4 {\n  background: #fff;\n  border-color: #676be5;\n}\n#app [sidebar] ul li.border-l-4 a span {\n  color: #333;\n}\n#app.sidebar [sidebar] {\n  width: 15vw;\n  overflow: visible;\n  transition: all 0.2s;\n}\n@media only screen and (max-width: 600px) {\n#app.sidebar [sidebar] {\n    position: absolute;\n    top: 4rem;\n    left: 0;\n    width: 80vw;\n    height: 100%;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
