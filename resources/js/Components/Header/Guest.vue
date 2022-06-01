@@ -7,8 +7,6 @@ import Dropdown from "@x/Dropdown.vue";
 import DropdownLink from "@x/DropdownLink.vue";
 import ResponsiveNavLink from "@x/ResponsiveNavLink.vue";
 
-defineProps(["title"]);
-
 const showingNavigationDropdown = ref(false);
 const isScrolled = ref(false);
 
