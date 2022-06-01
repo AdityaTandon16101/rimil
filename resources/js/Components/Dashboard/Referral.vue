@@ -2,18 +2,18 @@
 import Input from "@x/Input.vue";
 import Button from "@x/Button.vue";
 import { Link } from "@inertiajs/inertia-vue3";
-import { onMounted } from "@vue/runtime-core";
+// import { onMounted } from "@vue/runtime-core";
 import { ref } from "@vue/reactivity";
 
 const props = defineProps({
   member: Object,
 });
 
-onMounted(() => {
-  isDepositedUpto500.value = props.member.total_deposit >= 500;
-});
+// onMounted(() => {
+//   isDepositedUpto500.value = props.member.total_deposit >= 500;
+// });
 
-const isDepositedUpto500 = ref(false);
+const isDepositedUpto500 = ref(true);
 
 // const copied = ref(false);
 

@@ -24926,11 +24926,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _x_Input_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @x/Input.vue */ "./resources/js/Components/Input.vue");
 /* harmony import */ var _x_Button_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @x/Button.vue */ "./resources/js/Components/Button.vue");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
-/* harmony import */ var _vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vue/runtime-core */ "./node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js");
-/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
+/* harmony import */ var _vue_reactivity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @vue/reactivity */ "./node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js");
 
 
-
+ // import { onMounted } from "@vue/runtime-core";
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -24940,11 +24939,11 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var props = __props;
-    (0,_vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.onMounted)(function () {
-      isDepositedUpto500.value = props.member.total_deposit >= 500;
-    });
-    var isDepositedUpto500 = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_4__.ref)(false); // const copied = ref(false);
+    var props = __props; // onMounted(() => {
+    //   isDepositedUpto500.value = props.member.total_deposit >= 500;
+    // });
+
+    var isDepositedUpto500 = (0,_vue_reactivity__WEBPACK_IMPORTED_MODULE_3__.ref)(true); // const copied = ref(false);
     // const copy = () => {
     //   copied.value = false;
     //   navigator.clipboard.writeText();
@@ -24957,8 +24956,7 @@ __webpack_require__.r(__webpack_exports__);
       Input: _x_Input_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       Button: _x_Button_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
       Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_2__.Link,
-      onMounted: _vue_runtime_core__WEBPACK_IMPORTED_MODULE_3__.onMounted,
-      ref: _vue_reactivity__WEBPACK_IMPORTED_MODULE_4__.ref
+      ref: _vue_reactivity__WEBPACK_IMPORTED_MODULE_3__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,

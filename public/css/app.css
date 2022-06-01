@@ -739,13 +739,13 @@ select {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
 .my-auto {
   margin-top: auto;
   margin-bottom: auto;
+}
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -903,9 +903,6 @@ select {
 .w-1\/4 {
   width: 25%;
 }
-.w-1\/2 {
-  width: 50%;
-}
 .w-4\/5 {
   width: 80%;
 }
@@ -963,9 +960,6 @@ select {
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
-}
-.flex-row {
-  flex-direction: row;
 }
 .flex-col {
   flex-direction: column;
@@ -1182,13 +1176,13 @@ select {
   padding-top: 0px;
   padding-bottom: 0px;
 }
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 .pt-1 {
   padding-top: 0.25rem;
@@ -1219,12 +1213,6 @@ select {
 }
 .pt-16 {
   padding-top: 4rem;
-}
-.pl-4 {
-  padding-left: 1rem;
-}
-.pt-12 {
-  padding-top: 3rem;
 }
 .text-left {
   text-align: left;
@@ -1268,12 +1256,12 @@ select {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.text-\[2\.85em\] {
+  font-size: 2.85em;
+}
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-}
-.text-\[2\.85em\] {
-  font-size: 2.85em;
 }
 .font-medium {
   font-weight: 500;
@@ -1304,9 +1292,6 @@ select {
 }
 .leading-\[3rem\] {
   line-height: 3rem;
-}
-.leading-8 {
-  line-height: 2rem;
 }
 .tracking-wider {
   letter-spacing: 0.05em;
@@ -1365,10 +1350,6 @@ select {
 .text-indigo-600 {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
-}
-.text-\[\#333\] {
-  --tw-text-opacity: 1;
-  color: rgb(51 51 51 / var(--tw-text-opacity));
 }
 .text-green-800 {
   --tw-text-opacity: 1;
@@ -1665,20 +1646,12 @@ select {
     height: 5rem;
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
   .sm\:max-w-md {
     max-width: 28rem;
   }
 
   .sm\:flex-1 {
     flex: 1 1 0%;
-  }
-
-  .sm\:flex-col {
-    flex-direction: column;
   }
 
   .sm\:items-center {
@@ -1736,20 +1709,12 @@ select {
     width: 25%;
   }
 
-  .md\:w-1\/2 {
-    width: 50%;
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:flex-col {
-    flex-direction: column;
   }
 
   .md\:gap-8 {
