@@ -9,7 +9,7 @@ const props = defineProps(["canLogin", "canRegister"]);
     <div>
       <p class="text-[2.85em] font-bold lg:text-[4.2em] head">Welcome to Rimil Trades</p>
       <p class="text-[1.2em] uppercase lg:text-[1.4em] subtitle">
-        Lorem ipsum dolor sit amet consectetur
+        THIS IS THE BEST WEBSITE TO EARN MONEY COME & JOIN US
       </p>
       <ul v-if="props.canLogin && props.canRegister" class="flex mt-4">
         <li v-if="props.canLogin">
