@@ -1,12 +1,16 @@
 <script setup>
+import Sidebar from "@x/Sidebar/Admin.vue";
 import Header from "@x/Header/Customer.vue";
 
 defineProps(["title"]);
 </script>
 
 <template>
-  <div class="bg-[#eee]">
-    <Header :title="title" />
-    <slot />
+  <div class="relative flex bg-[#eee]">
+    <Sidebar />
+    <div class="flex-1">
+      <Header :title="title" />
+      <slot />
+    </div>
   </div>
 </template>
