@@ -28745,7 +28745,7 @@ var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
 var _hoisted_3 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": "text-[1.2em] uppercase lg:text-[1.4em] subtitle"
-  }, " Lorem ipsum dolor sit amet consectetur ", -1
+  }, " THIS IS THE BEST WEBSITE TO EARN MONEY COME & JOIN US ", -1
   /* HOISTED */
   );
 });
